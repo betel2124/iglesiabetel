@@ -1,0 +1,457 @@
+
+betel-logo.jpg
+
+Excelente. Voy a proponerte **lineamientos técnicos y coherentes con la identidad implícita en el logo**, pensando en consistencia multisoporte (A4 impreso, Instagram y web). Primero analicemos el logo conceptualmente: * 🔥 **Llama + manos** → Espíritu Santo, cuidado pastoral, acompañamiento.
+
+pasted
+
+voy a encargarme de la parte comunicacional de la iglesia en la que soy miembro. necesito definir un estilo visual para los carteles (A4, instagram) y para la pagina web que voy a diseñar a futuro. Tengo mas o menos esos guidelines que adjunto, necesito crear una especificacion de diseño mas detallada
+
+5:14 p. m.
+
+Check available skills
+Check available skills
+Voy a crear un documento de especificación de diseño completo y profesional para Iglesia Betel. Primero déjame revisar el skill de frontend para ver si hay algo útil para la parte web.
+
+
+Check frontend design skill
+Check frontend design skill
+Ahora voy a crear el documento de especificación de diseño completo como un archivo HTML interactivo que sirva como manual de marca visual.
+
+
+Se ejecutaron 5 comandos, archivo leído
+Se ejecutaron 5 comandos, archivo leído
+Acá tenés el Manual de Identidad Visual de Iglesia Betel — un documento HTML interactivo que podés abrir en cualquier navegador y compartir con diseñadores o colaboradores.
+
+El manual incluye 8 secciones completas:
+
+01 · Sistema de Color — paleta primaria y secundaria con códigos hex exactos y reglas de uso para cada color.
+
+02 · Sistema Tipográfico — muestras en vivo de Playfair Display + Montserrat, tabla completa con tamaños, pesos y aplicación de cada nivel de texto.
+
+03 · Uso del Logo — ejemplos visuales de fondos permitidos y prohibidos, con reglas de zona de protección.
+
+04 · Plantillas de Layout — wireframes en escala de A4, Instagram (1080×1080) y Homepage, mostrando jerarquía y distribución de espacios.
+
+05 · Espaciado y Márgenes — escala base de 8px y tabla de márgenes por formato (A4, Instagram, web).
+
+06 · Estilo Fotográfico — guía de tono, temperatura de color y tratamientos de overlay permitidos.
+
+07 · Tono Comunicacional — los cuatro pilares (bíblico, pastoral, sobrio, accesible) con implicancias de diseño.
+
+08 · Especificaciones Web — bloque de variables CSS listas para copiar/pegar en tu proyecto, más la arquitectura de páginas recomendada.
+
+Betel design spec
+Código · HTML 
+muy bien, en base a lo dicho, quiero que diseñes una maqueta en html+css del sitio web. necesito la pagina principal (Inicio), Nosotros, Ministerios, Predicaciones, Contacto. cada una en un .html distinto
+
+5:28 p. m.
+
+Read frontend design skill for best practices
+Read frontend design skill for best practices
+Voy a crear las 5 páginas con un diseño cohesivo, elegante y fiel al manual de identidad. Primero voy a preparar el logo en base64 y luego construir cada archivo.
+
+
+Prepare logo base64
+Prepare logo base64
+Now I'll create a shared CSS file and all 5 pages. Let me build them one by one.
+
+
+Se ejecutaron 8 comandos, archivo leído
+Se ejecutaron 8 comandos, archivo leído
+Las 5 páginas están listas, completamente autocontenidas (CSS y logo embebidos, sin dependencias externas). Podés abrirlas directamente en cualquier navegador. Un resumen de lo que tiene cada una:
+
+Inicio (index.html) — Hero de pantalla completa con el logo animado flotando, strip de horarios, sección visión con 4 pilares, próximos eventos sobre fondo negro, preview de predicaciones recientes, y formulario de contacto rápido integrado.
+
+Nosotros (nosotros.html) — Secciones de Visión y Misión con tarjetas de color, 6 valores con iconos, grilla de credos doctrinales sobre fondo negro, timeline histórico vertical, tarjetas de liderazgo, y nota de afiliación.
+
+Ministerios (ministerios.html) — Ministerio destacado (Jóvenes Betel) en formato hero de dos columnas, 6 tarjetas de ministerios con color diferenciado por área, y sección "Cómo participar" con 4 pasos sobre fondo negro.
+
+Predicaciones (predicaciones.html) — Barra de filtros por categoría sticky, 3 tarjetas de series activas, listado completo de mensajes con fecha, serie, pasaje, duración, botón play y descarga, paginación, y sección de suscripción por email.
+
+Contacto (contacto.html) — Layout de dos columnas: panel de info (dirección, horarios, WhatsApp) sticky a la izquierda, formulario completo a la derecha, mapa placeholder linkeable a Google Maps, y sección FAQ con acordeón interactivo.
+
+Para usar en producción, reemplazá los datos de placeholder (dirección, teléfono, nombres del liderazgo) por la información real de la iglesia.
+
+Index
+Código · HTML 
+Nosotros
+Código · HTML 
+Ministerios
+Código · HTML 
+Predicaciones
+Código · HTML 
+Contacto
+Código · HTML 
+vamos a intentar convertir este ejemplo en un sitio de Hugo. Analicemos los cambios que habria que hacer. La idea es que los eventos y las predicas serian archivos .md separados, que se filtran por tags (o metodo similar). La pagina de inicio tal vez convenga que sea mas contendio en .md formateado por estilos que html puro. analiza los cambios que habria que efectuar y los vemos
+
+7:05 p. m.
+Buena decisión. Hugo es ideal para esto. Voy a analizar los cambios necesarios antes de tocar cualquier código.
+
+Estructura general del proyecto Hugo
+iglesia-betel/
+├── config.toml
+├── content/
+│   ├── _index.md          ← Inicio (front matter + bloques)
+│   ├── nosotros.md
+│   ├── ministerios/
+│   │   ├── _index.md
+│   │   ├── jovenes.md
+│   │   ├── ninos.md
+│   │   └── ...
+│   ├── predicaciones/
+│   │   ├── _index.md
+│   │   └── *.md           ← una por mensaje
+│   └── eventos/
+│       ├── _index.md
+│       └── *.md           ← uno por evento
+├── layouts/
+│   ├── _default/
+│   ├── predicaciones/
+│   ├── eventos/
+│   └── ministerios/
+├── static/
+│   └── css/shared.css
+└── assets/
+    └── img/logo.jpg
+Lo que se convierte a .md y lo que sigue siendo template HTML
+✅ Pasa a archivos .md
+Predicaciones — son el caso más claro y el más importante:
+
+yaml
+---
+title: "El fuego que no se apaga"
+date: 2025-06-01
+predicador: "Pr. Nombre Apellido"
+serie: "vida-en-el-espiritu"
+pasaje: "Hechos 2:1–4"
+duracion: "48 min"
+audio: "https://..."
+tags: ["espiritu-santo", "serie", "culto-dominical"]
+destacado: true
+---
+El cuerpo del .md puede ser las notas del mensaje, un resumen, o quedar vacío.
+Eventos:
+
+yaml
+---
+title: "Noche de Alabanza y Oración"
+date: 2025-06-08
+hora: "20:00 hs"
+lugar: "Salón principal"
+tipo: "culto-especial"   ← tag o taxonomía
+entrada: "libre"
+destacado: true
+---
+Descripción del evento en prosa.
+Ministerios — cada uno es una página independiente:
+
+yaml
+---
+title: "Jóvenes Betel"
+dia: "Viernes"
+hora: "20:30 hs"
+edad: "13 a 30 años"
+icon: "⚡"
+color: "red"
+orden: 1
+---
+Descripción del ministerio en prosa, la copy que va en la tarjeta y en la página detalle.
+Nosotros — el contenido de los bloques (visión, misión, historia, credo, valores) puede vivir en .md con front matter, aunque la página en sí la renderiza un template. Los bloques de texto largo (historia, valores) se benefician de ser .md editable sin tocar HTML.
+
+Página de inicio — acá es más matizado (ver abajo).
+
+La página de inicio: ¿cuánto .md?
+El inicio actual tiene secciones muy heterogéneas visualmente. En Hugo hay tres enfoques posibles:
+
+Opción A — Front matter con bloques de datos (recomendada) El _index.md tiene front matter con los textos de cada sección, y el template los renderiza. Nada de HTML en el .md:
+
+yaml
+---
+hero_titulo: "Un Hogar para Crecer."
+hero_subtitulo: "Una comunidad cristiana..."
+vision_texto: "Somos una congregación pentecostal..."
+---
+Ventaja: el editor nunca toca HTML. Desventaja: el front matter puede volverse muy largo.
+
+Opción B — Shortcodes El .md usa shortcodes para los bloques especiales:
+
+markdown
+{{< hero titulo="Un Hogar para Crecer" >}}
+
+{{< seccion-vision >}}
+
+{{< eventos-recientes limite=3 >}}
+Ventaja: el .md es legible y estructurado. Permite mezclar prosa real con componentes. Desventaja: hay que escribir los shortcodes.
+
+Opción C — Template puro (como está ahora) El inicio es 100% template Hugo y no tiene .md editable salvo el título. Ventaja: control total del diseño. Desventaja: para editar copy hay que tocar HTML.
+
+Mi recomendación: Opción B (shortcodes) para el inicio. Es el balance correcto para una iglesia donde alguien sin conocimientos técnicos tiene que poder actualizar los textos.
+
+Taxonomías vs Tags: qué conviene para cada sección
+Predicaciones — conviene una taxonomía series separada de tags de temas:
+
+toml
+# config.toml
+[taxonomies]
+  serie = "series"
+  tag = "tags"
+  tipo = "tipos"
+Esto genera automáticamente páginas como /series/vida-en-el-espiritu/ listando todos los mensajes de esa serie. Los tags serían para temas transversales (espíritu-santo, familia, evangelismo).
+
+Eventos — una taxonomía tipo (culto-especial, jovenes, evangelismo, retiro) es suficiente. Los eventos pasados y futuros se distinguen por fecha: Hugo puede filtrar con where .Date.After now.
+
+Ministerios — no necesitan taxonomías, son pocos y fijos. Alcanza con una sección con _index.md.
+
+Cambios concretos en los templates HTML actuales
+Lo que desaparece del HTML:
+
+Todo el contenido hardcodeado (títulos, textos, fechas, nombres) pasa a .md o config.toml
+Los loops de predicaciones y eventos se reemplazan por range de Hugo
+Los filtros de la página de predicaciones se construyen con las taxonomías
+Lo que queda en los templates:
+
+Toda la estructura HTML y CSS
+La lógica de presentación (clases condicionales según color, destacado, etc.)
+El nav y footer se mueven a layouts/partials/
+Ejemplo concreto — loop de predicaciones:
+
+Esto (hardcodeado actualmente):
+
+html
+<div class="pred-row">
+  <div class="pred-row-day">01</div>
+  <div class="pred-row-title">El fuego que no se apaga</div>
+  ...
+</div>
+Se convierte en:
+
+html
+{{ range where .Site.RegularPages "Section" "predicaciones" }}
+<div class="pred-row">
+  <div class="pred-row-day">{{ .Date.Day }}</div>
+  <div class="pred-row-title">{{ .Title }}</div>
+  <div class="pred-row-meta">{{ .Params.predicador }} · {{ .Params.pasaje }}</div>
+</div>
+{{ end }}
+Filtros por serie/tag — la página de series puede ser un template de lista de taxonomía (layouts/series/list.html) que Hugo genera automáticamente. Los botones de filtro en /predicaciones/ pueden linkear a estas páginas de taxonomía, o hacerse con JS client-side filtrando por clase CSS si se quiere que sea en una sola página sin recargar.
+
+Preguntas clave antes de arrancar
+Hay algunas decisiones de diseño que conviene tomar ahora:
+
+1. ¿Los filtros de predicaciones son links (navegación a otra URL) o filtros JS en la misma página? Con Hugo puro serían links (/series/vida-en-el-espiritu/). Con un poco de JS vanilla podrían ser filtros instantáneos en la misma página. Ambas opciones son válidas.
+
+2. ¿Quién va a editar el contenido? Si es alguien técnico, editar .md directamente en el repositorio está perfecto. Si es alguien no técnico, conviene pensar en un CMS headless compatible con Hugo (Forestry/Tina CMS, Decap CMS) que da una interfaz visual para crear predicaciones y eventos.
+
+3. ¿El audio de las predicaciones se hostea en otro lado? Normalmente el .mp3 no vive en el repositorio sino en un servicio externo (SoundCloud, un bucket S3, YouTube). El .md solo guarda la URL del audio.
+
+4. ¿Eventos pasados vs futuros? ¿Se quiere una vista de "próximos eventos" en el inicio (filtrado por fecha futura) y un archivo de eventos pasados? Hugo lo puede hacer con where .Date.After now.
+
+Con todo esto claro, el plan de trabajo sería:
+
+Crear la estructura base del proyecto Hugo con config.toml y taxonomías
+Migrar shared.css a static/css/
+Crear los partials nav.html y footer.html
+Migrar cada página actual a su template correspondiente
+Crear los content types (predicaciones, eventos, ministerios)
+Cargar el contenido de prueba en .md
+Implementar los shortcodes para el inicio
+¿Querés que arranquemos con la estructura base y los templates, o primero definimos las respuestas a esas preguntas clave?
+
+las predicaciones que sean links a otra url
+seria bueno agregar tina o decap, o similar para un editor no experto en markdown
+tenemos un link a youtube de la predica con el audio. en el cuerpo, hay un resumen e informacion adicional.
+si, eventos pasados (historial) y futuros por fecha. puede suceder que no haya eventos futuros. Habria que diferenciarlos y ver si conviene poner ambos en el home. Una vez que se realiza el evento, editariamos el md para poner las novedades o eso iria en otro lado? A veces no hay novedades. Podemos tener tambien un link a la hisotoria de instagram o es muy pesado?
+Resolvamos esto antes de codear
+
+Mostrar más
+7:14 p. m.
+Buenas preguntas. Vamos punto por punto.
+
+2. CMS: Tina vs Decap
+Decap CMS (antes Netlify CMS) es más simple de configurar, open source, no requiere cuenta externa y funciona con cualquier hosting que sirva archivos estáticos. La interfaz es básica pero funcional para alguien no técnico.
+
+Tina CMS es más moderno, tiene edición visual en contexto (ves el cambio mientras escribís), pero requiere una cuenta en tina.io y tiene un tier gratuito con límites. Para una iglesia pequeña entraría en el free tier, pero agrega una dependencia externa.
+
+Mi recomendación: Decap CMS. Más simple, sin dependencias de terceros, fácil de configurar con GitHub. El editor ve formularios claros para cada campo (título, predicador, fecha, link de YouTube, etc.) sin tocar markdown.
+
+3. YouTube como fuente de audio/video
+Es la decisión correcta. El .md guarda solo el ID o la URL del video:
+
+yaml
+youtube: "dQw4w9WgXcQ"
+En el template se renderiza como un embed o como un link con thumbnail. Hay dos opciones de presentación a decidir:
+
+A) Embed directo — el video de YouTube aparece dentro de la página de la predicación. Ventaja: el visitante no sale del sitio. Desventaja: carga pesada, privacidad (cookies de Google).
+
+B) Link con thumbnail — muestra la miniatura del video con un botón "Ver en YouTube" que abre en nueva pestaña. Más liviano y más honesto.
+
+Para una iglesia recomendaría B para el listado y A disponible en la página de detalle de cada predicación, donde el visitante ya eligió ver ese mensaje en particular.
+
+4. Eventos: el modelo de datos
+Este es el punto más importante de definir bien.
+
+Propuesta de ciclo de vida de un evento:
+
+yaml
+---
+title: "Noche de Alabanza y Oración"
+date: 2025-06-08          ← fecha del evento (Hugo ordena por esto)
+hora: "20:00 hs"
+lugar: "Salón principal"
+tipo: "culto-especial"
+estado: "realizado"        ← draft → publicado → realizado
+---
+Descripción previa al evento.
+
+## Crónica
+Lo que pasó después, si hay algo que contar.
+Para el home: mostrar solo los próximos 3 eventos futuros. Si no hay ninguno, mostrar un mensaje tipo "Seguinos en Instagram para novedades" o directamente ocultar la sección. Mostrar eventos pasados en el home no tiene mucho valor para un visitante nuevo.
+
+Para la página /eventos/: dos secciones separadas — próximos arriba, historial abajo colapsado o con paginación.
+
+Sobre la crónica post-evento: que viva en el mismo .md es la solución más simple. El editor entra al archivo, cambia estado: "realizado" y agrega una sección ## Crónica con el texto. No requiere crear un nuevo archivo ni vincular nada. Si no hay novedad, el campo queda vacío y el template no muestra esa sección.
+
+Instagram Stories/Highlights: ¿conviene?
+Respuesta corta: no las embebas directamente, pero sí podés vincularlas.
+
+Las razones:
+
+Las Stories desaparecen a las 24 horas. Los Highlights sí son permanentes, pero la API de Instagram para embeds es restrictiva y cambia seguido (Meta ha roto embeds de terceros varias veces).
+Cualquier solución de embed que funcione hoy puede dejar de funcionar en 6 meses sin aviso.
+El peso no es el problema principal: es la fragilidad de la dependencia.
+Lo que sí tiene sentido: un botón o sección en la página que diga "Seguinos en Instagram" con link directo al perfil o a un Highlight específico. Simple, sin roturas, sin dependencias. El visitante que quiere ver las fotos del evento va a Instagram, que es donde ya las tiene.
+
+Si en el futuro querés algo más integrado, herramientas como Behold.so o Elfsight hacen widgets de feed de Instagram que son más estables, pero son servicios pagos.
+
+Resumen de decisiones
+Tema	Decisión
+CMS	Decap CMS
+Audio/Video	Link a YouTube, embed en página de detalle
+Eventos en home	Solo futuros. Si no hay ninguno, ocultar sección
+Eventos página	Futuros arriba, historial abajo
+Crónica post-evento	En el mismo .md, campo/sección opcional
+Instagram	Link al perfil, sin embed
+Una última pregunta antes de codear
+¿El sitio va a vivir en GitHub Pages, Netlify, o algún otro hosting? Esto afecta cómo se configura Decap CMS, que necesita autenticación OAuth para que el editor pueda publicar sin saber de Git. Netlify lo resuelve nativamente en dos minutos. GitHub Pages requiere un paso adicional con un servicio como Netlify Identity o un proxy OAuth externo.
+
+la pagina va a netlify conectada con el repo de github, para procesar el hugo al hacer commit.
+Esta bien lo que sugieres, haz eso
+
+7:20 p. m.
+Perfecto. Arrancamos a codear. Voy a construir el proyecto Hugo completo.
+
+
+Se ejecutaron 2 comandos, archivo visualizado
+Se ejecutaron 2 comandos, archivo visualizado
+No hay acceso a internet en el contenedor. Voy a construir el proyecto completo como estructura de archivos directamente, sin necesitar ejecutar Hugo localmente. El usuario lo va a correr en su máquina o Netlify lo compila.
+
+
+Se crearon 2 archivos, ejecutó un comando
+Se crearon 2 archivos, ejecutó un comando
+Now the Decap CMS setup:
+
+
+Se crearon 2 archivos, ejecutó un comando
+Se crearon 2 archivos, ejecutó un comando
+Now the CSS and JS:
+
+
+Se ejecutaron 2 comandos, creó un archivo
+Se ejecutaron 2 comandos, creó un archivo
+Now the base layout and partials:
+
+
+Se crearon 3 archivos
+Se crearon 3 archivos
+Now the page hero partial (reused across inner pages):
+
+
+Page hero partial - reusable inner page hero
+Page hero partial - reusable inner page hero
+Now the home page layout:
+
+
+Se crearon 2 archivos
+Se crearon 2 archivos
+Now the predicaciones layouts:
+
+
+Se crearon 2 archivos
+Se crearon 2 archivos
+Now eventos layouts:
+
+
+Se crearon 2 archivos
+Se crearon 2 archivos
+Now the remaining page layouts (nosotros, ministerios, contacto) and a default single/list:
+
+
+Se crearon 2 archivos
+Se crearon 2 archivos
+Now the specific page layouts for nosotros, ministerios, contacto:
+
+
+Se crearon 4 archivos, ejecutó un comando
+Se crearon 4 archivos, ejecutó un comando
+Now the content files:
+
+
+Se crearon 3 archivos, ejecutó un comando
+Se crearon 3 archivos, ejecutó un comando
+Now the sample content files — predicaciones, eventos, ministerios:
+
+
+Se crearon 12 archivos, se ejecutaron 3 comandos
+Se crearon 12 archivos, se ejecutaron 3 comandos
+Now the data file and README:
+
+
+Se crearon 2 archivos
+Se crearon 2 archivos
+Now package everything into a ZIP:
+
+
+Ejecutó un comando, archivo leído
+Ejecutó un comando, archivo leído
+El proyecto está completo. Acá está todo lo que incluye el ZIP y los próximos pasos concretos para levantarlo.
+
+Qué hay en el proyecto
+37 archivos listos, organizados así:
+
+hugo.toml — configuración central con todas las variables del sitio (URL, horarios, contacto, taxonomías)
+netlify.toml — build automático con Hugo 0.147.1 al hacer push a main
+layouts/ — todos los templates: inicio, nosotros, predicaciones (lista + detalle), eventos (lista + detalle), ministerios, contacto, nav, footer, hero reutilizable
+content/ — archivos .md de ejemplo: 3 predicaciones, 2 eventos (uno futuro, uno pasado con crónica), 4 ministerios
+static/admin/ — Decap CMS listo para configurar, con todos los campos definidos (incluyendo crónica de eventos, ID de YouTube, etc.)
+data/contacto.yaml — dirección, teléfono, horarios editables sin tocar código
+Pasos para levantarlo
+1. Subir a GitHub
+
+bash
+cd betel
+git init
+git add .
+git commit -m "Initial commit"
+git remote add origin https://github.com/TU-USUARIO/iglesia-betel.git
+git push -u origin main
+2. Conectar con Netlify — New site → Import from Git → elegir el repo → build command ya viene configurado en netlify.toml
+
+3. Activar Decap CMS (para el editor no técnico) — En Netlify: Site Settings → Identity → Enable → Registration: Invite only — Identity → Services → Git Gateway → Enable — Invitar al editor con su email — El editor entra a tusitio.netlify.app/admin/
+
+4. Lo único que queda pendiente a mano:
+
+Reemplazar los datos placeholder en data/contacto.yaml con la dirección y teléfono reales
+Actualizar los nombres del liderazgo en layouts/nosotros/single.html (están hardcodeados como placeholder, en una próxima iteración se pueden mover a front matter)
+Agregar foto real de la iglesia para el placeholder de la sección visión en el inicio
+Iglesia betel hugo
+ZIP 
+
+
+Se quedó sin mensajes gratuitos hasta 10:00 p.m.
+Actualizar
+
+
+Claude es IA y puede cometer errores. Por favor, verifica nuevamente las respuestas.
+
+

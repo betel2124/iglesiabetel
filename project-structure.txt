@@ -1,0 +1,85 @@
+# Iglesia Betel - Project Documentation
+
+## Philosophy & Architecture
+This project is a static website built with **Hugo**. It aims to provide a fast, secure, and easy-to-maintain web presence for Iglesia Betel.
+
+### Key Concepts
+1. **Static Core, Dynamic Filtering**: While the content is statically generated, time-sensitive displays (like "Upcoming Events" vs "Past Events") are handled client-side via JavaScript (`main.js`). This allows the site to remain static without needing daily rebuilds just to move an event from "Upcoming" to "History".
+2. **Timezone Awareness**: The site explicitly handles dates in the `America/Argentina/Buenos_Aires` timezone to ensure event visibility is accurate for the local congregation, regardless of where the user is browsing from.
+3. **Netlify CMS / Identity**: The project includes Netlify Identity scripts, suggesting a headless CMS approach accessible at `/admin/`.
+
+## Content Structure & Taxonomies
+The site's content is organized into "sections" which correspond to the top-level folders within the `/content/` directory. Each Markdown (`.md`) file inside these folders becomes a page on the website.
+
+The front matter (the YAML or TOML block at the top of each `.md` file) contains metadata for the page.
+
+### `/content/eventos/`
+This folder contains all church events. Each `.md` file represents a single event.
+
+**Purpose**: To create individual pages for upcoming and past events. The `main.js` script uses the `date` field to dynamically sort these on the front-end into "Próximos" and "Historial".
+
+**Front Matter Details (`.md` options):**
+- `title` (String): The name of the event.
+- `date` (Datetime): The date and time of the event. This is the most critical field, as its date part (`YYYY-MM-DD`) is rendered into the HTML `data-date` attribute for client-side filtering.
+- `tipos` (Array of Strings): A taxonomy used to categorize the event. Observed values include:
+  - `aniversario`: Church anniversary celebrations.
+  - `damas`: Events for women.
+  - `misiones`: Missionary-focused services.
+  - `evangelismo`: Outreach campaigns.
+  - `encuentro`: Social gatherings (e.g., "Cena de amigos").
+  - `retiro`: Retreats.
+  - `culto-especial`: Special services (e.g., "Semana Santa").
+
+**Example (`/content/eventos/retiro-jovenes.md`):**
+```yaml
+---
+title: "Retiro de Jóvenes 2025"
+date: 2025-02-21T18:00:00-03:00
+tipos: ["retiro"]
+---
+
+¡Prepárate para un fin de semana inolvidable! El retiro de jóvenes de este año se centrará en...
+```
+
+### `/content/predicaciones/`
+This folder contains all sermons. Each `.md` file represents a single sermon, likely with an embedded video/audio player and a summary.
+
+**Purpose**: To create an archive of sermons that can be filtered by topic (`tags`) or by preaching series (`series`) on the front-end.
+
+**Front Matter Details (`.md` options):**
+- `title` (String): The title of the sermon.
+- `date` (Datetime): The date the sermon was preached.
+- `series` (Array of Strings): A taxonomy to group the sermon into a specific series. The JavaScript filter uses this value.
+- `tags` (Array of Strings): A taxonomy for thematic topics covered in the sermon. The JavaScript filter also uses this.
+- `predicador` (String, inferred): A field for the speaker's name is highly likely to exist for display purposes.
+
+**Example (`/content/predicaciones/gozo-en-la-prueba.md`):**
+```yaml
+---
+title: "El Gozo en Medio de la Prueba"
+date: 2024-07-21T11:00:00-03:00
+series: ["fruto-del-espiritu"]
+tags: ["gozo", "caracter-cristiano"]
+predicador: "Pastor Juan Pérez"
+---
+
+En este sermón, exploramos cómo el gozo, como fruto del Espíritu, puede manifestarse incluso en...
+```
+
+## JavaScript Functionality (`main.js`)
+
+- **`getSiteTimezone()`**: Returns the site's timezone (default: Buenos Aires).
+- **`getTodayInSiteTz()`**: Calculates the current date in the site's timezone for accurate filtering.
+- **`filterEventosHome()`**: Controls visibility of events on the homepage.
+  - **Logic**: Shows upcoming events (`date >= today`).
+  - **Config**: Limit defined by `data-max-visible` attribute on `.js-eventos-home-grid` (default: 3).
+  - **State**: Toggles `.js-no-eventos-home` if no events are visible.
+- **`filterEventosPage()`**: On the main Events page.
+  - **Logic**: Splits `.ev-card` items into "Upcoming" and "History" based on `data-date`.
+  - **Sorting**: Upcoming (ascending), History (descending).
+  - **Visuals**: Adds `.realizado` class to past event cards.
+  - **State**: Toggles `.js-no-eventos-proximos` and updates `#eventos-pasados-count`.
+- **Predicaciones Filtering**: (Event listener on `.filtro-btn`) Filters sermon rows based on `data-serie` or `data-tags`.
+- **Mobile Nav**: Handles the hamburger menu toggle.
+- **FAQ Accordion**: Handles the expand/collapse logic for FAQ items.
+- **Netlify Identity**: Handles redirecting users to the `/admin/` panel after login.
