@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto — Iglesia Betel</title>
+  <meta name="description" content="Vení a conocernos. No importa dónde estés en tu camino espiritual.">
+
+  
+  <meta property="og:title" content="Contacto — Iglesia Betel">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://iglesiabetel.com.ar/contacto/">
+  <meta property="og:description" content="Un Hogar para Crecer. Una Familia para Acompañar.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/shared.css">
+  
+<style>
+.contacto-grid { display:grid; grid-template-columns:1fr 1.4fr; gap:40px; align-items:start; }
+.info-panel { position:sticky; top:calc(var(--nav-h) + 32px); }
+.info-card { background:var(--black); border-radius:var(--r); overflow:hidden; box-shadow:var(--shadow-lg); margin-bottom:20px; }
+.info-card-header { background:var(--red); padding:28px; position:relative; overflow:hidden; }
+.info-card-header::before { content:''; position:absolute; bottom:-30px; right:-30px; width:120px; height:120px; border-radius:50%; background:rgba(255,255,255,0.07); }
+.info-card-title { font-family:var(--font-h); font-size:26px; color:white; font-weight:700; line-height:1.2; position:relative; z-index:1; }
+.info-items { padding:8px 0; }
+.info-item { display:flex; align-items:flex-start; gap:16px; padding:20px 28px; border-bottom:1px solid rgba(255,255,255,0.07); }
+.info-item:last-child { border-bottom:none; }
+.info-icon { width:40px; height:40px; border-radius:50%; background:rgba(157,175,99,0.12); display:flex; align-items:center; justify-content:center; font-size:18px; flex-shrink:0; }
+.info-label { font-size:9px; letter-spacing:2.5px; text-transform:uppercase; color:var(--green); font-weight:600; margin-bottom:4px; }
+.info-value { font-size:14px; color:rgba(255,255,255,0.75); line-height:1.55; }
+.info-value a { color:rgba(255,255,255,0.75); }
+.horarios-card { background:var(--white); border-radius:var(--r); padding:24px; box-shadow:var(--shadow-sm); margin-bottom:20px; }
+.horario-row { display:flex; justify-content:space-between; align-items:center; padding:10px 0; border-bottom:1px solid var(--border); font-size:13px; }
+.horario-row:last-child { border-bottom:none; }
+.horario-row-day { font-weight:600; color:var(--black); }
+.horario-row-event { font-size:10px; letter-spacing:1px; text-transform:uppercase; color:var(--green-dark); font-weight:600; }
+.horario-row-time { color:var(--muted); }
+.whatsapp-btn { display:flex; align-items:center; justify-content:center; gap:10px; background:#25D366; color:white; padding:16px; border-radius:var(--r); font-weight:700; font-size:14px; transition:background 0.2s,transform 0.2s; box-shadow:var(--shadow-sm); text-decoration:none; }
+.whatsapp-btn:hover { background:#1dba58; transform:translateY(-2px); }
+.form-panel { background:var(--white); border-radius:var(--r); padding:48px; box-shadow:var(--shadow-sm); }
+.form-row { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+.form-group { margin-bottom:20px; }
+.form-label { display:block; font-size:10px; letter-spacing:2px; text-transform:uppercase; font-weight:600; color:var(--muted); margin-bottom:7px; }
+.form-input { width:100%; padding:13px 15px; border:1.5px solid var(--border); border-radius:var(--r); background:var(--beige); font-family:var(--font-b); font-size:14px; color:var(--black); transition:border-color 0.2s,background 0.2s; outline:none; }
+.form-input:focus { border-color:var(--green); background:var(--white); }
+.form-textarea { resize:vertical; min-height:130px; }
+.form-select { appearance:none; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M6 8L1 3h10z' fill='%236B6B6B'/%3E%3C/svg%3E"); background-repeat:no-repeat; background-position:right 14px center; padding-right:36px; cursor:pointer; background-color:var(--beige); }
+.faq-item { background:var(--white); border-radius:var(--r); margin-bottom:12px; box-shadow:var(--shadow-sm); overflow:hidden; }
+.faq-q { padding:20px 24px; font-size:15px; font-weight:600; color:var(--black); cursor:pointer; display:flex; justify-content:space-between; align-items:center; gap:16px; user-select:none; }
+.faq-q-icon { width:24px; height:24px; border-radius:50%; background:var(--beige); display:flex; align-items:center; justify-content:center; font-size:14px; flex-shrink:0; transition:background 0.2s,transform 0.3s; }
+.faq-item.open .faq-q-icon { background:var(--green); transform:rotate(45deg); }
+.faq-a { padding:0 24px; max-height:0; overflow:hidden; font-size:14px; color:var(--muted); line-height:1.75; transition:max-height 0.3s ease,padding 0.3s; }
+.faq-item.open .faq-a { max-height:200px; padding:0 24px 20px; }
+.mapa-placeholder { background:linear-gradient(135deg,#e8e3d8,#d0c9bc); border-radius:var(--r); height:320px; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; box-shadow:var(--shadow-sm); position:relative; overflow:hidden; }
+.mapa-placeholder::before { content:''; position:absolute; inset:0; background-image:repeating-linear-gradient(0deg,transparent,transparent 29px,rgba(0,0,0,0.04) 29px,rgba(0,0,0,0.04) 30px),repeating-linear-gradient(90deg,transparent,transparent 29px,rgba(0,0,0,0.04) 29px,rgba(0,0,0,0.04) 30px); }
+@media (max-width:900px) {
+  .contacto-grid { grid-template-columns:1fr; }
+  .info-panel { position:static; }
+  .form-row { grid-template-columns:1fr; }
+  .form-panel { padding:32px 24px; }
+}
+</style>
+
+
+  
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+</head>
+<body data-timezone="America/Argentina/Buenos_Aires">
+
+  
+<nav class="nav">
+  <a href="/" class="nav-brand">
+    <img class="nav-logo" src="/img/logo.svg" alt="Logo Iglesia Betel">
+    <div class="nav-name">
+      <span class="nav-name-main">Iglesia Betel</span>
+      <span class="nav-name-sub">Berazategui · Bs. As.</span>
+    </div>
+  </a>
+
+  <ul class="nav-links">
+    
+    
+      <li>
+        <a href="/"
+           >
+          Inicio
+        </a>
+      </li>
+    
+      <li>
+        <a href="/nosotros/"
+           >
+          Nosotros
+        </a>
+      </li>
+    
+      <li>
+        <a href="/ministerios/"
+           >
+          Ministerios
+        </a>
+      </li>
+    
+      <li>
+        <a href="/predicaciones/"
+           >
+          Predicaciones
+        </a>
+      </li>
+    
+      <li>
+        <a href="/eventos/"
+           >
+          Eventos
+        </a>
+      </li>
+    
+    <li><a href="/contacto/" class="nav-cta">Visitanos</a></li>
+  </ul>
+
+  <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<nav class="nav-mobile" id="navMobile">
+  <a href="/" >Inicio</a>
+  <a href="/nosotros/" >Nosotros</a>
+  <a href="/ministerios/" >Ministerios</a>
+  <a href="/predicaciones/" >Predicaciones</a>
+  <a href="/eventos/" >Eventos</a>
+  <a href="/contacto/" class="active">Visitanos</a>
+</nav>
+
+
+  <main>
+    
+
+<div class="page-body">
+
+
+<section class="page-hero">
+  <p class="page-hero-label">Iglesia Betel</p>
+  <h1 class="page-hero-title">
+    Vení a conocernos.<br><em>Te esperamos.</em>
+  </h1>
+  <p class="page-hero-sub">No importa dónde estés en tu camino espiritual. Hay un lugar para vos aquí.</p>
+</section>
+
+
+<section class="section" style="background:var(--beige);">
+  <div class="section-inner">
+    <div class="contacto-grid">
+
+      
+      <div class="info-panel">
+        <div class="info-card">
+          <div class="info-card-header">
+            <div class="info-card-title">¿Cómo<br>llegarnos?</div>
+          </div>
+          <div class="info-items">
+            <div class="info-item">
+              <div class="info-icon">📍</div>
+              <div>
+                <div class="info-label">Dirección</div>
+                <div class="info-value">Calle Ejemplo 1234, Berazategui, Buenos Aires</div>
+              </div>
+            </div>
+            <div class="info-item">
+              <div class="info-icon">📅</div>
+              <div>
+                <div class="info-label">Próximo servicio</div>
+                <div class="info-value">Domingo · 10:00 hs<br><span style="color:var(--green);font-size:12px;">Todos bienvenidos — entrada libre</span></div>
+              </div>
+            </div>
+            <div class="info-item">
+              <div class="info-icon">📱</div>
+              <div>
+                <div class="info-label">WhatsApp</div>
+                <div class="info-value"><a href="https://wa.me/5491112345678">&#43;54 11 1234-5678</a></div>
+              </div>
+            </div>
+            <div class="info-item">
+              <div class="info-icon">✉️</div>
+              <div>
+                <div class="info-label">Email</div>
+                <div class="info-value"><a href="mailto:contacto@iglesiabetel.com.ar">contacto@iglesiabetel.com.ar</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="horarios-card">
+          <div style="font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--green-dark);font-weight:600;margin-bottom:16px;">Horarios de reunión</div>
+          <div class="horario-row">
+            <div><div class="horario-row-day">Domingo</div><div class="horario-row-event">Culto principal</div></div>
+            <div class="horario-row-time">10:00 hs</div>
+          </div>
+          <div class="horario-row">
+            <div><div class="horario-row-day">Miércoles</div><div class="horario-row-event">Oración</div></div>
+            <div class="horario-row-time">20:00 hs</div>
+          </div>
+          <div class="horario-row" style="border-bottom:none;">
+            <div><div class="horario-row-day">Viernes</div><div class="horario-row-event">Jóvenes Betel</div></div>
+            <div class="horario-row-time">20:30 hs</div>
+          </div>
+        </div>
+
+        <a href="https://wa.me/5491112345678" target="_blank" class="whatsapp-btn">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12.004 2C6.477 2 2 6.477 2 12.004c0 1.773.46 3.44 1.265 4.897L2 22l5.24-1.242A9.947 9.947 0 0012.004 22C17.523 22 22 17.523 22 12.004 22 6.477 17.523 2 12.004 2zm0 18.183a8.16 8.16 0 01-4.153-1.133l-.298-.178-3.09.733.783-3.013-.194-.308A8.16 8.16 0 013.817 12c0-4.513 3.674-8.183 8.187-8.183 4.513 0 8.183 3.67 8.183 8.183 0 4.514-3.67 8.183-8.183 8.183z"/></svg>
+          Escribinos por WhatsApp
+        </a>
+      </div>
+
+      
+      <div class="form-panel">
+        <div style="font-family:var(--font-h);font-size:32px;color:var(--black);font-weight:700;margin-bottom:6px;line-height:1.2;">
+          Escribinos<br>o <em style="color:var(--red);">visitanos</em>
+        </div>
+        <p style="font-size:14px;color:var(--muted);margin-bottom:36px;line-height:1.65;">Completá el formulario y nos ponemos en contacto. También podés venir directamente al culto del domingo.</p>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Nombre *</label>
+            <input type="text" class="form-input" placeholder="Tu nombre">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Apellido</label>
+            <input type="text" class="form-input" placeholder="Tu apellido">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Email *</label>
+            <input type="email" class="form-input" placeholder="tu@email.com">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Teléfono</label>
+            <input type="tel" class="form-input" placeholder="+54 11...">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">¿Sobre qué querés consultarnos?</label>
+          <select class="form-input form-select">
+            <option value="">Seleccioná una opción...</option>
+            <option>Primera visita a la iglesia</option>
+            <option>Información sobre ministerios</option>
+            <option>Consejería pastoral</option>
+            <option>Bautismo o casamiento</option>
+            <option>Otro</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Mensaje *</label>
+          <textarea class="form-input form-textarea" placeholder="Contanos en qué podemos ayudarte..."></textarea>
+        </div>
+        <button class="btn btn-primary" style="width:100%;justify-content:center;">Enviar mensaje</button>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<section class="section" style="background:var(--white);">
+  <div class="section-inner">
+    <p class="section-label">Cómo llegar</p>
+    <h2 class="section-title">Nuestra <em>ubicación</em></h2>
+    <div class="divider"></div>
+    <div class="mapa-placeholder">
+      <div style="position:absolute;top:20px;right:20px;background:var(--red);color:white;font-size:11px;font-weight:700;padding:6px 14px;border-radius:20px;z-index:1;">📍 Berazategui</div>
+      <div style="font-size:48px;margin-bottom:12px;position:relative;z-index:1;">📍</div>
+      <div style="font-size:16px;font-weight:600;color:var(--black);margin-bottom:4px;position:relative;z-index:1;">Calle Ejemplo 1234, Berazategui, Buenos Aires</div>
+      <br>
+      <a href="https://maps.google.com/search/Calle&#43;Ejemplo&#43;1234%2C&#43;Berazategui%2C&#43;Buenos&#43;Aires" target="_blank" class="btn btn-primary" style="position:relative;z-index:1;margin-top:8px;">Ver en Google Maps</a>
+    </div>
+  </div>
+</section>
+
+
+<section class="section" style="background:var(--beige);">
+  <div class="section-inner">
+    <p class="section-label">Preguntas frecuentes</p>
+    <h2 class="section-title">Lo que la gente<br>suele <em>preguntar</em></h2>
+    <div class="divider"></div>
+    <div style="max-width:720px;">
+      
+      
+      <div class="faq-item open">
+        <div class="faq-q">¿Necesito avisar antes de visitar por primera vez?<div class="faq-q-icon">+</div></div>
+        <div class="faq-a">No hace falta ningún aviso previo. Podés venir cualquier domingo a las 10:00 hs. Si querés, avisanos por WhatsApp y te esperamos.</div>
+      </div>
+      
+      <div class="faq-item">
+        <div class="faq-q">¿Cómo debo vestirme para ir al culto?<div class="faq-q-icon">+</div></div>
+        <div class="faq-a">No hay código de vestimenta. Venite como sos y como estás cómodo.</div>
+      </div>
+      
+      <div class="faq-item">
+        <div class="faq-q">¿Qué pasa con los niños durante el culto?<div class="faq-q-icon">+</div></div>
+        <div class="faq-a">Tenemos Niños Betel, un espacio especial que funciona en simultáneo con el culto principal, con maestros comprometidos.</div>
+      </div>
+      
+      <div class="faq-item">
+        <div class="faq-q">¿Se puede solicitar consejería pastoral?<div class="faq-q-icon">+</div></div>
+        <div class="faq-a">Sí. Podés solicitar un turno de consejería por WhatsApp o email. El pastor atiende con total confidencialidad.</div>
+      </div>
+      
+      <div class="faq-item">
+        <div class="faq-q">¿Debo ser miembro para participar en un ministerio?<div class="faq-q-icon">+</div></div>
+        <div class="faq-a">No es requerimiento. Podés participar como invitado primero y luego formalizar tu participación conversando con el equipo.</div>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+</div>
+
+  </main>
+
+  
+<footer>
+  <div class="footer-top">
+    <div>
+      <img class="footer-brand-logo" src="/img/logo.svg" alt="Logo Iglesia Betel">
+      <div class="footer-brand-name">Iglesia Betel</div>
+      <div class="footer-brand-tagline">Un Hogar para Crecer.<br>Una Familia para Acompañar.</div>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Páginas</div>
+      <a href="/">Inicio</a>
+      <a href="/nosotros/">Nosotros</a>
+      <a href="/ministerios/">Ministerios</a>
+      <a href="/predicaciones/">Predicaciones</a>
+      <a href="/eventos/">Eventos</a>
+      <a href="/contacto/">Contacto</a>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Ministerios</div>
+      
+        <a href="/ministerios/jovenes/">Jóvenes Betel</a>
+      
+        <a href="/ministerios/ninos/">Niños Betel</a>
+      
+        <a href="/ministerios/damas/">Ministerio de Damas</a>
+      
+        <a href="/ministerios/alabanza/">Alabanza y Adoración</a>
+      
+      <a href="/ministerios/">Ver todos →</a>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Contacto</div>
+      <p>Calle Ejemplo 1234, Berazategui, Buenos Aires</p>
+      <p style="margin-top:8px;">Domingo 10:00 hs<br>Miércoles 20:00 hs</p>
+      <p style="margin-top:8px;">&#43;54 11 1234-5678</p>
+      <p style="margin-top:4px;"><a href="mailto:contacto@iglesiabetel.com.ar" style="color:inherit;">contacto@iglesiabetel.com.ar</a></p>
+      <div style="margin-top:16px;display:flex;gap:12px;">
+        
+        <a href="https://instagram.com/iglesiabetel" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.5);font-size:13px;transition:color 0.2s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,0.5)'">Instagram →</a>
+        
+        
+        <a href="https://youtube.com/@iglesiabetel" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.5);font-size:13px;transition:color 0.2s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,0.5)'">YouTube →</a>
+        
+      </div>
+    </div>
+  </div>
+  <div style="border-top:1px solid rgba(255,255,255,0.06);">
+    <div class="footer-bar">
+      <span>© 2026 Iglesia Betel. Todos los derechos reservados.</span>
+      <span style="color:var(--green);font-size:10px;letter-spacing:1px;">Berazategui · Buenos Aires · Argentina</span>
+    </div>
+  </div>
+  <div class="footer-bar-green">Un Hogar para Crecer · Una Familia para Acompañar</div>
+</footer>
+
+
+  <script src="/js/main.js"></script>
+  
+</body>
+</html>

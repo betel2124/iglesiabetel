@@ -1,0 +1,24 @@
+{{/* Renders one event card. . is the event page. Add data-date for client-side filtering. */}}
+<a href="{{ .RelPermalink }}" class="ev-card" data-date="{{ .Date.Format "2006-01-02" }}">
+  <div class="ev-card-top">
+    <div class="ev-date-num">{{ .Date.Day }}</div>
+    <div class="ev-date-rest">
+      <div class="ev-date-month">{{ .Date | time.Format "January" }}</div>
+      <div class="ev-date-year">{{ .Date.Year }}</div>
+    </div>
+  </div>
+  <div class="ev-body">
+    <div class="ev-tipo">{{ .Params.tipos | humanize }}</div>
+    <div class="ev-title">{{ .Title }}</div>
+    {{ with .Params.hora }}<div class="ev-info">🕐 {{ . }}</div>{{ end }}
+    {{ with .Params.lugar }}<div class="ev-info">📍 {{ . }}</div>{{ end }}
+    {{ with .Params.entrada }}<div class="ev-info">{{ . }}</div>{{ end }}
+    {{ if eq .Params.estado "realizado" }}
+    {{ with .Params.cronica }}
+    <div class="ev-tag-realizado">✓ Con crónica</div>
+    {{ else }}
+    <div class="ev-tag-realizado">Realizado</div>
+    {{ end }}
+    {{ end }}
+  </div>
+</a>

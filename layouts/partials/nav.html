@@ -1,0 +1,45 @@
+{{ $currentPage := . }}
+<nav class="nav">
+  <a href="/" class="nav-brand">
+    <img class="nav-logo" src="/img/logo.svg" alt="Logo Iglesia Betel">
+    <div class="nav-name">
+      <span class="nav-name-main">Iglesia Betel</span>
+      <span class="nav-name-sub">Berazategui · Bs. As.</span>
+    </div>
+  </a>
+
+  <ul class="nav-links">
+    {{ $pages := slice
+      (dict "url" "/"               "label" "Inicio")
+      (dict "url" "/nosotros/"      "label" "Nosotros")
+      (dict "url" "/ministerios/"   "label" "Ministerios")
+      (dict "url" "/predicaciones/" "label" "Predicaciones")
+      (dict "url" "/eventos/"       "label" "Eventos")
+    }}
+    {{ range $pages }}
+      <li>
+        <a href="{{ .url }}"
+           {{ if or (eq $currentPage.RelPermalink .url)
+                    (and (ne .url "/") (hasPrefix $currentPage.RelPermalink .url)) }}
+              class="active"
+           {{ end }}>
+          {{ .label }}
+        </a>
+      </li>
+    {{ end }}
+    <li><a href="/contacto/" class="nav-cta">Visitanos</a></li>
+  </ul>
+
+  <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<nav class="nav-mobile" id="navMobile">
+  <a href="/" {{ if eq $currentPage.RelPermalink "/" }}class="active"{{ end }}>Inicio</a>
+  <a href="/nosotros/" {{ if hasPrefix $currentPage.RelPermalink "/nosotros" }}class="active"{{ end }}>Nosotros</a>
+  <a href="/ministerios/" {{ if hasPrefix $currentPage.RelPermalink "/ministerios" }}class="active"{{ end }}>Ministerios</a>
+  <a href="/predicaciones/" {{ if hasPrefix $currentPage.RelPermalink "/predicaciones" }}class="active"{{ end }}>Predicaciones</a>
+  <a href="/eventos/" {{ if hasPrefix $currentPage.RelPermalink "/eventos" }}class="active"{{ end }}>Eventos</a>
+  <a href="/contacto/" {{ if hasPrefix $currentPage.RelPermalink "/contacto" }}class="active"{{ end }}>Visitanos</a>
+</nav>

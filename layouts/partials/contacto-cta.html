@@ -1,0 +1,52 @@
+{{ $p := .Site.Params }}
+<section class="section" style="background:var(--white);">
+  <div class="section-inner">
+    <div style="display:grid;grid-template-columns:1fr 1fr;border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow-lg);">
+      <div style="background:var(--black);padding:56px 48px;position:relative;overflow:hidden;">
+        <div style="position:absolute;bottom:-60px;right:-60px;width:300px;height:300px;border-radius:50%;border:1px solid rgba(157,175,99,0.15);"></div>
+        <h2 style="font-family:var(--font-h);font-size:32px;color:white;font-weight:700;line-height:1.2;margin-bottom:24px;position:relative;z-index:1;">
+          ¿Querés conocernos?<br>Te <em style="color:var(--red);">esperamos.</em>
+        </h2>
+        <div style="position:relative;z-index:1;">
+          <div style="display:flex;align-items:flex-start;gap:14px;padding:16px 0;border-bottom:1px solid rgba(255,255,255,0.07);">
+            <div style="width:36px;height:36px;background:rgba(157,175,99,0.15);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0;">📍</div>
+            <div>
+              <div style="font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--green);font-weight:600;margin-bottom:2px;">Dirección</div>
+              <div style="font-size:14px;color:rgba(255,255,255,0.75);">{{ $p.direccion }}</div>
+            </div>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:14px;padding:16px 0;border-bottom:1px solid rgba(255,255,255,0.07);">
+            <div style="width:36px;height:36px;background:rgba(157,175,99,0.15);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0;">📅</div>
+            <div>
+              <div style="font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--green);font-weight:600;margin-bottom:2px;">Horarios</div>
+              <div style="font-size:14px;color:rgba(255,255,255,0.75);">Domingo {{ $p.horario_domingo }} · Miércoles {{ $p.horario_miercoles }}</div>
+            </div>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:14px;padding:16px 0;">
+            <div style="width:36px;height:36px;background:rgba(157,175,99,0.15);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0;">📱</div>
+            <div>
+              <div style="font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--green);font-weight:600;margin-bottom:2px;">WhatsApp</div>
+              <div style="font-size:14px;color:rgba(255,255,255,0.75);"><a href="https://wa.me/{{ $p.whatsapp }}" style="color:inherit;">{{ $p.telefono }}</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="background:var(--beige);padding:56px 48px;display:flex;flex-direction:column;justify-content:center;">
+        <div style="font-family:var(--font-h);font-size:22px;color:var(--black);font-weight:600;margin-bottom:24px;">Escribinos</div>
+        <div style="margin-bottom:16px;">
+          <label style="display:block;font-size:10px;letter-spacing:2px;text-transform:uppercase;font-weight:600;color:var(--muted);margin-bottom:6px;">Tu nombre</label>
+          <input type="text" placeholder="Juan García" style="width:100%;padding:12px 14px;border:1.5px solid var(--border);border-radius:var(--r);background:white;font-family:var(--font-b);font-size:14px;color:var(--black);outline:none;">
+        </div>
+        <div style="margin-bottom:16px;">
+          <label style="display:block;font-size:10px;letter-spacing:2px;text-transform:uppercase;font-weight:600;color:var(--muted);margin-bottom:6px;">Email</label>
+          <input type="email" placeholder="juan@email.com" style="width:100%;padding:12px 14px;border:1.5px solid var(--border);border-radius:var(--r);background:white;font-family:var(--font-b);font-size:14px;color:var(--black);outline:none;">
+        </div>
+        <div style="margin-bottom:20px;">
+          <label style="display:block;font-size:10px;letter-spacing:2px;text-transform:uppercase;font-weight:600;color:var(--muted);margin-bottom:6px;">Mensaje</label>
+          <textarea placeholder="¿En qué podemos ayudarte?" style="width:100%;padding:12px 14px;border:1.5px solid var(--border);border-radius:var(--r);background:white;font-family:var(--font-b);font-size:14px;color:var(--black);outline:none;resize:vertical;min-height:100px;"></textarea>
+        </div>
+        <button class="btn btn-primary" style="width:100%;justify-content:center;">Enviar mensaje</button>
+      </div>
+    </div>
+  </div>
+</section>

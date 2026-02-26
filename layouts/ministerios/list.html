@@ -1,0 +1,151 @@
+{{ define "head" }}
+<style>
+.min-featured-grid { display:grid; grid-template-columns:1fr 1fr; gap:0; border-radius:var(--r); overflow:hidden; box-shadow:var(--shadow-lg); margin-bottom:64px; }
+.min-featured-img { background:linear-gradient(135deg,#1a1a2e,#111); min-height:380px; display:flex; flex-direction:column; align-items:flex-start; justify-content:flex-end; padding:40px; position:relative; overflow:hidden; }
+.min-featured-img::before { content:''; position:absolute; inset:0; background:linear-gradient(135deg,rgba(229,57,53,0.2),transparent 60%); }
+.min-featured-emoji { font-size:80px; position:absolute; top:40px; right:40px; opacity:.3; }
+.min-featured-tag { font-size:9px; letter-spacing:3px; text-transform:uppercase; color:var(--green); font-weight:600; margin-bottom:12px; position:relative; z-index:1; }
+.min-featured-name { font-family:var(--font-h); font-size:36px; color:white; font-weight:700; line-height:1.15; position:relative; z-index:1; }
+.min-featured-info { background:var(--beige); padding:40px; display:flex; flex-direction:column; justify-content:center; }
+.min-featured-desc { font-size:15px; color:var(--muted); line-height:1.8; margin-bottom:28px; }
+.min-detail-row { display:flex; align-items:flex-start; gap:12px; padding:12px 0; border-bottom:1px solid var(--border); }
+.min-detail-row:last-of-type { border-bottom:none; margin-bottom:24px; }
+.min-detail-icon { width:32px; height:32px; background:var(--green); border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:14px; flex-shrink:0; }
+.min-detail-label { font-size:10px; letter-spacing:1px; text-transform:uppercase; color:var(--muted); font-weight:600; }
+.min-detail-value { font-size:14px; color:var(--black); font-weight:500; margin-top:1px; }
+.min-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+.min-card { border-radius:var(--r); overflow:hidden; box-shadow:var(--shadow-sm); background:var(--white); text-decoration:none; display:block; transition:transform 0.25s,box-shadow 0.25s; }
+.min-card:hover { transform:translateY(-5px); box-shadow:var(--shadow-md); }
+.min-card-top { padding:36px 28px 24px; position:relative; }
+.min-card-top.red    { background:#FFF5F5; border-top:3px solid var(--red); }
+.min-card-top.green  { background:#F5FAF0; border-top:3px solid var(--green); }
+.min-card-top.dark   { background:#F5F5F5; border-top:3px solid var(--black); }
+.min-card-top.orange { background:#FFF8F5; border-top:3px solid var(--orange); }
+.min-card-top.green2 { background:#F0F5E8; border-top:3px solid var(--green-dark); }
+.min-card-top.gray   { background:#F8F8F8; border-top:3px solid #888; }
+.min-card-emoji { font-size:40px; margin-bottom:16px; display:block; }
+.min-card-name { font-family:var(--font-h); font-size:22px; font-weight:600; color:var(--black); margin-bottom:8px; line-height:1.2; }
+.min-card-desc { font-size:13px; color:var(--muted); line-height:1.65; }
+.min-card-footer { padding:16px 28px; border-top:1px solid var(--border); display:flex; justify-content:space-between; align-items:center; }
+.min-card-when { font-size:11px; color:var(--muted); }
+.inv-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; margin-top:48px; }
+.inv-step { background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08); border-radius:var(--r); padding:28px 20px; text-align:center; }
+.inv-step-num { font-family:var(--font-h); font-size:48px; font-weight:700; color:var(--red); opacity:.4; line-height:1; margin-bottom:12px; }
+.inv-step-title { font-size:14px; font-weight:700; color:white; margin-bottom:8px; }
+.inv-step-text { font-size:12px; color:rgba(255,255,255,0.4); line-height:1.65; }
+@media (max-width:900px) {
+  .min-featured-grid { grid-template-columns:1fr; }
+  .min-grid { grid-template-columns:1fr 1fr; }
+  .inv-grid { grid-template-columns:1fr 1fr; }
+}
+@media (max-width:480px) {
+  .min-grid { grid-template-columns:1fr; }
+  .inv-grid { grid-template-columns:1fr; }
+}
+</style>
+{{ end }}
+
+{{ define "main" }}
+<div class="page-body">
+
+{{ partial "page-hero.html" (dict
+  "label"   "Iglesia Betel"
+  "title"   "Cada persona,"
+  "titleEm" "un lugar en la familia"
+  "sub"     "Encontrá el ministerio donde podés crecer, servir y ser parte de algo más grande."
+) }}
+
+{{ $ministerios := (where .Site.RegularPages "Section" "ministerios").ByParam "weight" }}
+{{ $destacado   := where $ministerios "Params.destacado" true | first 1 }}
+{{ $resto       := where $ministerios "Params.destacado" "ne" true }}
+
+<section class="section" style="background:var(--white);">
+  <div class="section-inner">
+
+    {{/* ── FEATURED ── */}}
+    {{ with index $destacado 0 }}
+    <p class="section-label">Ministerio destacado</p>
+    <h2 class="section-title">{{ .Title }}</h2>
+    <div class="divider"></div>
+    <div class="min-featured-grid">
+      <div class="min-featured-img">
+        <span class="min-featured-emoji">{{ .Params.icon | default "⚡" }}</span>
+        <div class="min-featured-tag">Ministerio · {{ .Title }}</div>
+        <div class="min-featured-name">{{ .Title }}</div>
+      </div>
+      <div class="min-featured-info">
+        <p class="section-label">Quiénes somos</p>
+        <p class="min-featured-desc">{{ .Summary }}</p>
+        {{ with .Params.dia }}
+        <div class="min-detail-row">
+          <div class="min-detail-icon">📅</div>
+          <div>
+            <div class="min-detail-label">Cuándo</div>
+            <div class="min-detail-value">{{ . }}{{ with $.Params.hora }} a las {{ . }}{{ end }}</div>
+          </div>
+        </div>
+        {{ end }}
+        {{ with .Params.edad }}
+        <div class="min-detail-row">
+          <div class="min-detail-icon">👥</div>
+          <div>
+            <div class="min-detail-label">Edad</div>
+            <div class="min-detail-value">{{ . }}</div>
+          </div>
+        </div>
+        {{ end }}
+        <a href="{{ .RelPermalink }}" class="btn btn-primary">Ver más sobre este ministerio</a>
+      </div>
+    </div>
+    {{ end }}
+
+    {{/* ── ALL MINISTERIOS ── */}}
+    <p class="section-label">Todos los ministerios</p>
+    <h2 class="section-title">Un lugar para <em>cada uno</em></h2>
+    <div class="divider"></div>
+    <div class="min-grid">
+      {{ range $resto }}
+      <a href="{{ .RelPermalink }}" class="min-card">
+        <div class="min-card-top {{ .Params.color | default "green" }}">
+          <span class="min-card-emoji">{{ .Params.icon | default "🏠" }}</span>
+          <div class="min-card-name">{{ .Title }}</div>
+          <div class="min-card-desc">{{ .Summary }}</div>
+        </div>
+        <div class="min-card-footer">
+          <span class="min-card-when">{{ with .Params.dia }}{{ . }}{{ with $.Params.hora }} · {{ . }}{{ end }}{{ else }}Ver detalles{{ end }}</span>
+          <span style="font-size:16px;">→</span>
+        </div>
+      </a>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+{{/* ── CÓMO PARTICIPAR ── */}}
+<section class="section" style="background:var(--black);">
+  <div class="section-inner">
+    <p class="section-label" style="color:var(--green);">Sumate</p>
+    <h2 class="section-title" style="color:white;">¿Cómo puedo <em>participar?</em></h2>
+    <div class="inv-grid">
+      {{ $pasos := slice
+        (dict "n" "01" "titulo" "Vení un domingo"          "texto" "El primer paso es conocer la comunidad en persona.")
+        (dict "n" "02" "titulo" "Conversá con nosotros"    "texto" "Contanos en qué área sentís llamado a servir.")
+        (dict "n" "03" "titulo" "Período de observación"   "texto" "Participás como invitado para conocer el ministerio.")
+        (dict "n" "04" "titulo" "¡Sos parte!"              "texto" "Comenzás a servir junto al equipo que Dios puso en tu camino.")
+      }}
+      {{ range $pasos }}
+      <div class="inv-step">
+        <div class="inv-step-num">{{ .n }}</div>
+        <div class="inv-step-title">{{ .titulo }}</div>
+        <div class="inv-step-text">{{ .texto }}</div>
+      </div>
+      {{ end }}
+    </div>
+    <div style="text-align:center;margin-top:40px;">
+      <a href="/contacto/" class="btn btn-primary">Quiero participar</a>
+    </div>
+  </div>
+</section>
+
+</div>
+{{ end }}

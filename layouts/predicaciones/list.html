@@ -1,0 +1,158 @@
+{{ define "head" }}
+<style>
+.filtros-bar { background:var(--white); border-bottom:1px solid var(--border); padding:0 40px; position:sticky; top:var(--nav-h); z-index:100; }
+.filtros-inner { max-width:var(--max-w); margin:0 auto; display:flex; align-items:center; overflow-x:auto; -webkit-overflow-scrolling:touch; }
+.filtro-btn { padding:18px 24px; font-size:11px; font-weight:600; letter-spacing:1.5px; text-transform:uppercase; color:var(--muted); border-bottom:2px solid transparent; cursor:pointer; background:none; border-left:none; border-right:none; border-top:none; white-space:nowrap; transition:color 0.2s,border-color 0.2s; font-family:var(--font-b); }
+.filtro-btn:hover { color:var(--black); }
+.filtro-btn.active { color:var(--black); border-bottom-color:var(--red); }
+
+.series-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin-bottom:64px; }
+.serie-card { background:var(--white); border-radius:var(--r); overflow:hidden; box-shadow:var(--shadow-sm); cursor:pointer; transition:transform 0.25s,box-shadow 0.25s; text-decoration:none; display:block; }
+.serie-card:hover { transform:translateY(-4px); box-shadow:var(--shadow-md); }
+.serie-top { height:140px; display:flex; align-items:flex-end; padding:20px; position:relative; overflow:hidden; }
+.serie-emoji { position:absolute; top:16px; right:16px; font-size:48px; opacity:.3; }
+.serie-name { font-family:var(--font-h); font-size:22px; color:white; font-weight:700; position:relative; z-index:1; }
+.serie-body { padding:18px 20px; }
+.serie-count { font-size:10px; letter-spacing:2px; text-transform:uppercase; color:var(--muted); font-weight:600; margin-bottom:6px; }
+.serie-last { font-size:13px; color:var(--muted); }
+
+.pred-full-list { display:flex; flex-direction:column; }
+.pred-row { display:grid; grid-template-columns:80px 1fr auto; align-items:center; gap:24px; padding:20px 0; border-bottom:1px solid var(--border); transition:background 0.15s; border-radius:4px; text-decoration:none; color:inherit; }
+.pred-row:hover { background:var(--beige); padding-left:12px; padding-right:12px; margin:0 -12px; }
+.pred-row:last-child { border-bottom:none; }
+.pred-row-date-box { background:var(--beige); border-radius:6px; padding:10px; text-align:center; }
+.pred-row-day { font-family:var(--font-h); font-size:26px; font-weight:700; color:var(--black); line-height:1; }
+.pred-row-month { font-size:9px; letter-spacing:2px; text-transform:uppercase; color:var(--muted); font-weight:600; }
+.pred-row-series { font-size:9px; letter-spacing:2px; text-transform:uppercase; color:var(--green-dark); font-weight:600; margin-bottom:5px; }
+.pred-row-title { font-family:var(--font-h); font-size:18px; font-weight:600; color:var(--black); margin-bottom:5px; line-height:1.25; }
+.pred-row-meta { font-size:12px; color:var(--muted); display:flex; gap:16px; flex-wrap:wrap; }
+.pred-play-btn { width:44px; height:44px; border-radius:50%; background:var(--red); display:flex; align-items:center; justify-content:center; transition:background 0.2s,transform 0.2s; flex-shrink:0; text-decoration:none; }
+.pred-play-btn:hover { background:#C62828; transform:scale(1.08); }
+.pred-play-btn svg { width:18px; fill:white; margin-left:3px; }
+
+.suscribir { background:var(--black); text-align:center; }
+.suscribir .section-title { color:white; }
+.suscribir .section-label { color:var(--green); }
+.suscribir-form { display:flex; gap:12px; max-width:440px; margin:0 auto; flex-wrap:wrap; justify-content:center; }
+.suscribir-input { flex:1; min-width:220px; padding:13px 16px; border-radius:4px; border:1.5px solid rgba(255,255,255,0.15); background:rgba(255,255,255,0.07); color:white; font-family:var(--font-b); font-size:14px; outline:none; }
+.suscribir-input::placeholder { color:rgba(255,255,255,0.35); }
+
+@media (max-width:768px) {
+  .series-grid { grid-template-columns:1fr 1fr; }
+  .pred-row { grid-template-columns:60px 1fr; }
+  .pred-row > *:last-child { display:none; }
+  .filtros-bar { padding:0 16px; }
+}
+@media (max-width:480px) { .series-grid { grid-template-columns:1fr; } }
+</style>
+{{ end }}
+
+{{ define "main" }}
+
+{{ partial "page-hero.html" (dict
+  "label"    "La Palabra de Dios"
+  "title"    "Predicaciones y"
+  "titleEm"  "enseñanzas"
+  "sub"      "Escuchá los mensajes de los cultos dominicales y eventos especiales de Iglesia Betel."
+) }}
+
+{{/* Collect all predicaciones and series taxonomy */}}
+{{ $todasPreds := where .Site.RegularPages "Section" "predicaciones" }}
+{{ $todasPreds = $todasPreds.ByDate.Reverse }}
+{{ $series := .Site.Taxonomies.series }}
+
+{{/* ── FILTROS BAR ── */}}
+<div class="filtros-bar">
+  <div class="filtros-inner">
+    <button class="filtro-btn active" data-filter="all">Todos</button>
+    {{ range $term, $pages := $series }}
+    <button class="filtro-btn" data-filter="{{ $term }}">{{ $term | humanize }}</button>
+    {{ end }}
+  </div>
+</div>
+
+<section class="section" style="background:var(--beige);">
+  <div class="section-inner">
+
+    {{/* ── SERIES CARDS ── */}}
+    {{ if $series }}
+    <p class="section-label">Series</p>
+    <h2 class="section-title">Estudios en <em>profundidad</em></h2>
+    <div class="divider"></div>
+    <div class="series-grid">
+      {{ $colors := slice "#E53935" "#111111" "#7A8F45" "#FF7043" "#555555" }}
+      {{ range $term, $pages := $series }}
+      {{ $color := index $colors (mod (len $term) (len $colors)) }}
+      <a href="{{ (printf "/series/%s/" $term) | relURL }}" class="serie-card">
+        <div class="serie-top" style="background:linear-gradient(135deg,{{ $color }},{{ $color }}cc);">
+          <span class="serie-emoji">📖</span>
+          <div class="serie-name">{{ $term | humanize }}</div>
+        </div>
+        <div class="serie-body">
+          <div class="serie-count">{{ len $pages }} mensajes</div>
+          {{ with index $pages 0 }}
+          <div class="serie-last">Último: {{ .Title }}</div>
+          {{ end }}
+        </div>
+      </a>
+      {{ end }}
+    </div>
+    {{ end }}
+
+    {{/* ── LISTADO COMPLETO ── */}}
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:32px;flex-wrap:wrap;gap:16px;">
+      <div>
+        <p class="section-label">Mensajes</p>
+        <h2 class="section-title">Todos los <em>mensajes</em></h2>
+      </div>
+    </div>
+
+    <div class="pred-full-list" style="background:var(--white);border-radius:var(--r);padding:0 24px;box-shadow:var(--shadow-sm);">
+      {{ $preds := where .Site.RegularPages "Section" "predicaciones" }}
+      {{ range $preds.ByDate.Reverse }}
+      <a href="{{ .RelPermalink }}"
+         class="pred-row"
+         data-serie="{{ .Params.serie }}"
+         data-tags="{{ delimit .Params.tags "," }}">
+        <div class="pred-row-date-box">
+          <div class="pred-row-day">{{ .Date.Day }}</div>
+          <div class="pred-row-month">{{ .Date | time.Format "Jan 06" }}</div>
+        </div>
+        <div class="pred-row-info">
+          {{ with .Params.serie }}<div class="pred-row-series">{{ . | humanize }}{{ with $.Params.serie_ep }} · Ep. {{ . }}{{ end }}</div>{{ end }}
+          <div class="pred-row-title">{{ .Title }}</div>
+          <div class="pred-row-meta">
+            {{ with .Params.predicador }}<span>{{ . }}</span>{{ end }}
+            {{ with .Params.pasaje }}<span>{{ . }}</span>{{ end }}
+            {{ with .Params.duracion }}<span>{{ . }}</span>{{ end }}
+          </div>
+        </div>
+        {{ with .Params.youtube_url }}
+        <a href="{{ . }}" target="_blank" rel="noopener" class="pred-play-btn" onclick="event.stopPropagation()">
+          <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+        </a>
+        {{ end }}
+      </a>
+      {{ end }}
+    </div>
+
+    {{/* ── PAGINACIÓN ── */}}
+    {{ template "_internal/pagination.html" . }}
+
+  </div>
+</section>
+
+{{/* ── SUSCRIBIRSE ── */}}
+<section class="section suscribir">
+  <div class="section-inner" style="max-width:600px;">
+    <p class="section-label">Nunca te pierdas un mensaje</p>
+    <h2 class="section-title">Recibí las<br><em>predicaciones</em> por email</h2>
+    <div class="divider" style="margin:20px auto 32px;"></div>
+    <div class="suscribir-form">
+      <input class="suscribir-input" type="email" placeholder="tu@email.com">
+      <button class="btn btn-primary">Suscribirme</button>
+    </div>
+  </div>
+</section>
+
+{{ end }}

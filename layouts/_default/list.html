@@ -1,0 +1,17 @@
+{{ define "main" }}
+<div class="page-body">
+  {{ partial "page-hero.html" (dict "title" .Title "sub" .Description) }}
+  <section class="section" style="background:var(--beige);">
+    <div class="section-inner">
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:24px;">
+        {{ range .Pages }}
+        <a href="{{ .RelPermalink }}" style="background:var(--white);border-radius:var(--r);padding:28px;box-shadow:var(--shadow-sm);text-decoration:none;display:block;transition:transform 0.2s,box-shadow 0.2s;" onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='var(--shadow-md)'" onmouseout="this.style.transform='';this.style.boxShadow='var(--shadow-sm)'">
+          <div style="font-family:var(--font-h);font-size:20px;font-weight:600;color:var(--black);margin-bottom:8px;">{{ .Title }}</div>
+          <div style="font-size:13px;color:var(--muted);">{{ .Date | time.Format "2 January 2006" }}</div>
+        </a>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+</div>
+{{ end }}

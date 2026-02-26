@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ministerios — Iglesia Betel</title>
+  <meta name="description" content="Encontrá el ministerio donde podés crecer, servir y ser parte de algo más grande.">
+
+  
+  <meta property="og:title" content="Ministerios — Iglesia Betel">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://iglesiabetel.com.ar/ministerios/">
+  <meta property="og:description" content="Un Hogar para Crecer. Una Familia para Acompañar.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/shared.css">
+  
+<style>
+.min-featured-grid { display:grid; grid-template-columns:1fr 1fr; gap:0; border-radius:var(--r); overflow:hidden; box-shadow:var(--shadow-lg); margin-bottom:64px; }
+.min-featured-img { background:linear-gradient(135deg,#1a1a2e,#111); min-height:380px; display:flex; flex-direction:column; align-items:flex-start; justify-content:flex-end; padding:40px; position:relative; overflow:hidden; }
+.min-featured-img::before { content:''; position:absolute; inset:0; background:linear-gradient(135deg,rgba(229,57,53,0.2),transparent 60%); }
+.min-featured-emoji { font-size:80px; position:absolute; top:40px; right:40px; opacity:.3; }
+.min-featured-tag { font-size:9px; letter-spacing:3px; text-transform:uppercase; color:var(--green); font-weight:600; margin-bottom:12px; position:relative; z-index:1; }
+.min-featured-name { font-family:var(--font-h); font-size:36px; color:white; font-weight:700; line-height:1.15; position:relative; z-index:1; }
+.min-featured-info { background:var(--beige); padding:40px; display:flex; flex-direction:column; justify-content:center; }
+.min-featured-desc { font-size:15px; color:var(--muted); line-height:1.8; margin-bottom:28px; }
+.min-detail-row { display:flex; align-items:flex-start; gap:12px; padding:12px 0; border-bottom:1px solid var(--border); }
+.min-detail-row:last-of-type { border-bottom:none; margin-bottom:24px; }
+.min-detail-icon { width:32px; height:32px; background:var(--green); border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:14px; flex-shrink:0; }
+.min-detail-label { font-size:10px; letter-spacing:1px; text-transform:uppercase; color:var(--muted); font-weight:600; }
+.min-detail-value { font-size:14px; color:var(--black); font-weight:500; margin-top:1px; }
+.min-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+.min-card { border-radius:var(--r); overflow:hidden; box-shadow:var(--shadow-sm); background:var(--white); text-decoration:none; display:block; transition:transform 0.25s,box-shadow 0.25s; }
+.min-card:hover { transform:translateY(-5px); box-shadow:var(--shadow-md); }
+.min-card-top { padding:36px 28px 24px; position:relative; }
+.min-card-top.red    { background:#FFF5F5; border-top:3px solid var(--red); }
+.min-card-top.green  { background:#F5FAF0; border-top:3px solid var(--green); }
+.min-card-top.dark   { background:#F5F5F5; border-top:3px solid var(--black); }
+.min-card-top.orange { background:#FFF8F5; border-top:3px solid var(--orange); }
+.min-card-top.green2 { background:#F0F5E8; border-top:3px solid var(--green-dark); }
+.min-card-top.gray   { background:#F8F8F8; border-top:3px solid #888; }
+.min-card-emoji { font-size:40px; margin-bottom:16px; display:block; }
+.min-card-name { font-family:var(--font-h); font-size:22px; font-weight:600; color:var(--black); margin-bottom:8px; line-height:1.2; }
+.min-card-desc { font-size:13px; color:var(--muted); line-height:1.65; }
+.min-card-footer { padding:16px 28px; border-top:1px solid var(--border); display:flex; justify-content:space-between; align-items:center; }
+.min-card-when { font-size:11px; color:var(--muted); }
+.inv-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; margin-top:48px; }
+.inv-step { background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08); border-radius:var(--r); padding:28px 20px; text-align:center; }
+.inv-step-num { font-family:var(--font-h); font-size:48px; font-weight:700; color:var(--red); opacity:.4; line-height:1; margin-bottom:12px; }
+.inv-step-title { font-size:14px; font-weight:700; color:white; margin-bottom:8px; }
+.inv-step-text { font-size:12px; color:rgba(255,255,255,0.4); line-height:1.65; }
+@media (max-width:900px) {
+  .min-featured-grid { grid-template-columns:1fr; }
+  .min-grid { grid-template-columns:1fr 1fr; }
+  .inv-grid { grid-template-columns:1fr 1fr; }
+}
+@media (max-width:480px) {
+  .min-grid { grid-template-columns:1fr; }
+  .inv-grid { grid-template-columns:1fr; }
+}
+</style>
+
+
+  
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+</head>
+<body data-timezone="America/Argentina/Buenos_Aires">
+
+  
+<nav class="nav">
+  <a href="/" class="nav-brand">
+    <img class="nav-logo" src="/img/logo.svg" alt="Logo Iglesia Betel">
+    <div class="nav-name">
+      <span class="nav-name-main">Iglesia Betel</span>
+      <span class="nav-name-sub">Berazategui · Bs. As.</span>
+    </div>
+  </a>
+
+  <ul class="nav-links">
+    
+    
+      <li>
+        <a href="/"
+           >
+          Inicio
+        </a>
+      </li>
+    
+      <li>
+        <a href="/nosotros/"
+           >
+          Nosotros
+        </a>
+      </li>
+    
+      <li>
+        <a href="/ministerios/"
+           
+              class="active"
+           >
+          Ministerios
+        </a>
+      </li>
+    
+      <li>
+        <a href="/predicaciones/"
+           >
+          Predicaciones
+        </a>
+      </li>
+    
+      <li>
+        <a href="/eventos/"
+           >
+          Eventos
+        </a>
+      </li>
+    
+    <li><a href="/contacto/" class="nav-cta">Visitanos</a></li>
+  </ul>
+
+  <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<nav class="nav-mobile" id="navMobile">
+  <a href="/" >Inicio</a>
+  <a href="/nosotros/" >Nosotros</a>
+  <a href="/ministerios/" class="active">Ministerios</a>
+  <a href="/predicaciones/" >Predicaciones</a>
+  <a href="/eventos/" >Eventos</a>
+  <a href="/contacto/" >Visitanos</a>
+</nav>
+
+
+  <main>
+    
+<div class="page-body">
+
+
+<section class="page-hero">
+  <p class="page-hero-label">Iglesia Betel</p>
+  <h1 class="page-hero-title">
+    Cada persona,<br><em>un lugar en la familia</em>
+  </h1>
+  <p class="page-hero-sub">Encontrá el ministerio donde podés crecer, servir y ser parte de algo más grande.</p>
+</section>
+
+
+
+
+
+
+<section class="section" style="background:var(--white);">
+  <div class="section-inner">
+
+    
+    
+    <p class="section-label">Ministerio destacado</p>
+    <h2 class="section-title">Jóvenes Betel</h2>
+    <div class="divider"></div>
+    <div class="min-featured-grid">
+      <div class="min-featured-img">
+        <span class="min-featured-emoji">⚡</span>
+        <div class="min-featured-tag">Ministerio · Jóvenes Betel</div>
+        <div class="min-featured-name">Jóvenes Betel</div>
+      </div>
+      <div class="min-featured-info">
+        <p class="section-label">Quiénes somos</p>
+        <p class="min-featured-desc"><p>Un espacio para jóvenes que quieren conocer a Cristo en profundidad, vivir una fe auténtica y crecer junto a otros.</p>
+<p>Nada de entretenimiento vacío: Palabra, comunidad y compromiso real. Nos reunimos los viernes con alabanza, enseñanza bíblica y grupos de discusión.</p>
+<h2 id="qué-encontrás-en-jóvenes-betel">¿Qué encontrás en Jóvenes Betel?</h2>
+<ul>
+<li><strong>Enseñanza bíblica sólida</strong> — cada viernes hay un mensaje expositivo pensado para jóvenes</li>
+<li><strong>Grupos de comunidad</strong> — grupos pequeños donde la fe se vive de cerca</li>
+<li><strong>Retiros y campamentos</strong> — actividades especiales a lo largo del año</li>
+<li><strong>Oportunidades de servicio</strong> — para quienes quieren involucrarse en la iglesia</li>
+</ul>
+<p>Vengas solo o con amigos, vas a encontrar un lugar donde ser recibido como sos.</p></p>
+        
+        <div class="min-detail-row">
+          <div class="min-detail-icon">📅</div>
+          <div>
+            <div class="min-detail-label">Cuándo</div>
+            <div class="min-detail-value">Viernes</div>
+          </div>
+        </div>
+        
+        
+        <div class="min-detail-row">
+          <div class="min-detail-icon">👥</div>
+          <div>
+            <div class="min-detail-label">Edad</div>
+            <div class="min-detail-value">13 a 30 años</div>
+          </div>
+        </div>
+        
+        <a href="/ministerios/jovenes/" class="btn btn-primary">Ver más sobre este ministerio</a>
+      </div>
+    </div>
+    
+
+    
+    <p class="section-label">Todos los ministerios</p>
+    <h2 class="section-title">Un lugar para <em>cada uno</em></h2>
+    <div class="divider"></div>
+    <div class="min-grid">
+      
+      <a href="/ministerios/ninos/" class="min-card">
+        <div class="min-card-top green">
+          <span class="min-card-emoji">👶</span>
+          <div class="min-card-name">Niños Betel</div>
+          <div class="min-card-desc"><p>Educación bíblica y formación en la fe para los más chicos, con dinámicas adaptadas a cada etapa de la niñez.</p>
+<p>Mientras los adultos están en el culto principal, los niños participan de su propio espacio con maestros comprometidos y capacitados que los guían en el conocimiento de Dios de manera divertida y significativa.</p>
+<h2 id="etapas">Etapas</h2>
+<ul>
+<li><strong>Maternal</strong> (2–4 años): actividades sensoriales y primeros relatos bíblicos</li>
+<li><strong>Pre-escolar</strong> (5–6 años): cuentos, canciones y manualidades</li>
+<li><strong>Primaria</strong> (7–12 años): estudio bíblico adaptado, memorización y valores</li>
+</ul>
+<p>Los niños son bienvenidos desde la primera visita.</p></div>
+        </div>
+        <div class="min-card-footer">
+          <span class="min-card-when">Domingo</span>
+          <span style="font-size:16px;">→</span>
+        </div>
+      </a>
+      
+      <a href="/ministerios/damas/" class="min-card">
+        <div class="min-card-top green2">
+          <span class="min-card-emoji">👩</span>
+          <div class="min-card-name">Ministerio de Damas</div>
+          <div class="min-card-desc"><p>Un espacio de comunión, oración y estudio bíblico para mujeres de todas las edades.</p>
+<p>Enfocado en el crecimiento espiritual, el apoyo mutuo y la formación de mujeres según el modelo bíblico: fieles, sabias y sirviendo con alegría.</p></div>
+        </div>
+        <div class="min-card-footer">
+          <span class="min-card-when">Primer sábado del mes</span>
+          <span style="font-size:16px;">→</span>
+        </div>
+      </a>
+      
+      <a href="/ministerios/alabanza/" class="min-card">
+        <div class="min-card-top orange">
+          <span class="min-card-emoji">🎵</span>
+          <div class="min-card-name">Alabanza y Adoración</div>
+          <div class="min-card-desc"><p>El equipo de música y adoración que guía a la congregación en encuentros con Dios.</p>
+<p>Buscamos adoradores en espíritu y en verdad, no solo músicos. Si tenés talento musical y un corazón para servir, conversá con nosotros.</p></div>
+        </div>
+        <div class="min-card-footer">
+          <span class="min-card-when">Ensayos los sábados</span>
+          <span style="font-size:16px;">→</span>
+        </div>
+      </a>
+      
+    </div>
+  </div>
+</section>
+
+
+<section class="section" style="background:var(--black);">
+  <div class="section-inner">
+    <p class="section-label" style="color:var(--green);">Sumate</p>
+    <h2 class="section-title" style="color:white;">¿Cómo puedo <em>participar?</em></h2>
+    <div class="inv-grid">
+      
+      
+      <div class="inv-step">
+        <div class="inv-step-num">01</div>
+        <div class="inv-step-title">Vení un domingo</div>
+        <div class="inv-step-text">El primer paso es conocer la comunidad en persona.</div>
+      </div>
+      
+      <div class="inv-step">
+        <div class="inv-step-num">02</div>
+        <div class="inv-step-title">Conversá con nosotros</div>
+        <div class="inv-step-text">Contanos en qué área sentís llamado a servir.</div>
+      </div>
+      
+      <div class="inv-step">
+        <div class="inv-step-num">03</div>
+        <div class="inv-step-title">Período de observación</div>
+        <div class="inv-step-text">Participás como invitado para conocer el ministerio.</div>
+      </div>
+      
+      <div class="inv-step">
+        <div class="inv-step-num">04</div>
+        <div class="inv-step-title">¡Sos parte!</div>
+        <div class="inv-step-text">Comenzás a servir junto al equipo que Dios puso en tu camino.</div>
+      </div>
+      
+    </div>
+    <div style="text-align:center;margin-top:40px;">
+      <a href="/contacto/" class="btn btn-primary">Quiero participar</a>
+    </div>
+  </div>
+</section>
+
+</div>
+
+  </main>
+
+  
+<footer>
+  <div class="footer-top">
+    <div>
+      <img class="footer-brand-logo" src="/img/logo.svg" alt="Logo Iglesia Betel">
+      <div class="footer-brand-name">Iglesia Betel</div>
+      <div class="footer-brand-tagline">Un Hogar para Crecer.<br>Una Familia para Acompañar.</div>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Páginas</div>
+      <a href="/">Inicio</a>
+      <a href="/nosotros/">Nosotros</a>
+      <a href="/ministerios/">Ministerios</a>
+      <a href="/predicaciones/">Predicaciones</a>
+      <a href="/eventos/">Eventos</a>
+      <a href="/contacto/">Contacto</a>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Ministerios</div>
+      
+        <a href="/ministerios/jovenes/">Jóvenes Betel</a>
+      
+        <a href="/ministerios/ninos/">Niños Betel</a>
+      
+        <a href="/ministerios/damas/">Ministerio de Damas</a>
+      
+        <a href="/ministerios/alabanza/">Alabanza y Adoración</a>
+      
+      <a href="/ministerios/">Ver todos →</a>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Contacto</div>
+      <p>Calle Ejemplo 1234, Berazategui, Buenos Aires</p>
+      <p style="margin-top:8px;">Domingo 10:00 hs<br>Miércoles 20:00 hs</p>
+      <p style="margin-top:8px;">&#43;54 11 1234-5678</p>
+      <p style="margin-top:4px;"><a href="mailto:contacto@iglesiabetel.com.ar" style="color:inherit;">contacto@iglesiabetel.com.ar</a></p>
+      <div style="margin-top:16px;display:flex;gap:12px;">
+        
+        <a href="https://instagram.com/iglesiabetel" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.5);font-size:13px;transition:color 0.2s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,0.5)'">Instagram →</a>
+        
+        
+        <a href="https://youtube.com/@iglesiabetel" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.5);font-size:13px;transition:color 0.2s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,0.5)'">YouTube →</a>
+        
+      </div>
+    </div>
+  </div>
+  <div style="border-top:1px solid rgba(255,255,255,0.06);">
+    <div class="footer-bar">
+      <span>© 2026 Iglesia Betel. Todos los derechos reservados.</span>
+      <span style="color:var(--green);font-size:10px;letter-spacing:1px;">Berazategui · Buenos Aires · Argentina</span>
+    </div>
+  </div>
+  <div class="footer-bar-green">Un Hogar para Crecer · Una Familia para Acompañar</div>
+</footer>
+
+
+  <script src="/js/main.js"></script>
+  
+</body>
+</html>

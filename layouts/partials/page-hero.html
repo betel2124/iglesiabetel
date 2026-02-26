@@ -1,0 +1,8 @@
+{{/* Usage: {{ partial "page-hero.html" (dict "label" "..." "title" "..." "titleEm" "..." "sub" "...") }} */}}
+<section class="page-hero">
+  {{ with .label }}<p class="page-hero-label">{{ . }}</p>{{ end }}
+  <h1 class="page-hero-title">
+    {{ .title }}{{ with .titleEm }}<br><em>{{ . }}</em>{{ end }}
+  </h1>
+  {{ with .sub }}<p class="page-hero-sub">{{ . }}</p>{{ end }}
+</section>

@@ -1,0 +1,187 @@
+{{ define "head" }}
+<style>
+.pred-single { background:var(--beige); }
+.pred-single-grid { display:grid; grid-template-columns:2fr 1fr; gap:40px; align-items:start; }
+.pred-main { background:var(--white); border-radius:var(--r); overflow:hidden; box-shadow:var(--shadow-sm); }
+.pred-main-hero { background:var(--black); padding:48px; position:relative; overflow:hidden; }
+.pred-main-hero::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse at 80% 50%,rgba(229,57,53,0.1),transparent 60%); }
+.pred-back { display:inline-flex; align-items:center; gap:6px; font-size:11px; font-weight:600; letter-spacing:2px; text-transform:uppercase; color:var(--green); margin-bottom:20px; position:relative; z-index:1; text-decoration:none; transition:gap 0.2s; }
+.pred-back:hover { gap:10px; }
+.pred-serie-tag { font-size:10px; letter-spacing:3px; text-transform:uppercase; color:rgba(255,255,255,0.4); font-weight:600; margin-bottom:12px; position:relative; z-index:1; }
+.pred-single-title { font-family:var(--font-h); font-size:clamp(24px,3.5vw,38px); color:white; font-weight:700; line-height:1.2; margin-bottom:16px; position:relative; z-index:1; }
+.pred-preacher { font-size:14px; color:rgba(255,255,255,0.5); position:relative; z-index:1; }
+.pred-body-section { padding:40px; }
+.pred-meta-row { display:flex; gap:24px; flex-wrap:wrap; margin-bottom:32px; padding-bottom:24px; border-bottom:1px solid var(--border); }
+.pred-meta-pill { display:flex; align-items:center; gap:6px; background:var(--beige); border-radius:20px; padding:6px 14px; font-size:12px; color:var(--muted); font-weight:500; }
+.pred-content { font-size:15px; color:var(--muted); line-height:1.8; }
+.pred-content h2 { font-family:var(--font-h); font-size:22px; color:var(--black); margin:32px 0 12px; }
+.pred-content h3 { font-family:var(--font-h); font-size:18px; color:var(--black); margin:24px 0 8px; }
+.pred-content p { margin-bottom:16px; }
+.pred-content blockquote { border-left:3px solid var(--green); padding-left:20px; margin:24px 0; font-family:var(--font-h); font-style:italic; font-size:17px; color:var(--black); }
+.pred-youtube-embed { margin:32px 0; }
+.pred-youtube-embed iframe { width:100%; aspect-ratio:16/9; border:none; border-radius:var(--r); }
+
+.pred-sidebar { position:sticky; top:calc(var(--nav-h) + 24px); display:flex; flex-direction:column; gap:20px; }
+.pred-sidebar-card { background:var(--white); border-radius:var(--r); padding:24px; box-shadow:var(--shadow-sm); }
+.pred-sidebar-title { font-size:10px; letter-spacing:3px; text-transform:uppercase; color:var(--green-dark); font-weight:600; margin-bottom:16px; }
+.pred-yt-btn { display:flex; align-items:center; justify-content:center; gap:10px; background:#FF0000; color:white; padding:14px; border-radius:var(--r); font-weight:700; font-size:13px; text-decoration:none; transition:background 0.2s,transform 0.2s; margin-bottom:12px; }
+.pred-yt-btn:hover { background:#CC0000; transform:translateY(-1px); }
+.related-list { display:flex; flex-direction:column; gap:12px; }
+.related-item { display:flex; gap:12px; text-decoration:none; padding:10px; border-radius:6px; transition:background 0.15s; }
+.related-item:hover { background:var(--beige); }
+.related-item-date { font-size:10px; color:var(--muted); flex-shrink:0; padding-top:2px; }
+.related-item-title { font-size:13px; font-weight:600; color:var(--black); line-height:1.3; }
+.related-item-meta { font-size:11px; color:var(--muted); margin-top:2px; }
+
+.pred-nav { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:40px; }
+.pred-nav-btn { background:var(--white); border-radius:var(--r); padding:20px; box-shadow:var(--shadow-sm); text-decoration:none; color:var(--black); transition:box-shadow 0.2s; }
+.pred-nav-btn:hover { box-shadow:var(--shadow-md); }
+.pred-nav-dir { font-size:10px; letter-spacing:2px; text-transform:uppercase; color:var(--muted); font-weight:600; margin-bottom:6px; }
+.pred-nav-title { font-family:var(--font-h); font-size:15px; font-weight:600; line-height:1.3; }
+
+@media (max-width:900px) {
+  .pred-single-grid { grid-template-columns:1fr; }
+  .pred-sidebar { position:static; }
+  .pred-main-hero { padding:32px; }
+  .pred-body-section { padding:28px; }
+}
+</style>
+{{ end }}
+
+{{ define "main" }}
+<div class="page-body">
+  <section class="section pred-single">
+    <div class="section-inner">
+      <div class="pred-single-grid">
+
+        {{/* ── MAIN CONTENT ── */}}
+        <div class="pred-main">
+          <div class="pred-main-hero">
+            <a href="/predicaciones/" class="pred-back">← Predicaciones</a>
+            {{ with .Params.serie }}<div class="pred-serie-tag">{{ . | humanize }}{{ with $.Params.serie_ep }} · Episodio {{ . }}{{ end }}</div>{{ end }}
+            <h1 class="pred-single-title">{{ .Title }}</h1>
+            <div class="pred-preacher">{{ .Params.predicador }}</div>
+          </div>
+
+          <div class="pred-body-section">
+            {{/* Meta pills */}}
+            <div class="pred-meta-row">
+              <div class="pred-meta-pill">📅 {{ .Date | time.Format "2 de January de 2006" }}</div>
+              {{ with .Params.pasaje }}<div class="pred-meta-pill">📖 {{ . }}</div>{{ end }}
+              {{ with .Params.duracion }}<div class="pred-meta-pill">⏱ {{ . }}</div>{{ end }}
+            </div>
+
+            {{/* YouTube embed */}}
+            {{ with .Params.youtube_id }}
+            <div class="pred-youtube-embed">
+              <iframe
+                src="https://www.youtube.com/embed/{{ . }}"
+                title="{{ $.Title }}"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+              </iframe>
+            </div>
+            {{ end }}
+
+            {{/* Body content from .md */}}
+            {{ with .Content }}
+            <div class="pred-content">{{ . }}</div>
+            {{ end }}
+          </div>
+        </div>
+
+        {{/* ── SIDEBAR ── */}}
+        <div class="pred-sidebar">
+
+          {{/* Watch on YouTube */}}
+          {{ with .Params.youtube_url }}
+          <div class="pred-sidebar-card">
+            <div class="pred-sidebar-title">Ver mensaje</div>
+            <a href="{{ . }}" target="_blank" rel="noopener" class="pred-yt-btn">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg>
+              Ver en YouTube
+            </a>
+            <p style="font-size:12px;color:var(--muted);text-align:center;">Se abre en YouTube</p>
+          </div>
+          {{ end }}
+
+          {{/* Datos del mensaje */}}
+          <div class="pred-sidebar-card">
+            <div class="pred-sidebar-title">Sobre este mensaje</div>
+            {{ with .Params.predicador }}
+            <div style="margin-bottom:12px;">
+              <div style="font-size:10px;text-transform:uppercase;letter-spacing:1px;color:var(--muted);font-weight:600;margin-bottom:3px;">Predicador</div>
+              <div style="font-size:14px;color:var(--black);font-weight:500;">{{ . }}</div>
+            </div>
+            {{ end }}
+            {{ with .Params.pasaje }}
+            <div style="margin-bottom:12px;">
+              <div style="font-size:10px;text-transform:uppercase;letter-spacing:1px;color:var(--muted);font-weight:600;margin-bottom:3px;">Pasaje</div>
+              <div style="font-size:14px;color:var(--black);font-weight:500;">{{ . }}</div>
+            </div>
+            {{ end }}
+            {{ with .Params.serie }}
+            <div style="margin-bottom:12px;">
+              <div style="font-size:10px;text-transform:uppercase;letter-spacing:1px;color:var(--muted);font-weight:600;margin-bottom:3px;">Serie</div>
+              <a href="{{ "/series/" | relURL }}{{ . | urlize }}/" style="font-size:14px;color:var(--green-dark);font-weight:500;text-decoration:none;">{{ . | humanize }} →</a>
+            </div>
+            {{ end }}
+            {{ with .Params.tags }}
+            <div>
+              <div style="font-size:10px;text-transform:uppercase;letter-spacing:1px;color:var(--muted);font-weight:600;margin-bottom:8px;">Temas</div>
+              <div style="display:flex;flex-wrap:wrap;gap:6px;">
+                {{ range . }}
+                <a href="{{ "/tags/" | relURL }}{{ . | urlize }}/" style="background:var(--beige);border-radius:20px;padding:4px 12px;font-size:11px;color:var(--muted);text-decoration:none;transition:background 0.2s;" onmouseover="this.style.background='var(--border)'" onmouseout="this.style.background='var(--beige)'">{{ . }}</a>
+                {{ end }}
+              </div>
+            </div>
+            {{ end }}
+          </div>
+
+          {{/* Related - same series */}}
+          {{ $serie := .Params.serie }}
+          {{ if $serie }}
+          {{ $related := where .Site.RegularPages "Params.serie" $serie | first 4 }}
+          {{ $related = where $related "Permalink" "ne" .Permalink }}
+          {{ if $related }}
+          <div class="pred-sidebar-card">
+            <div class="pred-sidebar-title">Misma serie</div>
+            <div class="related-list">
+              {{ range $related | first 3 }}
+              <a href="{{ .RelPermalink }}" class="related-item">
+                <div class="related-item-date">{{ .Date | time.Format "2/1" }}</div>
+                <div>
+                  <div class="related-item-title">{{ .Title }}</div>
+                  {{ with .Params.pasaje }}<div class="related-item-meta">{{ . }}</div>{{ end }}
+                </div>
+              </a>
+              {{ end }}
+            </div>
+          </div>
+          {{ end }}
+          {{ end }}
+
+        </div>
+      </div>
+
+      {{/* Prev / Next navigation */}}
+      {{ $preds := (where .Site.RegularPages "Section" "predicaciones").ByDate.Reverse }}
+      <div class="pred-nav">
+        {{ with .PrevInSection }}
+        <a href="{{ .RelPermalink }}" class="pred-nav-btn">
+          <div class="pred-nav-dir">← Anterior</div>
+          <div class="pred-nav-title">{{ .Title }}</div>
+        </a>
+        {{ else }}<div></div>{{ end }}
+        {{ with .NextInSection }}
+        <a href="{{ .RelPermalink }}" class="pred-nav-btn" style="text-align:right;">
+          <div class="pred-nav-dir">Siguiente →</div>
+          <div class="pred-nav-title">{{ .Title }}</div>
+        </a>
+        {{ end }}
+      </div>
+
+    </div>
+  </section>
+</div>
+{{ end }}

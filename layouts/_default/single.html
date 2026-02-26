@@ -1,0 +1,12 @@
+{{ define "main" }}
+<div class="page-body">
+  {{ partial "page-hero.html" (dict "title" .Title "sub" .Description) }}
+  <section class="section" style="background:var(--beige);">
+    <div class="section-inner" style="max-width:720px;">
+      <div style="background:var(--white);border-radius:var(--r);padding:48px;box-shadow:var(--shadow-sm);font-size:15px;color:var(--muted);line-height:1.8;">
+        {{ .Content }}
+      </div>
+    </div>
+  </section>
+</div>
+{{ end }}

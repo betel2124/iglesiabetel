@@ -1,0 +1,43 @@
+baseURL = "https://iglesiabetel.com.ar/"
+languageCode = "es-AR"
+title = "Iglesia Betel"
+
+# All dates/times on the site are interpreted in this timezone (e.g. eventos "próximamente").
+# Change here if the church moves or for testing. IANA: https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+timeZone = "America/Argentina/Buenos_Aires"
+
+[params]
+  # Same as timeZone; used by JS for client-side filtering. Keep in sync when changing timezone.
+  timezone           = "America/Argentina/Buenos_Aires"
+  descripcion    = "Un Hogar para Crecer. Una Familia para Acompañar."
+  tagline        = "Un Hogar para Crecer. Una Familia para Acompañar."
+  direccion      = "Calle Ejemplo 1234, Berazategui, Buenos Aires"
+  telefono       = "+54 11 1234-5678"
+  whatsapp       = "5491112345678"
+  email          = "contacto@iglesiabetel.com.ar"
+  instagram      = "https://instagram.com/iglesiabetel"
+  youtube        = "https://youtube.com/@iglesiabetel"
+  horario_domingo    = "10:00 hs"
+  horario_miercoles  = "20:00 hs"
+  horario_viernes    = "20:30 hs"
+  anios_ministerio   = "15"
+
+[taxonomies]
+  serie = "series"
+  tag   = "tags"
+  tipo  = "tipos"
+
+[outputs]
+  home = ["HTML"]
+  page = ["HTML"]
+  section = ["HTML"]
+
+[pagination]
+  pagerSize = 10
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true   # allows HTML in .md files when needed
+  [markup.highlight]
+    noClasses = false
