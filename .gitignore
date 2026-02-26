@@ -1,0 +1,21 @@
+# Hugo default output
+/public
+/resources
+.hugo_build.lock
+
+# Dependency directories
+/node_modules
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Editor directories and files
+.idea
+.vscode
+*.swp
