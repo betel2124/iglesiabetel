@@ -1,26 +1,38 @@
 # Iglesia Betel - Project Documentation
 
 ## Philosophy & Architecture
-This project is a static website built with **Hugo**. It aims to provide a fast, secure, and easy-to-maintain web presence for Iglesia Betel.
+This project is a static website built with **Hugo**. It aims to provide a fast, secure, and easy-to-maintain web presence for Iglesia Betel. The visual identity is based on a detailed design specification (`documentation/betel-design-spec.html`).
 
 ### Key Concepts
-1. **Static Core, Dynamic Filtering**: While the content is statically generated, time-sensitive displays (like "Upcoming Events" vs "Past Events") are handled client-side via JavaScript (`main.js`). This allows the site to remain static without needing daily rebuilds just to move an event from "Upcoming" to "History".
-2. **Timezone Awareness**: The site explicitly handles dates in the `America/Argentina/Buenos_Aires` timezone to ensure event visibility is accurate for the local congregation, regardless of where the user is browsing from.
-3. **Netlify CMS / Identity**: The project includes Netlify Identity scripts, suggesting a headless CMS approach accessible at `/admin/`.
+1. **Static Core, Dynamic Filtering**: The site was initially built with server-side date filtering. This was later evolved to a client-side JavaScript approach (`main.js`) for time-sensitive displays (like "Upcoming Events" vs "Past Events"). This solves timezone complexities and allows the site to remain static without needing daily rebuilds just to move an event from "Upcoming" to "History".
+2. **Timezone Awareness**: The site explicitly handles dates in the `America/Argentina/Buenos_Aires` timezone, configured in `hugo.toml` and read by the client-side JS. This ensures event visibility is accurate for the local congregation, regardless of where the user is browsing from.
+3. **Decap CMS (Netlify CMS) / Identity**: The project is integrated with Decap CMS (via `/static/admin/`) and Netlify Identity. This provides a user-friendly interface for non-technical editors to manage content (events, sermons) without interacting with Markdown or Git directly.
+
+## Configuration
+Global site settings are managed in two key places:
+- **`hugo.toml`**: Contains core Hugo settings, including the site's `timeZone` and a matching `params.timezone` for the front-end. It also defines the taxonomies used across the site (`series`, `tags`, `tipos`).
+- **`data/contacto.yaml`**: Stores contact information like address, phone number, and schedules. This allows for easy updates without modifying layout files.
 
 ## Content Structure & Taxonomies
 The site's content is organized into "sections" which correspond to the top-level folders within the `/content/` directory. Each Markdown (`.md`) file inside these folders becomes a page on the website.
 
-The front matter (the YAML or TOML block at the top of each `.md` file) contains metadata for the page.
+The front matter (the YAML block at the top of each `.md` file) contains metadata for the page.
 
 ### `/content/eventos/`
 This folder contains all church events. Each `.md` file represents a single event.
 
 **Purpose**: To create individual pages for upcoming and past events. The `main.js` script uses the `date` field to dynamically sort these on the front-end into "Próximos" and "Historial".
 
+**Template Requirement**: The `layouts/eventos/list.html` template must render **ALL** events (past and future) into a hidden container (e.g., `#eventos-all`) with a `data-date` attribute. It must **NOT** filter by date server-side (e.g. `where ... "Date" "ge" now`), otherwise the client-side timezone logic cannot function correctly.
+
+**Content Lifecycle**:
+1. An event is created with a future `date`.
+2. After the event, the file can be updated to change `estado` to `"realizado"` and add a `## Crónica` section to the body with a summary or photos.
+
 **Front Matter Details (`.md` options):**
 - `title` (String): The name of the event.
-- `date` (Datetime): The date and time of the event. This is the most critical field, as its date part (`YYYY-MM-DD`) is rendered into the HTML `data-date` attribute for client-side filtering.
+- `date` (Datetime): The date and time of the event. This is the most critical field, used for client-side filtering.
+- `estado` (String): The intended state of the event (e.g., `proximo`, `realizado`). While client-side filtering is date-based, this field was part of the original content model for administrative purposes.
 - `tipos` (Array of Strings): A taxonomy used to categorize the event. Observed values include:
   - `aniversario`: Church anniversary celebrations.
   - `damas`: Events for women.
@@ -36,9 +48,14 @@ This folder contains all church events. Each `.md` file represents a single even
 title: "Retiro de Jóvenes 2025"
 date: 2025-02-21T18:00:00-03:00
 tipos: ["retiro"]
+estado: "proximo"
 ---
 
 ¡Prepárate para un fin de semana inolvidable! El retiro de jóvenes de este año se centrará en...
+
+## Crónica
+(This section is added after the event)
+El retiro fue una bendición, con más de 50 jóvenes participando...
 ```
 
 ### `/content/predicaciones/`

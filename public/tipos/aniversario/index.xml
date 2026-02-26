@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Aniversario on Iglesia Betel</title>
-    <link>https://iglesiabetel.com.ar/tipos/aniversario/</link>
+    <link>http://localhost:1313/tipos/aniversario/</link>
     <description>Recent content in Aniversario on Iglesia Betel</description>
     <generator>Hugo</generator>
     <language>es-AR</language>
     <lastBuildDate>Sun, 04 May 2025 00:00:00 -0300</lastBuildDate>
-    <atom:link href="https://iglesiabetel.com.ar/tipos/aniversario/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tipos/aniversario/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Aniversario de la iglesia</title>
-      <link>https://iglesiabetel.com.ar/eventos/2025-05-04-aniversario-iglesia/</link>
+      <link>http://localhost:1313/eventos/2025-05-04-aniversario-iglesia/</link>
       <pubDate>Sun, 04 May 2025 00:00:00 -0300</pubDate>
-      <guid>https://iglesiabetel.com.ar/eventos/2025-05-04-aniversario-iglesia/</guid>
+      <guid>http://localhost:1313/eventos/2025-05-04-aniversario-iglesia/</guid>
       <description>&lt;p&gt;Celebramos un nuevo aniversario de Iglesia Betel dando gracias a Dios por su fidelidad a lo largo de los años.&lt;/p&gt;</description>
     </item>
   </channel>

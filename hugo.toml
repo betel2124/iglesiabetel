@@ -5,6 +5,7 @@ title = "Iglesia Betel"
 # All dates/times on the site are interpreted in this timezone (e.g. eventos "próximamente").
 # Change here if the church moves or for testing. IANA: https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 timeZone = "America/Argentina/Buenos_Aires"
+buildFuture = true
 
 [params]
   # Same as timeZone; used by JS for client-side filtering. Keep in sync when changing timezone.

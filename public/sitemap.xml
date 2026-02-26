@@ -2,152 +2,173 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://iglesiabetel.com.ar/ministerios/jovenes/</loc>
+    <loc>http://localhost:1313/ministerios/jovenes/</loc>
   </url><url>
-    <loc>https://iglesiabetel.com.ar/ministerios/ninos/</loc>
+    <loc>http://localhost:1313/ministerios/ninos/</loc>
   </url><url>
-    <loc>https://iglesiabetel.com.ar/ministerios/damas/</loc>
+    <loc>http://localhost:1313/ministerios/damas/</loc>
   </url><url>
-    <loc>https://iglesiabetel.com.ar/ministerios/alabanza/</loc>
+    <loc>http://localhost:1313/ministerios/alabanza/</loc>
   </url><url>
-    <loc>https://iglesiabetel.com.ar/</loc>
+    <loc>http://localhost:1313/</loc>
+    <lastmod>2026-12-20T00:00:00-03:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/eventos/2026-12-20-culto-navidad-2026/</loc>
+    <lastmod>2026-12-20T00:00:00-03:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/eventos/</loc>
+    <lastmod>2026-12-20T00:00:00-03:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tipos/navidad/</loc>
+    <lastmod>2026-12-20T00:00:00-03:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tipos/</loc>
+    <lastmod>2026-12-20T00:00:00-03:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/eventos/2026-09-13-conferencia-misiones/</loc>
+    <lastmod>2026-09-13T00:00:00-03:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tipos/misiones/</loc>
+    <lastmod>2026-09-13T00:00:00-03:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/eventos/2026-06-14-encuentro-juvenil/</loc>
+    <lastmod>2026-06-14T00:00:00-03:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tipos/jovenes/</loc>
+    <lastmod>2026-06-14T00:00:00-03:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tipos/encuentro/</loc>
+    <lastmod>2026-04-19T00:00:00-03:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/eventos/2026-04-19-encuentro-matrimonios-2026/</loc>
+    <lastmod>2026-04-19T00:00:00-03:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tipos/retiro/</loc>
+    <lastmod>2026-04-12T00:00:00-03:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/eventos/2025-04-12-retiro-jovenes/</loc>
+    <lastmod>2026-04-12T00:00:00-03:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tipos/culto-especial/</loc>
+    <lastmod>2026-03-08T00:00:00-03:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/eventos/2026-03-08-noche-adoracion/</loc>
+    <lastmod>2026-03-08T00:00:00-03:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/eventos/2025-06-08-noche-de-alabanza/</loc>
     <lastmod>2025-06-08T00:00:00-03:00</lastmod>
   </url><url>
-    <loc>https://iglesiabetel.com.ar/tipos/culto-especial/</loc>
-    <lastmod>2025-06-08T00:00:00-03:00</lastmod>
-  </url><url>
-    <loc>https://iglesiabetel.com.ar/eventos/</loc>
-    <lastmod>2025-06-08T00:00:00-03:00</lastmod>
-  </url><url>
-    <loc>https://iglesiabetel.com.ar/eventos/2025-06-08-noche-de-alabanza/</loc>
-    <lastmod>2025-06-08T00:00:00-03:00</lastmod>
-  </url><url>
-    <loc>https://iglesiabetel.com.ar/tipos/</loc>
-    <lastmod>2025-06-08T00:00:00-03:00</lastmod>
-  </url><url>
-    <loc>https://iglesiabetel.com.ar/tags/avivamiento/</loc>
+    <loc>http://localhost:1313/tags/avivamiento/</loc>
     <lastmod>2025-06-01T00:00:00-03:00</lastmod>
   </url><url>
-    <loc>https://iglesiabetel.com.ar/predicaciones/2025-06-01-el-fuego-que-no-se-apaga/</loc>
+    <loc>http://localhost:1313/predicaciones/2025-06-01-el-fuego-que-no-se-apaga/</loc>
     <lastmod>2025-06-01T00:00:00-03:00</lastmod>
   </url><url>
-    <loc>https://iglesiabetel.com.ar/tags/espiritu-santo/</loc>
+    <loc>http://localhost:1313/tags/espiritu-santo/</loc>
     <lastmod>2025-06-01T00:00:00-03:00</lastmod>
   </url><url>
-    <loc>https://iglesiabetel.com.ar/predicaciones/</loc>
+    <loc>http://localhost:1313/predicaciones/</loc>
     <lastmod>2025-06-01T00:00:00-03:00</lastmod>
   </url><url>
-    <loc>https://iglesiabetel.com.ar/tags/</loc>
+    <loc>http://localhost:1313/tags/</loc>
     <lastmod>2025-06-01T00:00:00-03:00</lastmod>
   </url><url>
-    <loc>https://iglesiabetel.com.ar/tags/gracia/</loc>
+    <loc>http://localhost:1313/tags/gracia/</loc>
     <lastmod>2025-05-25T00:00:00-03:00</lastmod>
   </url><url>
-    <loc>https://iglesiabetel.com.ar/predicaciones/2025-05-25-gracia-que-transforma/</loc>
+    <loc>http://localhost:1313/predicaciones/2025-05-25-gracia-que-transforma/</loc>
     <lastmod>2025-05-25T00:00:00-03:00</lastmod>
   </url><url>
-    <loc>https://iglesiabetel.com.ar/tags/santificacion/</loc>
+    <loc>http://localhost:1313/tags/santificacion/</loc>
     <lastmod>2025-05-25T00:00:00-03:00</lastmod>
   </url><url>
-    <loc>https://iglesiabetel.com.ar/predicaciones/2025-05-11-bienaventurados-los-mansos/</loc>
+    <loc>http://localhost:1313/predicaciones/2025-05-11-bienaventurados-los-mansos/</loc>
     <lastmod>2025-05-11T00:00:00-03:00</lastmod>
   </url><url>
-    <loc>https://iglesiabetel.com.ar/tags/caracter-cristiano/</loc>
+    <loc>http://localhost:1313/tags/caracter-cristiano/</loc>
     <lastmod>2025-05-11T00:00:00-03:00</lastmod>
   </url><url>
-    <loc>https://iglesiabetel.com.ar/tags/sermon-del-monte/</loc>
+    <loc>http://localhost:1313/tags/sermon-del-monte/</loc>
     <lastmod>2025-05-11T00:00:00-03:00</lastmod>
   </url><url>
-    <loc>https://iglesiabetel.com.ar/tipos/aniversario/</loc>
+    <loc>http://localhost:1313/tipos/aniversario/</loc>
     <lastmod>2025-05-04T00:00:00-03:00</lastmod>
   </url><url>
-    <loc>https://iglesiabetel.com.ar/eventos/2025-05-04-aniversario-iglesia/</loc>
+    <loc>http://localhost:1313/eventos/2025-05-04-aniversario-iglesia/</loc>
     <lastmod>2025-05-04T00:00:00-03:00</lastmod>
   </url><url>
-    <loc>https://iglesiabetel.com.ar/eventos/2025-04-06-domingo-ramos/</loc>
+    <loc>http://localhost:1313/eventos/2025-04-06-domingo-ramos/</loc>
     <lastmod>2025-04-06T00:00:00-03:00</lastmod>
   </url><url>
-    <loc>https://iglesiabetel.com.ar/tipos/capacitacion/</loc>
+    <loc>http://localhost:1313/tipos/capacitacion/</loc>
     <lastmod>2025-03-16T00:00:00-03:00</lastmod>
   </url><url>
-    <loc>https://iglesiabetel.com.ar/eventos/2025-03-16-escuela-obreros/</loc>
+    <loc>http://localhost:1313/eventos/2025-03-16-escuela-obreros/</loc>
     <lastmod>2025-03-16T00:00:00-03:00</lastmod>
   </url><url>
-    <loc>https://iglesiabetel.com.ar/eventos/2025-02-09-culto-visita-misionero/</loc>
+    <loc>http://localhost:1313/eventos/2025-02-09-culto-visita-misionero/</loc>
     <lastmod>2025-02-09T00:00:00-03:00</lastmod>
   </url><url>
-    <loc>https://iglesiabetel.com.ar/tipos/misiones/</loc>
-    <lastmod>2025-02-09T00:00:00-03:00</lastmod>
-  </url><url>
-    <loc>https://iglesiabetel.com.ar/tipos/ayuno-oracion/</loc>
+    <loc>http://localhost:1313/tipos/ayuno-oracion/</loc>
     <lastmod>2025-01-12T00:00:00-03:00</lastmod>
   </url><url>
-    <loc>https://iglesiabetel.com.ar/eventos/2025-01-12-ayuno-oracion/</loc>
+    <loc>http://localhost:1313/eventos/2025-01-12-ayuno-oracion/</loc>
     <lastmod>2025-01-12T00:00:00-03:00</lastmod>
   </url><url>
-    <loc>https://iglesiabetel.com.ar/eventos/2024-12-15-culto-navidad/</loc>
+    <loc>http://localhost:1313/eventos/2024-12-15-culto-navidad/</loc>
     <lastmod>2024-12-15T00:00:00-03:00</lastmod>
   </url><url>
-    <loc>https://iglesiabetel.com.ar/tipos/navidad/</loc>
-    <lastmod>2024-12-15T00:00:00-03:00</lastmod>
-  </url><url>
-    <loc>https://iglesiabetel.com.ar/tipos/damas/</loc>
+    <loc>http://localhost:1313/tipos/damas/</loc>
     <lastmod>2024-11-02T00:00:00-03:00</lastmod>
   </url><url>
-    <loc>https://iglesiabetel.com.ar/eventos/2024-11-02-encuentro-damas/</loc>
+    <loc>http://localhost:1313/eventos/2024-11-02-encuentro-damas/</loc>
     <lastmod>2024-11-02T00:00:00-03:00</lastmod>
   </url><url>
-    <loc>https://iglesiabetel.com.ar/eventos/2024-10-12-campana-evangelistica/</loc>
+    <loc>http://localhost:1313/eventos/2024-10-12-campana-evangelistica/</loc>
     <lastmod>2024-10-12T00:00:00-03:00</lastmod>
   </url><url>
-    <loc>https://iglesiabetel.com.ar/tipos/evangelismo/</loc>
+    <loc>http://localhost:1313/tipos/evangelismo/</loc>
     <lastmod>2024-10-12T00:00:00-03:00</lastmod>
   </url><url>
-    <loc>https://iglesiabetel.com.ar/tipos/bautismos/</loc>
+    <loc>http://localhost:1313/tipos/bautismos/</loc>
     <lastmod>2024-09-07T00:00:00-03:00</lastmod>
   </url><url>
-    <loc>https://iglesiabetel.com.ar/eventos/2024-09-07-bautismos/</loc>
+    <loc>http://localhost:1313/eventos/2024-09-07-bautismos/</loc>
     <lastmod>2024-09-07T00:00:00-03:00</lastmod>
   </url><url>
-    <loc>https://iglesiabetel.com.ar/eventos/2024-08-17-encuentro-jovenes/</loc>
+    <loc>http://localhost:1313/eventos/2024-08-17-encuentro-jovenes/</loc>
     <lastmod>2024-08-17T00:00:00-03:00</lastmod>
   </url><url>
-    <loc>https://iglesiabetel.com.ar/tipos/jovenes/</loc>
-    <lastmod>2024-08-17T00:00:00-03:00</lastmod>
-  </url><url>
-    <loc>https://iglesiabetel.com.ar/eventos/2024-07-20-cena-de-amigos/</loc>
+    <loc>http://localhost:1313/eventos/2024-07-20-cena-de-amigos/</loc>
     <lastmod>2024-07-20T00:00:00-03:00</lastmod>
   </url><url>
-    <loc>https://iglesiabetel.com.ar/tipos/encuentro/</loc>
-    <lastmod>2024-07-20T00:00:00-03:00</lastmod>
-  </url><url>
-    <loc>https://iglesiabetel.com.ar/eventos/2024-06-16-dia-del-padre/</loc>
+    <loc>http://localhost:1313/eventos/2024-06-16-dia-del-padre/</loc>
     <lastmod>2024-06-16T00:00:00-03:00</lastmod>
   </url><url>
-    <loc>https://iglesiabetel.com.ar/eventos/2024-05-05-dia-de-la-familia/</loc>
+    <loc>http://localhost:1313/eventos/2024-05-05-dia-de-la-familia/</loc>
     <lastmod>2024-05-05T00:00:00-03:00</lastmod>
   </url><url>
-    <loc>https://iglesiabetel.com.ar/eventos/2024-04-20-encuentro-matrimonios/</loc>
+    <loc>http://localhost:1313/eventos/2024-04-20-encuentro-matrimonios/</loc>
     <lastmod>2024-04-20T00:00:00-03:00</lastmod>
   </url><url>
-    <loc>https://iglesiabetel.com.ar/eventos/2024-03-30-semana-santa/</loc>
+    <loc>http://localhost:1313/eventos/2024-03-30-semana-santa/</loc>
     <lastmod>2024-03-30T00:00:00-03:00</lastmod>
   </url><url>
-    <loc>https://iglesiabetel.com.ar/tipos/vigilia/</loc>
+    <loc>http://localhost:1313/tipos/vigilia/</loc>
     <lastmod>2024-02-10T00:00:00-03:00</lastmod>
   </url><url>
-    <loc>https://iglesiabetel.com.ar/eventos/2024-02-10-vigilia-oracion/</loc>
+    <loc>http://localhost:1313/eventos/2024-02-10-vigilia-oracion/</loc>
     <lastmod>2024-02-10T00:00:00-03:00</lastmod>
   </url><url>
-    <loc>https://iglesiabetel.com.ar/eventos/2024-01-15-vision-2024/</loc>
+    <loc>http://localhost:1313/eventos/2024-01-15-vision-2024/</loc>
     <lastmod>2024-01-15T00:00:00-03:00</lastmod>
   </url><url>
-    <loc>https://iglesiabetel.com.ar/contacto/</loc>
+    <loc>http://localhost:1313/contacto/</loc>
   </url><url>
-    <loc>https://iglesiabetel.com.ar/ministerios/</loc>
+    <loc>http://localhost:1313/ministerios/</loc>
   </url><url>
-    <loc>https://iglesiabetel.com.ar/nosotros/</loc>
+    <loc>http://localhost:1313/nosotros/</loc>
   </url><url>
-    <loc>https://iglesiabetel.com.ar/series/</loc>
+    <loc>http://localhost:1313/series/</loc>
   </url>
 </urlset>

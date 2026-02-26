@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Bautismos on Iglesia Betel</title>
-    <link>https://iglesiabetel.com.ar/tipos/bautismos/</link>
+    <link>http://localhost:1313/tipos/bautismos/</link>
     <description>Recent content in Bautismos on Iglesia Betel</description>
     <generator>Hugo</generator>
     <language>es-AR</language>
     <lastBuildDate>Sat, 07 Sep 2024 00:00:00 -0300</lastBuildDate>
-    <atom:link href="https://iglesiabetel.com.ar/tipos/bautismos/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tipos/bautismos/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Servicio de bautismos</title>
-      <link>https://iglesiabetel.com.ar/eventos/2024-09-07-bautismos/</link>
+      <link>http://localhost:1313/eventos/2024-09-07-bautismos/</link>
       <pubDate>Sat, 07 Sep 2024 00:00:00 -0300</pubDate>
-      <guid>https://iglesiabetel.com.ar/eventos/2024-09-07-bautismos/</guid>
+      <guid>http://localhost:1313/eventos/2024-09-07-bautismos/</guid>
       <description>&lt;p&gt;Varios hermanos dan testimonio público de su fe en Jesucristo por medio del bautismo en agua.&lt;/p&gt;</description>
     </item>
   </channel>
