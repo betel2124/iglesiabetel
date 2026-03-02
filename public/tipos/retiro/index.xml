@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Retiro on Iglesia Betel</title>
-    <link>http://localhost:1313/tipos/retiro/</link>
+    <link>https://iglesiabetel.com.ar/tipos/retiro/</link>
     <description>Recent content in Retiro on Iglesia Betel</description>
     <generator>Hugo</generator>
     <language>es-AR</language>
     <lastBuildDate>Sun, 12 Apr 2026 00:00:00 -0300</lastBuildDate>
-    <atom:link href="http://localhost:1313/tipos/retiro/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://iglesiabetel.com.ar/tipos/retiro/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Retiro de Jóvenes Betel 2025</title>
-      <link>http://localhost:1313/eventos/2025-04-12-retiro-jovenes/</link>
+      <link>https://iglesiabetel.com.ar/eventos/2025-04-12-retiro-jovenes/</link>
       <pubDate>Sun, 12 Apr 2026 00:00:00 -0300</pubDate>
-      <guid>http://localhost:1313/eventos/2025-04-12-retiro-jovenes/</guid>
+      <guid>https://iglesiabetel.com.ar/eventos/2025-04-12-retiro-jovenes/</guid>
       <description>&lt;p&gt;Dos días para alejarse del ruido, profundizar en la Palabra y fortalecer la comunidad entre jóvenes. El tema del retiro fue &lt;strong&gt;&amp;ldquo;Raíces&amp;rdquo;&lt;/strong&gt;, explorando Colosenses 2:6–7 como base para una fe que no se sacude.&lt;/p&gt;&#xA;&lt;p&gt;Contamos con tiempo de enseñanza, grupos de discusión, adoración, actividades al aire libre y mucha comunidad real.&lt;/p&gt;&#xA;&lt;h2 id=&#34;crónica&#34;&gt;Crónica&lt;/h2&gt;&#xA;&lt;p&gt;Fue un fin de semana que ninguno de los que estuvo va a olvidar fácilmente. Más de 40 jóvenes participaron, con varios tomando decisiones significativas de fe y otros reafirmando su compromiso con Cristo y con la iglesia local.&lt;/p&gt;</description>
     </item>
   </channel>

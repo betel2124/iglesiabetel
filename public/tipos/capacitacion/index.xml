@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Capacitacion on Iglesia Betel</title>
-    <link>http://localhost:1313/tipos/capacitacion/</link>
+    <link>https://iglesiabetel.com.ar/tipos/capacitacion/</link>
     <description>Recent content in Capacitacion on Iglesia Betel</description>
     <generator>Hugo</generator>
     <language>es-AR</language>
     <lastBuildDate>Sun, 16 Mar 2025 00:00:00 -0300</lastBuildDate>
-    <atom:link href="http://localhost:1313/tipos/capacitacion/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://iglesiabetel.com.ar/tipos/capacitacion/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Escuela de obreros</title>
-      <link>http://localhost:1313/eventos/2025-03-16-escuela-obreros/</link>
+      <link>https://iglesiabetel.com.ar/eventos/2025-03-16-escuela-obreros/</link>
       <pubDate>Sun, 16 Mar 2025 00:00:00 -0300</pubDate>
-      <guid>http://localhost:1313/eventos/2025-03-16-escuela-obreros/</guid>
+      <guid>https://iglesiabetel.com.ar/eventos/2025-03-16-escuela-obreros/</guid>
       <description>&lt;p&gt;Espacio de capacitación para servidores y líderes de la iglesia, enfocado en carácter, doctrina y práctica ministerial.&lt;/p&gt;</description>
     </item>
   </channel>
