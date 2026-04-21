@@ -49,13 +49,14 @@
 {{ end }}
 
 {{ define "main" }}
+{{ $p := .Site.Params }}
 <div class="page-body">
 
 {{ partial "page-hero.html" (dict
   "label"   "Iglesia Betel · Berazategui"
   "title"   "Conocé nuestra historia"
   "titleEm" "y quiénes somos"
-  "sub"     "Una iglesia local con más de 15 años de ministerio fiel en la comunidad."
+  "sub"     (printf "Una iglesia local con más de %s años de ministerio fiel en la comunidad." $p.anios_ministerio)
 ) }}
 
 {{/* ── VISIÓN / MISIÓN ── */}}
@@ -180,7 +181,7 @@
         <div class="timeline-content">
           <div class="timeline-year">Hoy</div>
           <div class="timeline-title">Una iglesia en marcha</div>
-          <div class="timeline-text">Con más de 15 años de historia, seguimos comprometidos con el mismo evangelio. Lo mejor de Dios aún está por venir.</div>
+          <div class="timeline-text">{{ printf "Con más de %s años de historia, seguimos comprometidos con el mismo evangelio. Lo mejor de Dios aún está por venir." $p.anios_ministerio }}</div>
         </div>
       </div>
     </div>

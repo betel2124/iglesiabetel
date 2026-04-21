@@ -1,4 +1,4 @@
 ---
 title: "Predicaciones"
-description: "Escuchá los mensajes de los cultos dominicales y eventos especiales de Iglesia Betel."
+description: "Escuchá los mensajes de los cultos dominicales y reuniones especiales de Iglesia Betel."
 ---

@@ -1,101 +1,87 @@
-// Iglesia Betel — main.js
+// Iglesia Betel main.js
 
-// ── Site timezone (Buenos Aires). Used for "próximamente" filtering by client date.
-function getSiteTimezone() {
-  const body = document.body;
-  return (body && body.getAttribute('data-timezone')) || 'America/Argentina/Buenos_Aires';
-}
-
-// Today's date (YYYY-MM-DD) in the site timezone, based on client's current time.
-function getTodayInSiteTz() {
-  const tz = getSiteTimezone();
-  const now = new Date();
-  const formatter = new Intl.DateTimeFormat('en-CA', { timeZone: tz, year: 'numeric', month: '2-digit', day: '2-digit' });
-  const parts = formatter.formatToParts(now);
-  const y = parts.find(p => p.type === 'year').value;
-  const m = parts.find(p => p.type === 'month').value;
-  const d = parts.find(p => p.type === 'day').value;
-  return y + '-' + m + '-' + d;
-}
-
-// ── Home: filter "Próximos eventos" by client date in site timezone ─────────────────
-function filterEventosHome() {
-  const grid = document.querySelector('.js-eventos-home-grid');
-  const noEventos = document.querySelector('.js-no-eventos-home');
-  if (!grid || !noEventos) return;
-  const cards = grid.querySelectorAll('.evento-card[data-date]');
-  const today = getTodayInSiteTz();
-  const maxVisible = parseInt(grid.getAttribute('data-max-visible') || '3', 10);
-  let visible = 0;
-  cards.forEach((card, i) => {
-    const date = card.getAttribute('data-date') || '';
-    const isUpcoming = date >= today;
-    if (isUpcoming && visible < maxVisible) {
-      card.style.display = '';
-      visible++;
-    } else {
-      card.style.display = 'none';
-    }
-  });
-  if (visible === 0) {
-    grid.style.display = 'none';
-    noEventos.style.display = 'block';
-  } else {
-    grid.style.display = '';
-    noEventos.style.display = 'none';
-  }
-}
-
-// ── Eventos page: distribute cards to Próximamente / Historial by client date ─────
-function filterEventosPage() {
-  const container = document.getElementById('eventos-all');
-  const proximosGrid = document.getElementById('eventos-proximos-grid');
-  const pasadosGrid = document.getElementById('historialGrid');
-  const noEventosProximos = document.querySelector('.js-no-eventos-proximos');
-  const countEl = document.getElementById('eventos-pasados-count');
-  const pasadosSection = document.getElementById('eventos-pasados-section');
-  if (!container || !proximosGrid || !pasadosGrid) return;
-  const cards = Array.from(container.querySelectorAll('.ev-card[data-date]'));
-  const today = getTodayInSiteTz();
-  const proximos = cards.filter(c => (c.getAttribute('data-date') || '') >= today);
-  const pasados = cards.filter(c => (c.getAttribute('data-date') || '') < today);
-  proximos.sort((a, b) => (a.getAttribute('data-date') || '').localeCompare(b.getAttribute('data-date') || ''));
-  pasados.sort((a, b) => (b.getAttribute('data-date') || '').localeCompare(a.getAttribute('data-date') || ''));
-  proximos.forEach(c => {
-    const top = c.querySelector('.ev-card-top');
-    if (top) top.classList.remove('realizado');
-    proximosGrid.appendChild(c);
-  });
-  pasados.forEach(c => {
-    const top = c.querySelector('.ev-card-top');
-    if (top) top.classList.add('realizado');
-    pasadosGrid.appendChild(c);
-  });
-  if (noEventosProximos) {
-    noEventosProximos.style.display = proximos.length === 0 ? 'block' : 'none';
-  }
-  if (countEl) countEl.textContent = pasados.length;
-  if (pasadosSection) pasadosSection.style.display = pasados.length === 0 ? 'none' : '';
-}
-
-// ── Nav mobile toggle ──────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', function () {
+  function buildContactMessage() {
+    const nameInput = document.getElementById('cta-contact-name');
+    const messageInput = document.getElementById('cta-contact-message');
+    const name = nameInput ? nameInput.value.trim() : '';
+    const message = messageInput ? messageInput.value.trim() : '';
+    const parts = [];
 
-  // Run client-side eventos filtering (home and /eventos/ page)
-  filterEventosHome();
-  if (document.getElementById('eventos-all')) filterEventosPage();
+    if (name) {
+      parts.push('Nombre: ' + name);
+    }
+
+    if (message) {
+      parts.push('Mensaje: ' + message);
+    }
+
+    if (parts.length === 0) {
+      parts.push('Mensaje: Quiero hacer una consulta.');
+    }
+
+    return {
+      name: name,
+      text: parts.join('\n')
+    };
+  }
+
+  function extractHandle(url) {
+    if (!url) return '';
+    try {
+      const parsed = new URL(url);
+      return parsed.pathname.replace(/^\/+|\/+$/g, '').split('/')[0] || '';
+    } catch (error) {
+      return '';
+    }
+  }
+
+  document.querySelectorAll('.js-contact-channel').forEach(link => {
+    link.addEventListener('click', event => {
+      const channel = link.dataset.channel || '';
+      const contact = buildContactMessage();
+      const whatsapp = link.dataset.whatsapp || '';
+      const email = link.dataset.email || '';
+      const instagram = link.dataset.instagram || '';
+      const facebook = link.dataset.facebook || '';
+      let href = link.getAttribute('href') || '#';
+
+      if (channel === 'whatsapp' && whatsapp) {
+        href = 'https://wa.me/' + whatsapp + '?text=' + encodeURIComponent(contact.text);
+      } else if (channel === 'email' && email) {
+        const subject = contact.name ? 'Contacto web ' + contact.name : 'Contacto web';
+        href = 'mailto:' + email + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(contact.text);
+      } else if (channel === 'instagram' && instagram) {
+        const handle = extractHandle(instagram);
+        href = handle ? 'https://ig.me/m/' + handle + '?text=' + encodeURIComponent(contact.text) : instagram;
+      } else if (channel === 'facebook' && facebook) {
+        const handle = extractHandle(facebook);
+        href = handle ? 'https://m.me/' + handle + '?ref=' + encodeURIComponent(contact.text) : facebook;
+      }
+
+      if (!href || href === '#') {
+        event.preventDefault();
+        return;
+      }
+
+      link.setAttribute('href', href);
+
+      if (channel === 'whatsapp' || channel === 'instagram' || channel === 'facebook') {
+        link.setAttribute('target', '_blank');
+        link.setAttribute('rel', 'noopener');
+      }
+    });
+  });
 
   const toggle = document.getElementById('navToggle');
   const mobile = document.getElementById('navMobile');
   if (toggle && mobile) {
     toggle.addEventListener('click', () => {
       mobile.classList.toggle('open');
-      // animate hamburger
       toggle.classList.toggle('open');
     });
   }
 
-  // ── FAQ accordion ────────────────────────────────────────────
   document.querySelectorAll('.faq-q').forEach(q => {
     q.addEventListener('click', () => {
       const item = q.parentElement;
@@ -105,9 +91,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  // ── Filtros de predicaciones (client-side) ───────────────────
-  // Each filter button has data-filter="serie-slug" or data-filter="all"
-  // Each pred-row has data-serie="serie-slug" and data-tags="tag1,tag2"
   document.querySelectorAll('.filtro-btn').forEach(btn => {
     btn.addEventListener('click', function () {
       document.querySelectorAll('.filtro-btn').forEach(b => b.classList.remove('active'));
@@ -129,7 +112,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  // ── Netlify Identity redirect ────────────────────────────────
   if (window.netlifyIdentity) {
     window.netlifyIdentity.on('init', user => {
       if (!user) {
@@ -139,5 +121,4 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     });
   }
-
 });

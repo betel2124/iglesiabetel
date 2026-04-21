@@ -1,6 +1,6 @@
 ---
 title: "Nosotros"
-description: "Una iglesia local con más de 15 años de ministerio fiel en la comunidad de Berazategui."
+description: "Una iglesia local con una trayectoria de ministerio fiel en la comunidad de Berazategui."
 vision: |
   Ser una iglesia local sólida, bíblicamente fundamentada, donde cada persona encuentre un hogar espiritual, sea formada en la fe y enviada a vivir el evangelio en su entorno cotidiano.
 mision: |

@@ -14,7 +14,6 @@
       (dict "url" "/nosotros/"      "label" "Nosotros")
       (dict "url" "/ministerios/"   "label" "Ministerios")
       (dict "url" "/predicaciones/" "label" "Predicaciones")
-      (dict "url" "/eventos/"       "label" "Eventos")
     }}
     {{ range $pages }}
       <li>
@@ -27,7 +26,7 @@
         </a>
       </li>
     {{ end }}
-    <li><a href="/contacto/" class="nav-cta">Visitanos</a></li>
+    <li><a href="/contacto/" class="nav-cta">Visítanos</a></li>
   </ul>
 
   <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">
@@ -40,6 +39,5 @@
   <a href="/nosotros/" {{ if hasPrefix $currentPage.RelPermalink "/nosotros" }}class="active"{{ end }}>Nosotros</a>
   <a href="/ministerios/" {{ if hasPrefix $currentPage.RelPermalink "/ministerios" }}class="active"{{ end }}>Ministerios</a>
   <a href="/predicaciones/" {{ if hasPrefix $currentPage.RelPermalink "/predicaciones" }}class="active"{{ end }}>Predicaciones</a>
-  <a href="/eventos/" {{ if hasPrefix $currentPage.RelPermalink "/eventos" }}class="active"{{ end }}>Eventos</a>
-  <a href="/contacto/" {{ if hasPrefix $currentPage.RelPermalink "/contacto" }}class="active"{{ end }}>Visitanos</a>
+  <a href="/contacto/" {{ if hasPrefix $currentPage.RelPermalink "/contacto" }}class="active"{{ end }}>Visítanos</a>
 </nav>

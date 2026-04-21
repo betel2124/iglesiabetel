@@ -1,102 +1,77 @@
 # Iglesia Betel - Project Documentation
 
 ## Philosophy & Architecture
-This project is a static website built with **Hugo**. It aims to provide a fast, secure, and easy-to-maintain web presence for Iglesia Betel. The visual identity is based on a detailed design specification (`documentation/betel-design-spec.html`).
+This project is a static website built with Hugo. It is designed to be fast, simple to maintain, and editable by non-technical users through Decap CMS.
 
 ### Key Concepts
-1. **Static Core, Dynamic Filtering**: The site was initially built with server-side date filtering. This was later evolved to a client-side JavaScript approach (`main.js`) for time-sensitive displays (like "Upcoming Events" vs "Past Events"). This solves timezone complexities and allows the site to remain static without needing daily rebuilds just to move an event from "Upcoming" to "History".
-2. **Timezone Awareness**: The site explicitly handles dates in the `America/Argentina/Buenos_Aires` timezone, configured in `hugo.toml` and read by the client-side JS. This ensures event visibility is accurate for the local congregation, regardless of where the user is browsing from.
-3. **Decap CMS (Netlify CMS) / Identity**: The project is integrated with Decap CMS (via `/static/admin/`) and Netlify Identity. This provides a user-friendly interface for non-technical editors to manage content (events, sermons) without interacting with Markdown or Git directly.
+1. Static site generation with Hugo.
+2. Global configuration in `hugo.toml`.
+3. Editable content in `content/`.
+4. Shared templates in `layouts/`.
+5. Decap CMS integration in `static/admin/`.
 
 ## Configuration
-Global site settings are managed in two key places:
-- **`hugo.toml`**: Contains core Hugo settings, including the site's `timeZone` and a matching `params.timezone` for the front-end. It also defines the taxonomies used across the site (`series`, `tags`, `tipos`).
-- **`hugo.toml` (`[params]`)**: Stores contact information, schedules, and other global site settings used by the layouts.
+- `hugo.toml`: Core Hugo settings plus `[params]` for contact details, schedules, and other site-wide values.
 
-## Content Structure & Taxonomies
-The site's content is organized into "sections" which correspond to the top-level folders within the `/content/` directory. Each Markdown (`.md`) file inside these folders becomes a page on the website.
-
-The front matter (the YAML block at the top of each `.md` file) contains metadata for the page.
-
-### `/content/eventos/`
-This folder contains all church events. Each `.md` file represents a single event.
-
-**Purpose**: To create individual pages for upcoming and past events. The `main.js` script uses the `date` field to dynamically sort these on the front-end into "Próximos" and "Historial".
-
-**Template Requirement**: The `layouts/eventos/list.html` template must render **ALL** events (past and future) into a hidden container (e.g., `#eventos-all`) with a `data-date` attribute. It must **NOT** filter by date server-side (e.g. `where ... "Date" "ge" now`), otherwise the client-side timezone logic cannot function correctly.
-
-**Content Lifecycle**:
-1. An event is created with a future `date`.
-2. After the event, the file can be updated to change `estado` to `"realizado"` and add a `## Crónica` section to the body with a summary or photos.
-
-**Front Matter Details (`.md` options):**
-- `title` (String): The name of the event.
-- `date` (Datetime): The date and time of the event. This is the most critical field, used for client-side filtering.
-- `estado` (String): The intended state of the event (e.g., `proximo`, `realizado`). While client-side filtering is date-based, this field was part of the original content model for administrative purposes.
-- `tipos` (Array of Strings): A taxonomy used to categorize the event. Observed values include:
-  - `aniversario`: Church anniversary celebrations.
-  - `damas`: Events for women.
-  - `misiones`: Missionary-focused services.
-  - `evangelismo`: Outreach campaigns.
-  - `encuentro`: Social gatherings (e.g., "Cena de amigos").
-  - `retiro`: Retreats.
-  - `culto-especial`: Special services (e.g., "Semana Santa").
-
-**Example (`/content/eventos/retiro-jovenes.md`):**
-```yaml
----
-title: "Retiro de Jóvenes 2025"
-date: 2025-02-21T18:00:00-03:00
-tipos: ["retiro"]
-estado: "proximo"
----
-
-¡Prepárate para un fin de semana inolvidable! El retiro de jóvenes de este año se centrará en...
-
-## Crónica
-(This section is added after the event)
-El retiro fue una bendición, con más de 50 jóvenes participando...
-```
+## Content Structure
 
 ### `/content/predicaciones/`
-This folder contains all sermons. Each `.md` file represents a single sermon, likely with an embedded video/audio player and a summary.
+Contains one Markdown file per sermon.
 
-**Purpose**: To create an archive of sermons that can be filtered by topic (`tags`) or by preaching series (`series`) on the front-end.
+Typical front matter fields:
+- `title`
+- `date`
+- `predicador`
+- `serie`
+- `serie_ep`
+- `pasaje`
+- `duracion`
+- `youtube_url`
+- `youtube_id`
+- `destacado`
+- `tags`
 
-**Front Matter Details (`.md` options):**
-- `title` (String): The title of the sermon.
-- `date` (Datetime): The date the sermon was preached.
-- `series` (Array of Strings): A taxonomy to group the sermon into a specific series. The JavaScript filter uses this value.
-- `tags` (Array of Strings): A taxonomy for thematic topics covered in the sermon. The JavaScript filter also uses this.
-- `predicador` (String, inferred): A field for the speaker's name is highly likely to exist for display purposes.
+### `/content/ministerios/`
+Contains one Markdown file per ministry.
 
-**Example (`/content/predicaciones/gozo-en-la-prueba.md`):**
-```yaml
----
-title: "El Gozo en Medio de la Prueba"
-date: 2024-07-21T11:00:00-03:00
-series: ["fruto-del-espiritu"]
-tags: ["gozo", "caracter-cristiano"]
-predicador: "Pastor Juan Pérez"
----
+Typical front matter fields:
+- `title`
+- `weight`
+- `icon`
+- `color`
+- `dia`
+- `hora`
+- `edad`
+- `destacado`
 
-En este sermón, exploramos cómo el gozo, como fruto del Espíritu, puede manifestarse incluso en...
-```
+### `/content/nosotros/_index.md`
+Stores the editable content for the Nosotros section:
+- `description`
+- `vision`
+- `mision`
+- `historia`
+- `afiliacion`
 
-## JavaScript Functionality (`main.js`)
+## JavaScript Functionality
 
-- **`getSiteTimezone()`**: Returns the site's timezone (default: Buenos Aires).
-- **`getTodayInSiteTz()`**: Calculates the current date in the site's timezone for accurate filtering.
-- **`filterEventosHome()`**: Controls visibility of events on the homepage.
-  - **Logic**: Shows upcoming events (`date >= today`).
-  - **Config**: Limit defined by `data-max-visible` attribute on `.js-eventos-home-grid` (default: 3).
-  - **State**: Toggles `.js-no-eventos-home` if no events are visible.
-- **`filterEventosPage()`**: On the main Events page.
-  - **Logic**: Splits `.ev-card` items into "Upcoming" and "History" based on `data-date`.
-  - **Sorting**: Upcoming (ascending), History (descending).
-  - **Visuals**: Adds `.realizado` class to past event cards.
-  - **State**: Toggles `.js-no-eventos-proximos` and updates `#eventos-pasados-count`.
-- **Predicaciones Filtering**: (Event listener on `.filtro-btn`) Filters sermon rows based on `data-serie` or `data-tags`.
-- **Mobile Nav**: Handles the hamburger menu toggle.
-- **FAQ Accordion**: Handles the expand/collapse logic for FAQ items.
-- **Netlify Identity**: Handles redirecting users to the `/admin/` panel after login.
+`static/js/main.js` handles:
+- Mobile navigation toggle
+- FAQ accordion behavior
+- Client-side filtering for predicaciones
+- Netlify Identity redirect to `/admin/`
+
+## Main Templates
+
+- `layouts/index.html`: Home page
+- `layouts/nosotros/list.html`: Nosotros section list view
+- `layouts/nosotros/single.html`: Nosotros single template
+- `layouts/predicaciones/list.html`: Sermons archive
+- `layouts/predicaciones/single.html`: Sermon detail
+- `layouts/contacto/single.html`: Contact page
+- `layouts/partials/nav.html`: Main navigation
+- `layouts/partials/footer.html`: Footer
+
+## Notes
+
+- `anios_ministerio` is defined in `hugo.toml` and used in the home page and Nosotros templates.
+- The `public/` directory contains generated output and can be rebuilt from Hugo.
