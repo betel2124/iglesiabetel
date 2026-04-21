@@ -2,101 +2,101 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tipos on Iglesia Betel</title>
-    <link>https://iglesiabetel.com.ar/tipos/</link>
+    <link>http://localhost:1313/tipos/</link>
     <description>Recent content in Tipos on Iglesia Betel</description>
     <generator>Hugo</generator>
     <language>es-AR</language>
     <lastBuildDate>Sun, 20 Dec 2026 00:00:00 -0300</lastBuildDate>
-    <atom:link href="https://iglesiabetel.com.ar/tipos/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tipos/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Navidad</title>
-      <link>https://iglesiabetel.com.ar/tipos/navidad/</link>
+      <link>http://localhost:1313/tipos/navidad/</link>
       <pubDate>Sun, 15 Dec 2024 00:00:00 -0300</pubDate>
-      <guid>https://iglesiabetel.com.ar/tipos/navidad/</guid>
+      <guid>http://localhost:1313/tipos/navidad/</guid>
       <description></description>
     </item>
     <item>
       <title>Misiones</title>
-      <link>https://iglesiabetel.com.ar/tipos/misiones/</link>
+      <link>http://localhost:1313/tipos/misiones/</link>
       <pubDate>Sun, 09 Feb 2025 00:00:00 -0300</pubDate>
-      <guid>https://iglesiabetel.com.ar/tipos/misiones/</guid>
+      <guid>http://localhost:1313/tipos/misiones/</guid>
       <description></description>
     </item>
     <item>
       <title>Jovenes</title>
-      <link>https://iglesiabetel.com.ar/tipos/jovenes/</link>
+      <link>http://localhost:1313/tipos/jovenes/</link>
       <pubDate>Sat, 17 Aug 2024 00:00:00 -0300</pubDate>
-      <guid>https://iglesiabetel.com.ar/tipos/jovenes/</guid>
+      <guid>http://localhost:1313/tipos/jovenes/</guid>
       <description></description>
     </item>
     <item>
       <title>Encuentro</title>
-      <link>https://iglesiabetel.com.ar/tipos/encuentro/</link>
+      <link>http://localhost:1313/tipos/encuentro/</link>
       <pubDate>Sat, 20 Jul 2024 00:00:00 -0300</pubDate>
-      <guid>https://iglesiabetel.com.ar/tipos/encuentro/</guid>
+      <guid>http://localhost:1313/tipos/encuentro/</guid>
       <description></description>
     </item>
     <item>
       <title>Retiro</title>
-      <link>https://iglesiabetel.com.ar/tipos/retiro/</link>
+      <link>http://localhost:1313/tipos/retiro/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://iglesiabetel.com.ar/tipos/retiro/</guid>
+      <guid>http://localhost:1313/tipos/retiro/</guid>
       <description></description>
     </item>
     <item>
       <title>Culto-Especial</title>
-      <link>https://iglesiabetel.com.ar/tipos/culto-especial/</link>
+      <link>http://localhost:1313/tipos/culto-especial/</link>
       <pubDate>Sun, 08 Jun 2025 00:00:00 -0300</pubDate>
-      <guid>https://iglesiabetel.com.ar/tipos/culto-especial/</guid>
+      <guid>http://localhost:1313/tipos/culto-especial/</guid>
       <description></description>
     </item>
     <item>
       <title>Aniversario</title>
-      <link>https://iglesiabetel.com.ar/tipos/aniversario/</link>
+      <link>http://localhost:1313/tipos/aniversario/</link>
       <pubDate>Sun, 04 May 2025 00:00:00 -0300</pubDate>
-      <guid>https://iglesiabetel.com.ar/tipos/aniversario/</guid>
+      <guid>http://localhost:1313/tipos/aniversario/</guid>
       <description></description>
     </item>
     <item>
       <title>Capacitacion</title>
-      <link>https://iglesiabetel.com.ar/tipos/capacitacion/</link>
+      <link>http://localhost:1313/tipos/capacitacion/</link>
       <pubDate>Sun, 16 Mar 2025 00:00:00 -0300</pubDate>
-      <guid>https://iglesiabetel.com.ar/tipos/capacitacion/</guid>
+      <guid>http://localhost:1313/tipos/capacitacion/</guid>
       <description></description>
     </item>
     <item>
       <title>Ayuno-Oracion</title>
-      <link>https://iglesiabetel.com.ar/tipos/ayuno-oracion/</link>
+      <link>http://localhost:1313/tipos/ayuno-oracion/</link>
       <pubDate>Sun, 12 Jan 2025 00:00:00 -0300</pubDate>
-      <guid>https://iglesiabetel.com.ar/tipos/ayuno-oracion/</guid>
+      <guid>http://localhost:1313/tipos/ayuno-oracion/</guid>
       <description></description>
     </item>
     <item>
       <title>Damas</title>
-      <link>https://iglesiabetel.com.ar/tipos/damas/</link>
+      <link>http://localhost:1313/tipos/damas/</link>
       <pubDate>Sat, 02 Nov 2024 00:00:00 -0300</pubDate>
-      <guid>https://iglesiabetel.com.ar/tipos/damas/</guid>
+      <guid>http://localhost:1313/tipos/damas/</guid>
       <description></description>
     </item>
     <item>
       <title>Evangelismo</title>
-      <link>https://iglesiabetel.com.ar/tipos/evangelismo/</link>
+      <link>http://localhost:1313/tipos/evangelismo/</link>
       <pubDate>Sat, 12 Oct 2024 00:00:00 -0300</pubDate>
-      <guid>https://iglesiabetel.com.ar/tipos/evangelismo/</guid>
+      <guid>http://localhost:1313/tipos/evangelismo/</guid>
       <description></description>
     </item>
     <item>
       <title>Bautismos</title>
-      <link>https://iglesiabetel.com.ar/tipos/bautismos/</link>
+      <link>http://localhost:1313/tipos/bautismos/</link>
       <pubDate>Sat, 07 Sep 2024 00:00:00 -0300</pubDate>
-      <guid>https://iglesiabetel.com.ar/tipos/bautismos/</guid>
+      <guid>http://localhost:1313/tipos/bautismos/</guid>
       <description></description>
     </item>
     <item>
       <title>Vigilia</title>
-      <link>https://iglesiabetel.com.ar/tipos/vigilia/</link>
+      <link>http://localhost:1313/tipos/vigilia/</link>
       <pubDate>Sat, 10 Feb 2024 00:00:00 -0300</pubDate>
-      <guid>https://iglesiabetel.com.ar/tipos/vigilia/</guid>
+      <guid>http://localhost:1313/tipos/vigilia/</guid>
       <description></description>
     </item>
   </channel>

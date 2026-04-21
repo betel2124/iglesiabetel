@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Caracter-Cristiano on Iglesia Betel</title>
-    <link>https://iglesiabetel.com.ar/tags/caracter-cristiano/</link>
+    <link>http://localhost:1313/tags/caracter-cristiano/</link>
     <description>Recent content in Caracter-Cristiano on Iglesia Betel</description>
     <generator>Hugo</generator>
     <language>es-AR</language>
     <lastBuildDate>Sun, 11 May 2025 00:00:00 -0300</lastBuildDate>
-    <atom:link href="https://iglesiabetel.com.ar/tags/caracter-cristiano/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/caracter-cristiano/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Bienaventurados los mansos: la fortaleza de la mansedumbre</title>
-      <link>https://iglesiabetel.com.ar/predicaciones/2025-05-11-bienaventurados-los-mansos/</link>
+      <link>http://localhost:1313/predicaciones/2025-05-11-bienaventurados-los-mansos/</link>
       <pubDate>Sun, 11 May 2025 00:00:00 -0300</pubDate>
-      <guid>https://iglesiabetel.com.ar/predicaciones/2025-05-11-bienaventurados-los-mansos/</guid>
+      <guid>http://localhost:1313/predicaciones/2025-05-11-bienaventurados-los-mansos/</guid>
       <description>&lt;h2 id=&#34;resumen&#34;&gt;Resumen&lt;/h2&gt;&#xA;&lt;p&gt;Contra toda intuición cultural, Jesús llama bienaventurados a los mansos. La mansedumbre bíblica no es debilidad: es fortaleza bajo control, poder domesticado por la gracia.&lt;/p&gt;</description>
     </item>
   </channel>

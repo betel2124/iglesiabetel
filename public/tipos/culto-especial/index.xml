@@ -2,59 +2,59 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Culto-Especial on Iglesia Betel</title>
-    <link>https://iglesiabetel.com.ar/tipos/culto-especial/</link>
+    <link>http://localhost:1313/tipos/culto-especial/</link>
     <description>Recent content in Culto-Especial on Iglesia Betel</description>
     <generator>Hugo</generator>
     <language>es-AR</language>
     <lastBuildDate>Sun, 08 Mar 2026 00:00:00 -0300</lastBuildDate>
-    <atom:link href="https://iglesiabetel.com.ar/tipos/culto-especial/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tipos/culto-especial/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Noche de adoración y clamor</title>
-      <link>https://iglesiabetel.com.ar/eventos/2026-03-08-noche-adoracion/</link>
+      <link>http://localhost:1313/eventos/2026-03-08-noche-adoracion/</link>
       <pubDate>Sun, 08 Mar 2026 00:00:00 -0300</pubDate>
-      <guid>https://iglesiabetel.com.ar/eventos/2026-03-08-noche-adoracion/</guid>
+      <guid>http://localhost:1313/eventos/2026-03-08-noche-adoracion/</guid>
       <description>&lt;p&gt;Una noche dedicada a adorar juntos y clamar por la obra del Espíritu Santo en nuestras vidas y en la ciudad.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Noche de Alabanza y Oración</title>
-      <link>https://iglesiabetel.com.ar/eventos/2025-06-08-noche-de-alabanza/</link>
+      <link>http://localhost:1313/eventos/2025-06-08-noche-de-alabanza/</link>
       <pubDate>Sun, 08 Jun 2025 00:00:00 -0300</pubDate>
-      <guid>https://iglesiabetel.com.ar/eventos/2025-06-08-noche-de-alabanza/</guid>
+      <guid>http://localhost:1313/eventos/2025-06-08-noche-de-alabanza/</guid>
       <description>&lt;p&gt;Una noche especial para buscar a Dios juntos en adoración y oración. No es un culto ordinario: venimos con el único propósito de encontrarnos con Él.&lt;/p&gt;&#xA;&lt;p&gt;Traé tu Biblia. No hace falta inscripción previa.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Domingo de Ramos</title>
-      <link>https://iglesiabetel.com.ar/eventos/2025-04-06-domingo-ramos/</link>
+      <link>http://localhost:1313/eventos/2025-04-06-domingo-ramos/</link>
       <pubDate>Sun, 06 Apr 2025 00:00:00 -0300</pubDate>
-      <guid>https://iglesiabetel.com.ar/eventos/2025-04-06-domingo-ramos/</guid>
+      <guid>http://localhost:1313/eventos/2025-04-06-domingo-ramos/</guid>
       <description>&lt;p&gt;Recordamos la entrada triunfal de Jesús en Jerusalén y preparamos nuestro corazón para Semana Santa.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Día del padre</title>
-      <link>https://iglesiabetel.com.ar/eventos/2024-06-16-dia-del-padre/</link>
+      <link>http://localhost:1313/eventos/2024-06-16-dia-del-padre/</link>
       <pubDate>Sun, 16 Jun 2024 00:00:00 -0300</pubDate>
-      <guid>https://iglesiabetel.com.ar/eventos/2024-06-16-dia-del-padre/</guid>
+      <guid>http://localhost:1313/eventos/2024-06-16-dia-del-padre/</guid>
       <description>&lt;p&gt;Honramos a los padres de la congregación con un culto especial y un mensaje de ánimo para los hogares.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Día de la familia</title>
-      <link>https://iglesiabetel.com.ar/eventos/2024-05-05-dia-de-la-familia/</link>
+      <link>http://localhost:1313/eventos/2024-05-05-dia-de-la-familia/</link>
       <pubDate>Sun, 05 May 2024 00:00:00 -0300</pubDate>
-      <guid>https://iglesiabetel.com.ar/eventos/2024-05-05-dia-de-la-familia/</guid>
+      <guid>http://localhost:1313/eventos/2024-05-05-dia-de-la-familia/</guid>
       <description>&lt;p&gt;Celebramos juntos el diseño de Dios para la familia con un culto especial y actividades para niños.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Semana Santa: recordando la cruz</title>
-      <link>https://iglesiabetel.com.ar/eventos/2024-03-30-semana-santa/</link>
+      <link>http://localhost:1313/eventos/2024-03-30-semana-santa/</link>
       <pubDate>Sat, 30 Mar 2024 00:00:00 -0300</pubDate>
-      <guid>https://iglesiabetel.com.ar/eventos/2024-03-30-semana-santa/</guid>
+      <guid>http://localhost:1313/eventos/2024-03-30-semana-santa/</guid>
       <description>&lt;p&gt;Reunión especial de Semana Santa con tiempo de adoración, reflexión bíblica y Santa Cena.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Noche de visión 2024</title>
-      <link>https://iglesiabetel.com.ar/eventos/2024-01-15-vision-2024/</link>
+      <link>http://localhost:1313/eventos/2024-01-15-vision-2024/</link>
       <pubDate>Mon, 15 Jan 2024 00:00:00 -0300</pubDate>
-      <guid>https://iglesiabetel.com.ar/eventos/2024-01-15-vision-2024/</guid>
+      <guid>http://localhost:1313/eventos/2024-01-15-vision-2024/</guid>
       <description>&lt;p&gt;Una reunión especial de comienzo de año para compartir la visión pastoral para 2024, orar juntos y consagrar el nuevo ciclo al Señor.&lt;/p&gt;</description>
     </item>
   </channel>

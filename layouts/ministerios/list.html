@@ -56,17 +56,18 @@
 ) }}
 
 {{ $ministerios := (where .Site.RegularPages "Section" "ministerios").ByParam "weight" }}
-{{ $destacado   := where $ministerios "Params.destacado" true | first 1 }}
+{{ $destacados  := where $ministerios "Params.destacado" true }}
 {{ $resto       := where $ministerios "Params.destacado" "ne" true }}
 
 <section class="section" style="background:var(--white);">
   <div class="section-inner">
 
     {{/* ── FEATURED ── */}}
-    {{ with index $destacado 0 }}
-    <p class="section-label">Ministerio destacado</p>
-    <h2 class="section-title">{{ .Title }}</h2>
+    {{ if gt (len $destacados) 0 }}
+    <p class="section-label">Ministerios destacados</p>
+    <h2 class="section-title">Conocelos <em>primero</em></h2>
     <div class="divider"></div>
+    {{ range $destacados }}
     <div class="min-featured-grid">
       <div class="min-featured-img">
         <span class="min-featured-emoji">{{ .Params.icon | default "⚡" }}</span>
@@ -98,8 +99,10 @@
       </div>
     </div>
     {{ end }}
+    {{ end }}
 
     {{/* ── ALL MINISTERIOS ── */}}
+    {{ if gt (len $resto) 0 }}
     <p class="section-label">Todos los ministerios</p>
     <h2 class="section-title">Un lugar para <em>cada uno</em></h2>
     <div class="divider"></div>
@@ -118,6 +121,7 @@
       </a>
       {{ end }}
     </div>
+    {{ end }}
   </div>
 </section>
 
@@ -149,3 +153,4 @@
 
 </div>
 {{ end }}
+

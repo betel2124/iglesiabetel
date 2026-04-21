@@ -1,11 +1,11 @@
 ---
-title: "Niños Betel"
+title: "Exploradores del Rey"
 weight: 2
-icon: "👶"
+icon: "⚡"
 color: "green"
-dia: "Domingo"
+dia: "Sábado"
 hora: "10:00 hs"
-destacado: false
+destacado: true
 ---
 
 Educación bíblica y formación en la fe para los más chicos, con dinámicas adaptadas a cada etapa de la niñez.

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Evangelismo on Iglesia Betel</title>
-    <link>https://iglesiabetel.com.ar/tipos/evangelismo/</link>
+    <link>http://localhost:1313/tipos/evangelismo/</link>
     <description>Recent content in Evangelismo on Iglesia Betel</description>
     <generator>Hugo</generator>
     <language>es-AR</language>
     <lastBuildDate>Sat, 12 Oct 2024 00:00:00 -0300</lastBuildDate>
-    <atom:link href="https://iglesiabetel.com.ar/tipos/evangelismo/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tipos/evangelismo/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Campaña evangelística en el barrio</title>
-      <link>https://iglesiabetel.com.ar/eventos/2024-10-12-campana-evangelistica/</link>
+      <link>http://localhost:1313/eventos/2024-10-12-campana-evangelistica/</link>
       <pubDate>Sat, 12 Oct 2024 00:00:00 -0300</pubDate>
-      <guid>https://iglesiabetel.com.ar/eventos/2024-10-12-campana-evangelistica/</guid>
+      <guid>http://localhost:1313/eventos/2024-10-12-campana-evangelistica/</guid>
       <description>&lt;p&gt;Salimos a las calles para compartir el evangelio con música, testimonios y un mensaje claro de salvación.&lt;/p&gt;</description>
     </item>
   </channel>

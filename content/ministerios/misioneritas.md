@@ -1,11 +1,11 @@
 ---
-title: "Jóvenes Betel"
+title: "Misioneritas"
 weight: 1
-icon: "⚡"
+icon: "💮"
 color: "red"
-dia: "Viernes"
-hora: "20:30 hs"
-edad: "13 a 30 años"
+dia: "Sábado"
+hora: "10:00 hs"
+edad: "5 a 14 años"
 destacado: true
 ---
 

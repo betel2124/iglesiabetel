@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Navidad on Iglesia Betel</title>
-    <link>https://iglesiabetel.com.ar/tipos/navidad/</link>
+    <link>http://localhost:1313/tipos/navidad/</link>
     <description>Recent content in Navidad on Iglesia Betel</description>
     <generator>Hugo</generator>
     <language>es-AR</language>
     <lastBuildDate>Sun, 20 Dec 2026 00:00:00 -0300</lastBuildDate>
-    <atom:link href="https://iglesiabetel.com.ar/tipos/navidad/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tipos/navidad/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Culto de Navidad 2026</title>
-      <link>https://iglesiabetel.com.ar/eventos/2026-12-20-culto-navidad-2026/</link>
+      <link>http://localhost:1313/eventos/2026-12-20-culto-navidad-2026/</link>
       <pubDate>Sun, 20 Dec 2026 00:00:00 -0300</pubDate>
-      <guid>https://iglesiabetel.com.ar/eventos/2026-12-20-culto-navidad-2026/</guid>
+      <guid>http://localhost:1313/eventos/2026-12-20-culto-navidad-2026/</guid>
       <description>&lt;p&gt;Celebramos juntos la Navidad, recordando el nacimiento de nuestro Salvador con teatro, música y un mensaje evangelístico.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Culto de Navidad 2024</title>
-      <link>https://iglesiabetel.com.ar/eventos/2024-12-15-culto-navidad/</link>
+      <link>http://localhost:1313/eventos/2024-12-15-culto-navidad/</link>
       <pubDate>Sun, 15 Dec 2024 00:00:00 -0300</pubDate>
-      <guid>https://iglesiabetel.com.ar/eventos/2024-12-15-culto-navidad/</guid>
+      <guid>http://localhost:1313/eventos/2024-12-15-culto-navidad/</guid>
       <description>&lt;p&gt;Celebramos el nacimiento de Jesús con música, participación de los niños y un mensaje evangelístico.&lt;/p&gt;</description>
     </item>
   </channel>
