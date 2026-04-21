@@ -2,52 +2,52 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Iglesia Betel</title>
-    <link>http://localhost:1313/tags/</link>
+    <link>https://iglesiabetel.com.ar/tags/</link>
     <description>Recent content in Tags on Iglesia Betel</description>
     <generator>Hugo</generator>
     <language>es-AR</language>
     <lastBuildDate>Sun, 01 Jun 2025 00:00:00 -0300</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://iglesiabetel.com.ar/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Avivamiento</title>
-      <link>http://localhost:1313/tags/avivamiento/</link>
+      <link>https://iglesiabetel.com.ar/tags/avivamiento/</link>
       <pubDate>Sun, 01 Jun 2025 00:00:00 -0300</pubDate>
-      <guid>http://localhost:1313/tags/avivamiento/</guid>
+      <guid>https://iglesiabetel.com.ar/tags/avivamiento/</guid>
       <description></description>
     </item>
     <item>
       <title>Espiritu-Santo</title>
-      <link>http://localhost:1313/tags/espiritu-santo/</link>
+      <link>https://iglesiabetel.com.ar/tags/espiritu-santo/</link>
       <pubDate>Sun, 01 Jun 2025 00:00:00 -0300</pubDate>
-      <guid>http://localhost:1313/tags/espiritu-santo/</guid>
+      <guid>https://iglesiabetel.com.ar/tags/espiritu-santo/</guid>
       <description></description>
     </item>
     <item>
       <title>Gracia</title>
-      <link>http://localhost:1313/tags/gracia/</link>
+      <link>https://iglesiabetel.com.ar/tags/gracia/</link>
       <pubDate>Sun, 25 May 2025 00:00:00 -0300</pubDate>
-      <guid>http://localhost:1313/tags/gracia/</guid>
+      <guid>https://iglesiabetel.com.ar/tags/gracia/</guid>
       <description></description>
     </item>
     <item>
       <title>Santificacion</title>
-      <link>http://localhost:1313/tags/santificacion/</link>
+      <link>https://iglesiabetel.com.ar/tags/santificacion/</link>
       <pubDate>Sun, 25 May 2025 00:00:00 -0300</pubDate>
-      <guid>http://localhost:1313/tags/santificacion/</guid>
+      <guid>https://iglesiabetel.com.ar/tags/santificacion/</guid>
       <description></description>
     </item>
     <item>
       <title>Caracter-Cristiano</title>
-      <link>http://localhost:1313/tags/caracter-cristiano/</link>
+      <link>https://iglesiabetel.com.ar/tags/caracter-cristiano/</link>
       <pubDate>Sun, 11 May 2025 00:00:00 -0300</pubDate>
-      <guid>http://localhost:1313/tags/caracter-cristiano/</guid>
+      <guid>https://iglesiabetel.com.ar/tags/caracter-cristiano/</guid>
       <description></description>
     </item>
     <item>
       <title>Sermon-Del-Monte</title>
-      <link>http://localhost:1313/tags/sermon-del-monte/</link>
+      <link>https://iglesiabetel.com.ar/tags/sermon-del-monte/</link>
       <pubDate>Sun, 11 May 2025 00:00:00 -0300</pubDate>
-      <guid>http://localhost:1313/tags/sermon-del-monte/</guid>
+      <guid>https://iglesiabetel.com.ar/tags/sermon-del-monte/</guid>
       <description></description>
     </item>
   </channel>

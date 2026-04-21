@@ -170,7 +170,7 @@
 
 {{/* ── HORARIOS STRIP ── */}}
 <div class="strip">
-  ⏱ Servicios — Domingo {{ $p.horario_domingo }} · Miércoles {{ $p.horario_miercoles }} · Viernes Jóvenes {{ $p.horario_viernes }}
+  ⏱ Reunión principal: Domingo {{ $p.horario_domingo }}
 </div>
 
 {{/* ── HORARIOS ── */}}
@@ -178,19 +178,18 @@
   <div class="horarios-inner">
     <div class="horario-item">
       <div class="horario-day">Domingo</div>
-      <div class="horario-event">Culto Principal</div>
-      <div class="horario-time">{{ $p.horario_domingo }} — Salón principal</div>
-      <div class="horario-tag">Esta semana</div>
+      <div class="horario-event">Reunión Principal</div>
+      <div class="horario-time">{{ $p.horario_domingo }}</div>
     </div>
     <div class="horario-item">
-      <div class="horario-day">Miércoles</div>
+      <div class="horario-day">Jueves</div>
       <div class="horario-event">Reunión de Oración</div>
-      <div class="horario-time">{{ $p.horario_miercoles }} — Salón principal</div>
+      <div class="horario-time">{{ $p.horario_jueves }}</div>
     </div>
     <div class="horario-item">
-      <div class="horario-day">Viernes</div>
-      <div class="horario-event">Jóvenes Betel</div>
-      <div class="horario-time">{{ $p.horario_viernes }} — Salón de jóvenes</div>
+      <div class="horario-day">Durante la semana</div>
+      <div class="horario-event">Reuniones de oración</div>
+      <div class="horario-time">Desde tu casa — Por videollamada</div>
     </div>
   </div>
 </section>
@@ -209,7 +208,7 @@
         </div>
         <div class="vision-badge">
           <span class="vision-badge-num">{{ $p.anios_ministerio | default "15" }}+</span>
-          <span class="vision-badge-text">años de ministerio</span>
+          <span class="vision-badge-text">años de servicio</span>
         </div>
       </div>
       <div class="vision-text">
@@ -220,7 +219,7 @@
           {{ with .Params.vision_texto }}
             {{ . | markdownify }}
           {{ else }}
-            <p>Somos una congregación pentecostal clásica ubicada en Berazategui. Creemos en la autoridad de las Escrituras, la obra del Espíritu Santo y el evangelio de Jesucristo como el único camino de salvación.</p>
+            <p>Somos una congregación pentecostal clásica ubicada en Berazategui. Creemos en Jesucristo como el único camino de salvación, en la autoridad de las Escrituras y la obra del Espíritu Santo.</p>
           {{ end }}
         </div>
         <div class="vision-pillars">
@@ -231,47 +230,6 @@
         </div>
         <a href="/nosotros/" class="btn btn-outline">Conocé nuestra historia</a>
       </div>
-    </div>
-  </div>
-</section>
-
-{{/* ── PRÓXIMOS EVENTOS (filtered by client date in site timezone) ── */}}
-{{ $eventosCandidates := (where .Site.RegularPages "Section" "eventos").ByDate }}
-{{ $eventosCandidates = where $eventosCandidates "Date" "ge" (now.AddDate 0 0 -30) | first 20 }}
-
-<section class="section eventos" id="section-eventos">
-  <div class="section-inner">
-    <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:48px;flex-wrap:wrap;gap:20px;">
-      <div>
-        <p class="section-label">Agenda</p>
-        <h2 class="section-title">Próximos <em>eventos</em></h2>
-      </div>
-      <a href="/eventos/" class="btn btn-light">Ver todos los eventos</a>
-    </div>
-
-    <div class="eventos-grid js-eventos-home-grid" data-max-visible="3">
-      {{ range $eventosCandidates }}
-      <a href="{{ .RelPermalink }}" style="text-decoration:none;" class="evento-card" data-date="{{ .Date.Format "2006-01-02" }}">
-        <div class="evento-date-bar">
-          <div class="evento-date-num">{{ .Date.Day }}</div>
-          <div class="evento-date-rest">
-            <div class="evento-date-month">{{ .Date | time.Format "January" }}</div>
-            <div class="evento-date-year">{{ .Date.Year }}</div>
-          </div>
-        </div>
-        <div class="evento-body">
-          <div class="evento-tag">{{ .Params.tipos | humanize }}</div>
-          <div class="evento-title">{{ .Title }}</div>
-          {{ with .Params.hora }}<div class="evento-info">🕐 {{ . }}</div>{{ end }}
-          {{ with .Params.lugar }}<div class="evento-info">📍 {{ . }}</div>{{ end }}
-          {{ with .Params.entrada }}<div class="evento-info" style="margin-top:4px;">{{ . }}</div>{{ end }}
-        </div>
-      </a>
-      {{ end }}
-    </div>
-    <div class="no-eventos js-no-eventos-home" style="display:none;">
-      <p>Por el momento no hay eventos programados.</p>
-      <p style="margin-top:8px;">Seguinos en <a href="{{ $p.instagram }}" target="_blank">Instagram</a> para estar al tanto de las novedades.</p>
     </div>
   </div>
 </section>

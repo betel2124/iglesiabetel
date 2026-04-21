@@ -113,8 +113,7 @@ Completar después del evento si hay algo para contar.
 
 ### Actualizar horarios o dirección
 
-- Opción A: Editar `data/contacto.yaml` directamente
-- Opción B: Entrar al CMS en `/admin/` → Configuración del sitio
+- Editar la sección `[params]` en `hugo.toml`
 
 ---
 
@@ -129,7 +128,7 @@ El tiempo de build es aproximadamente 30–60 segundos.
 ## Personalización pendiente
 
 - [ ] Reemplazar `static/img/logo.jpg` con el logo real
-- [ ] Actualizar datos de contacto en `data/contacto.yaml`
+- [ ] Actualizar datos de contacto en `hugo.toml`
 - [ ] Actualizar nombres del liderazgo en `layouts/nosotros/single.html`
 - [ ] Activar Netlify Identity y Git Gateway
 - [ ] Configurar formulario de contacto (Netlify Forms o Formspree)

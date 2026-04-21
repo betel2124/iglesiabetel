@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Santificacion on Iglesia Betel</title>
-    <link>http://localhost:1313/tags/santificacion/</link>
+    <link>https://iglesiabetel.com.ar/tags/santificacion/</link>
     <description>Recent content in Santificacion on Iglesia Betel</description>
     <generator>Hugo</generator>
     <language>es-AR</language>
     <lastBuildDate>Sun, 25 May 2025 00:00:00 -0300</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/santificacion/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://iglesiabetel.com.ar/tags/santificacion/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Gracia que transforma: del interior al exterior</title>
-      <link>http://localhost:1313/predicaciones/2025-05-25-gracia-que-transforma/</link>
+      <link>https://iglesiabetel.com.ar/predicaciones/2025-05-25-gracia-que-transforma/</link>
       <pubDate>Sun, 25 May 2025 00:00:00 -0300</pubDate>
-      <guid>http://localhost:1313/predicaciones/2025-05-25-gracia-que-transforma/</guid>
+      <guid>https://iglesiabetel.com.ar/predicaciones/2025-05-25-gracia-que-transforma/</guid>
       <description>&lt;h2 id=&#34;resumen&#34;&gt;Resumen&lt;/h2&gt;&#xA;&lt;p&gt;La gracia de Dios no es solo el punto de partida de la fe cristiana: es la atmósfera en la que el creyente vive y crece. En este mensaje vemos cómo la gracia recibida en la justificación produce una transformación progresiva que va del corazón hacia afuera.&lt;/p&gt;</description>
     </item>
   </channel>

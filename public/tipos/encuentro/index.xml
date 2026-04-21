@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Encuentro on Iglesia Betel</title>
-    <link>http://localhost:1313/tipos/encuentro/</link>
+    <link>https://iglesiabetel.com.ar/tipos/encuentro/</link>
     <description>Recent content in Encuentro on Iglesia Betel</description>
     <generator>Hugo</generator>
     <language>es-AR</language>
     <lastBuildDate>Sun, 19 Apr 2026 00:00:00 -0300</lastBuildDate>
-    <atom:link href="http://localhost:1313/tipos/encuentro/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://iglesiabetel.com.ar/tipos/encuentro/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Encuentro de matrimonios 2026</title>
-      <link>http://localhost:1313/eventos/2026-04-19-encuentro-matrimonios-2026/</link>
+      <link>https://iglesiabetel.com.ar/eventos/2026-04-19-encuentro-matrimonios-2026/</link>
       <pubDate>Sun, 19 Apr 2026 00:00:00 -0300</pubDate>
-      <guid>http://localhost:1313/eventos/2026-04-19-encuentro-matrimonios-2026/</guid>
+      <guid>https://iglesiabetel.com.ar/eventos/2026-04-19-encuentro-matrimonios-2026/</guid>
       <description>&lt;p&gt;Un nuevo encuentro para fortalecer matrimonios a través de la Palabra, testimonios y espacios de diálogo guiado.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Cena de amigos</title>
-      <link>http://localhost:1313/eventos/2024-07-20-cena-de-amigos/</link>
+      <link>https://iglesiabetel.com.ar/eventos/2024-07-20-cena-de-amigos/</link>
       <pubDate>Sat, 20 Jul 2024 00:00:00 -0300</pubDate>
-      <guid>http://localhost:1313/eventos/2024-07-20-cena-de-amigos/</guid>
+      <guid>https://iglesiabetel.com.ar/eventos/2024-07-20-cena-de-amigos/</guid>
       <description>&lt;p&gt;Una noche distendida para invitar amigos y compartir la fe alrededor de la mesa.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Encuentro de matrimonios</title>
-      <link>http://localhost:1313/eventos/2024-04-20-encuentro-matrimonios/</link>
+      <link>https://iglesiabetel.com.ar/eventos/2024-04-20-encuentro-matrimonios/</link>
       <pubDate>Sat, 20 Apr 2024 00:00:00 -0300</pubDate>
-      <guid>http://localhost:1313/eventos/2024-04-20-encuentro-matrimonios/</guid>
+      <guid>https://iglesiabetel.com.ar/eventos/2024-04-20-encuentro-matrimonios/</guid>
       <description>&lt;p&gt;Una tarde pensada para fortalecer el vínculo matrimonial a la luz de la Palabra de Dios.&lt;/p&gt;</description>
     </item>
   </channel>

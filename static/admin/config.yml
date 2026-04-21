@@ -10,99 +10,99 @@ locale: "es"
 
 collections:
 
-  # ── PREDICACIONES ──────────────────────────────────────────────
+  # â”€â”€ PREDICACIONES â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
   - name: "predicaciones"
     label: "Predicaciones"
-    label_singular: "Predicación"
+    label_singular: "PredicaciÃ³n"
     folder: "content/predicaciones"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    summary: "{{title}} — {{predicador}} ({{date | date('DD/MM/YYYY')}})"
+    summary: "{{title}} â€” {{predicador}} ({{date | date('DD/MM/YYYY')}})"
     sortable_fields: ["date", "title", "serie"]
     fields:
-      - { label: "Título", name: "title", widget: "string",
+      - { label: "TÃ­tulo", name: "title", widget: "string",
           hint: "Ej: El fuego que no se apaga" }
       - { label: "Fecha", name: "date", widget: "datetime",
           format: "YYYY-MM-DD", date_format: "DD/MM/YYYY",
           time_format: false }
       - { label: "Predicador", name: "predicador", widget: "string",
-          hint: "Ej: Pr. Juan García" }
+          hint: "Ej: Pr. Juan GarcÃ­a" }
       - { label: "Serie", name: "serie", widget: "select",
           options: ["vida-en-el-espiritu", "el-sermon-del-monte",
                     "raices-fe-y-familia", "sin-serie"],
           default: "sin-serie",
           hint: "Serie a la que pertenece este mensaje" }
-      - { label: "Número en la serie", name: "serie_ep", widget: "number",
+      - { label: "NÃºmero en la serie", name: "serie_ep", widget: "number",
           required: false, hint: "Ej: 3 (para 'Episodio 3')" }
-      - { label: "Pasaje bíblico", name: "pasaje", widget: "string",
-          hint: "Ej: Hechos 2:1–4" }
-      - { label: "Duración", name: "duracion", widget: "string",
+      - { label: "Pasaje bÃ­blico", name: "pasaje", widget: "string",
+          hint: "Ej: Hechos 2:1â€“4" }
+      - { label: "DuraciÃ³n", name: "duracion", widget: "string",
           hint: "Ej: 48 min", required: false }
       - { label: "Link de YouTube", name: "youtube_url", widget: "string",
           hint: "URL completa del video en YouTube",
           required: false }
       - { label: "ID de YouTube", name: "youtube_id", widget: "string",
-          hint: "Solo el ID del video (lo que va después de ?v=). Ej: dQw4w9WgXcQ",
+          hint: "Solo el ID del video (lo que va despuÃ©s de ?v=). Ej: dQw4w9WgXcQ",
           required: false }
-      - { label: "¿Predicación destacada?", name: "destacado",
+      - { label: "Â¿PredicaciÃ³n destacada?", name: "destacado",
           widget: "boolean", default: false,
-          hint: "Si está activado, aparece primero en la lista" }
+          hint: "Si estÃ¡ activado, aparece primero en la lista" }
       - { label: "Tags", name: "tags", widget: "list",
           allow_add: true, required: false,
           hint: "Ej: espiritu-santo, familia, evangelismo" }
-      - { label: "Resumen e información adicional", name: "body",
+      - { label: "Resumen e informaciÃ³n adicional", name: "body",
           widget: "markdown",
-          hint: "Resumen del mensaje, notas, o información adicional. Opcional." }
+          hint: "Resumen del mensaje, notas, o informaciÃ³n adicional. Opcional." }
 
-  # ── EVENTOS ────────────────────────────────────────────────────
+  # â”€â”€ EVENTOS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
   - name: "eventos"
     label: "Eventos"
     label_singular: "Evento"
     folder: "content/eventos"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    summary: "{{title}} — {{date | date('DD/MM/YYYY')}} [{{estado}}]"
+    summary: "{{title}} â€” {{date | date('DD/MM/YYYY')}} [{{estado}}]"
     sortable_fields: ["date", "title"]
     fields:
-      - { label: "Título", name: "title", widget: "string" }
+      - { label: "TÃ­tulo", name: "title", widget: "string" }
       - { label: "Fecha del evento", name: "date", widget: "datetime",
           format: "YYYY-MM-DD", date_format: "DD/MM/YYYY",
           time_format: false }
       - { label: "Hora", name: "hora", widget: "string",
           hint: "Ej: 20:00 hs" }
       - { label: "Lugar", name: "lugar", widget: "string",
-          hint: "Ej: Salón principal" }
+          hint: "Ej: SalÃ³n principal" }
       - { label: "Tipo", name: "tipos", widget: "select",
           options:
             - { label: "Culto especial", value: "culto-especial" }
-            - { label: "Jóvenes", value: "jovenes" }
+            - { label: "JÃ³venes", value: "jovenes" }
             - { label: "Evangelismo", value: "evangelismo" }
             - { label: "Retiro", value: "retiro" }
             - { label: "Conferencia", value: "conferencia" }
             - { label: "Damas", value: "damas" }
             - { label: "Varones", value: "varones" }
-            - { label: "Niños", value: "ninos" }
+            - { label: "NiÃ±os", value: "ninos" }
             - { label: "General", value: "general" }
           default: "general" }
       - { label: "Estado", name: "estado", widget: "select",
           options:
-            - { label: "Próximo", value: "proximo" }
+            - { label: "PrÃ³ximo", value: "proximo" }
             - { label: "Realizado", value: "realizado" }
           default: "proximo" }
       - { label: "Entrada", name: "entrada", widget: "string",
           default: "Libre y gratuita", required: false }
-      - { label: "¿Mostrar en inicio?", name: "destacado",
+      - { label: "Â¿Mostrar en inicio?", name: "destacado",
           widget: "boolean", default: true }
       - { label: "Link de Instagram (story/post)", name: "instagram_url",
           widget: "string", required: false,
-          hint: "URL directa a la publicación o highlight de Instagram" }
-      - { label: "Descripción previa", name: "body", widget: "markdown",
-          hint: "Descripción del evento antes de que ocurra. Puede incluir info de inscripción, qué llevar, etc." }
-      - { label: "Crónica (post-evento)", name: "cronica",
+          hint: "URL directa a la publicaciÃ³n o highlight de Instagram" }
+      - { label: "DescripciÃ³n previa", name: "body", widget: "markdown",
+          hint: "DescripciÃ³n del evento antes de que ocurra. Puede incluir info de inscripciÃ³n, quÃ© llevar, etc." }
+      - { label: "CrÃ³nica (post-evento)", name: "cronica",
           widget: "markdown", required: false,
-          hint: "Opcional. Lo que pasó después del evento. Solo completar si hay algo para contar." }
+          hint: "Opcional. Lo que pasÃ³ despuÃ©s del evento. Solo completar si hay algo para contar." }
 
-  # ── MINISTERIOS ────────────────────────────────────────────────
+  # â”€â”€ MINISTERIOS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
   - name: "ministerios"
     label: "Ministerios"
     label_singular: "Ministerio"
@@ -112,70 +112,53 @@ collections:
     summary: "{{title}}"
     fields:
       - { label: "Nombre", name: "title", widget: "string" }
-      - { label: "Orden de aparición", name: "weight", widget: "number",
-          default: 10, hint: "Número menor = aparece primero" }
-      - { label: "Ícono (emoji)", name: "icon", widget: "string",
-          hint: "Ej: ⚡ 👶 🎵" }
+      - { label: "Orden de apariciÃ³n", name: "weight", widget: "number",
+          default: 10, hint: "NÃºmero menor = aparece primero" }
+      - { label: "Ãcono (emoji)", name: "icon", widget: "string",
+          hint: "Ej: âš¡ ðŸ‘¶ ðŸŽµ" }
       - { label: "Color de tarjeta", name: "color", widget: "select",
           options: ["red", "green", "dark", "orange", "green2", "gray"],
           default: "green" }
-      - { label: "Día de reunión", name: "dia", widget: "string",
+      - { label: "DÃ­a de reuniÃ³n", name: "dia", widget: "string",
           hint: "Ej: Viernes", required: false }
       - { label: "Horario", name: "hora", widget: "string",
           hint: "Ej: 20:30 hs", required: false }
       - { label: "Rango de edad", name: "edad", widget: "string",
-          required: false, hint: "Ej: 13 a 30 años" }
-      - { label: "¿Es el ministerio destacado?", name: "destacado",
+          required: false, hint: "Ej: 13 a 30 aÃ±os" }
+      - { label: "Â¿Es el ministerio destacado?", name: "destacado",
           widget: "boolean", default: false,
-          hint: "Solo uno debería estar destacado (aparece grande arriba)" }
-      - { label: "Descripción", name: "body", widget: "markdown",
-          hint: "Descripción completa del ministerio." }
+          hint: "Solo uno deberÃ­a estar destacado (aparece grande arriba)" }
+      - { label: "DescripciÃ³n", name: "body", widget: "markdown",
+          hint: "DescripciÃ³n completa del ministerio." }
 
-  # ── PÁGINAS ESTÁTICAS ──────────────────────────────────────────
+  # â”€â”€ PÃGINAS ESTÃTICAS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
   - name: "paginas"
-    label: "Páginas"
-    label_singular: "Página"
+    label: "PÃ¡ginas"
+    label_singular: "PÃ¡gina"
     files:
 
-      - label: "Página de Inicio"
+      - label: "PÃ¡gina de Inicio"
         name: "inicio"
         file: "content/_index.md"
         fields:
-          - { label: "Hero — Título línea 1", name: "hero_titulo", widget: "string",
+          - { label: "Hero â€” TÃ­tulo lÃ­nea 1", name: "hero_titulo", widget: "string",
               default: "Un Hogar para Crecer." }
-          - { label: "Hero — Título línea 2 (en rojo itálico)", name: "hero_titulo2",
-              widget: "string", default: "Una Familia para Acompañar." }
-          - { label: "Hero — Subtítulo", name: "hero_subtitulo", widget: "text" }
-          - { label: "Sección visión — Texto", name: "vision_texto",
+          - { label: "Hero â€” TÃ­tulo lÃ­nea 2 (en rojo itÃ¡lico)", name: "hero_titulo2",
+              widget: "string", default: "Una Familia para AcompaÃ±ar." }
+          - { label: "Hero â€” SubtÃ­tulo", name: "hero_subtitulo", widget: "text" }
+          - { label: "SecciÃ³n visiÃ³n â€” Texto", name: "vision_texto",
               widget: "markdown" }
-          - { label: "Años de ministerio", name: "anios", widget: "number",
+          - { label: "AÃ±os de ministerio", name: "anios", widget: "number",
               default: 15 }
 
       - label: "Nosotros"
         name: "nosotros"
         file: "content/nosotros/_index.md"
         fields:
-          - { label: "Título de página", name: "title", widget: "string",
+          - { label: "TÃ­tulo de pÃ¡gina", name: "title", widget: "string",
               default: "Nosotros" }
-          - { label: "Visión", name: "vision", widget: "markdown" }
-          - { label: "Misión", name: "mision", widget: "markdown" }
+          - { label: "VisiÃ³n", name: "vision", widget: "markdown" }
+          - { label: "MisiÃ³n", name: "mision", widget: "markdown" }
           - { label: "Historia", name: "historia", widget: "markdown" }
-          - { label: "Texto de afiliación", name: "afiliacion",
+          - { label: "Texto de afiliaciÃ³n", name: "afiliacion",
               widget: "markdown" }
-
-  # ── CONFIGURACIÓN GENERAL ──────────────────────────────────────
-  - name: "config"
-    label: "Configuración del sitio"
-    files:
-      - label: "Información de contacto y horarios"
-        name: "contacto"
-        file: "data/contacto.yaml"
-        fields:
-          - { label: "Dirección", name: "direccion", widget: "string" }
-          - { label: "Teléfono / WhatsApp", name: "telefono", widget: "string" }
-          - { label: "Email", name: "email", widget: "string" }
-          - { label: "Instagram URL", name: "instagram", widget: "string" }
-          - { label: "YouTube URL", name: "youtube", widget: "string" }
-          - { label: "Horario domingo", name: "horario_domingo", widget: "string" }
-          - { label: "Horario miércoles", name: "horario_miercoles", widget: "string" }
-          - { label: "Horario viernes", name: "horario_viernes", widget: "string" }

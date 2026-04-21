@@ -11,7 +11,7 @@ This project is a static website built with **Hugo**. It aims to provide a fast,
 ## Configuration
 Global site settings are managed in two key places:
 - **`hugo.toml`**: Contains core Hugo settings, including the site's `timeZone` and a matching `params.timezone` for the front-end. It also defines the taxonomies used across the site (`series`, `tags`, `tipos`).
-- **`data/contacto.yaml`**: Stores contact information like address, phone number, and schedules. This allows for easy updates without modifying layout files.
+- **`hugo.toml` (`[params]`)**: Stores contact information, schedules, and other global site settings used by the layouts.
 
 ## Content Structure & Taxonomies
 The site's content is organized into "sections" which correspond to the top-level folders within the `/content/` directory. Each Markdown (`.md`) file inside these folders becomes a page on the website.

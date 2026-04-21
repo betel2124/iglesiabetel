@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Eventos — Iglesia Betel</title>
@@ -9,7 +9,7 @@
   
   <meta property="og:title" content="Eventos — Iglesia Betel">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="http://localhost:1313/eventos/">
+  <meta property="og:url" content="https://iglesiabetel.com.ar/eventos/">
   <meta property="og:description" content="Un Hogar para Crecer. Una Familia para Acompañar.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,40 +17,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/shared.css">
   
-<style>
-.ev-section { background:var(--beige); }
-.ev-section-dark { background:var(--black); }
-.ev-section-dark .section-title { color:white; }
-.ev-section-dark .section-label { color:var(--green); }
-.ev-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
-.ev-card { background:var(--white); border-radius:var(--r); overflow:hidden; box-shadow:var(--shadow-sm); text-decoration:none; display:block; transition:transform 0.25s,box-shadow 0.25s; }
-.ev-card:hover { transform:translateY(-4px); box-shadow:var(--shadow-md); }
-.ev-card-top { background:var(--red); padding:20px; display:flex; align-items:center; gap:16px; }
-.ev-card-top.realizado { background:#555; }
-.ev-date-num { font-family:var(--font-h); font-size:40px; font-weight:700; color:white; line-height:1; }
-.ev-date-rest { color:rgba(255,255,255,0.85); }
-.ev-date-month { font-size:10px; letter-spacing:2px; text-transform:uppercase; font-weight:600; }
-.ev-date-year { font-size:12px; opacity:.7; }
-.ev-body { padding:22px; }
-.ev-tipo { font-size:9px; letter-spacing:2px; text-transform:uppercase; color:var(--green-dark); font-weight:600; margin-bottom:8px; }
-.ev-title { font-family:var(--font-h); font-size:18px; color:var(--black); font-weight:600; margin-bottom:8px; line-height:1.3; }
-.ev-info { font-size:12px; color:var(--muted); margin-bottom:4px; }
-.ev-tag-realizado { display:inline-block; background:var(--beige); color:var(--muted); font-size:9px; letter-spacing:2px; text-transform:uppercase; font-weight:700; padding:3px 10px; border-radius:20px; margin-top:8px; }
-.no-eventos { background:var(--white); border-radius:var(--r); padding:48px; text-align:center; box-shadow:var(--shadow-sm); }
-.no-eventos-icon { font-size:48px; margin-bottom:16px; }
-.no-eventos-title { font-family:var(--font-h); font-size:22px; color:var(--black); margin-bottom:8px; }
-.no-eventos-text { font-size:15px; color:var(--muted); line-height:1.7; }
-.no-eventos-text a { color:var(--green-dark); }
-.historial-toggle { display:flex; align-items:center; gap:12px; cursor:pointer; margin-bottom:32px; background:none; border:none; font-family:var(--font-b); padding:0; }
-.historial-toggle-text { font-size:13px; font-weight:600; color:rgba(255,255,255,0.55); letter-spacing:1px; text-transform:uppercase; }
-.historial-toggle-icon { width:32px; height:32px; background:rgba(255,255,255,0.08); border-radius:50%; display:flex; align-items:center; justify-content:center; color:white; font-size:16px; transition:transform 0.3s; }
-.historial-toggle.open .historial-toggle-icon { transform:rotate(180deg); }
-.historial-grid { display:none; }
-.historial-grid.open { display:grid; }
-@media (max-width:768px) { .ev-grid { grid-template-columns:1fr 1fr; } }
-@media (max-width:480px) { .ev-grid { grid-template-columns:1fr; } }
-</style>
-
 
   
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
@@ -127,604 +93,144 @@
 
   <main>
     
-
-
+<div class="page-body">
+  
 <section class="page-hero">
-  <p class="page-hero-label">Agenda</p>
+  
   <h1 class="page-hero-title">
-    Eventos y<br><em>actividades</em>
+    Eventos
   </h1>
   <p class="page-hero-sub">Lo que está por venir y lo que ya pasó en la comunidad.</p>
 </section>
 
-
-
-
-
-<div id="eventos-all" class="ev-all-container" style="display:none;" aria-hidden="true">
-  
-  
-<a href="/eventos/2024-01-15-vision-2024/" class="ev-card" data-date="2024-01-15">
-  <div class="ev-card-top">
-    <div class="ev-date-num">15</div>
-    <div class="ev-date-rest">
-      <div class="ev-date-month">January</div>
-      <div class="ev-date-year">2024</div>
-    </div>
-  </div>
-  <div class="ev-body">
-    <div class="ev-tipo">Culto especial</div>
-    <div class="ev-title">Noche de visión 2024</div>
-    <div class="ev-info">🕐 20:00 hs</div>
-    <div class="ev-info">📍 Salón principal · Iglesia Betel</div>
-    <div class="ev-info">Libre y gratuita</div>
-    
-    
-    <div class="ev-tag-realizado">Realizado</div>
-    
-    
-  </div>
-</a>
-
-  
-  
-<a href="/eventos/2024-02-10-vigilia-oracion/" class="ev-card" data-date="2024-02-10">
-  <div class="ev-card-top">
-    <div class="ev-date-num">10</div>
-    <div class="ev-date-rest">
-      <div class="ev-date-month">February</div>
-      <div class="ev-date-year">2024</div>
-    </div>
-  </div>
-  <div class="ev-body">
-    <div class="ev-tipo">Vigilia</div>
-    <div class="ev-title">Vigilia de oración</div>
-    <div class="ev-info">🕐 22:00 hs</div>
-    <div class="ev-info">📍 Salón principal · Iglesia Betel</div>
-    <div class="ev-info">Libre y gratuita</div>
-    
-    
-    <div class="ev-tag-realizado">Realizado</div>
-    
-    
-  </div>
-</a>
-
-  
-  
-<a href="/eventos/2024-03-30-semana-santa/" class="ev-card" data-date="2024-03-30">
-  <div class="ev-card-top">
-    <div class="ev-date-num">30</div>
-    <div class="ev-date-rest">
-      <div class="ev-date-month">March</div>
-      <div class="ev-date-year">2024</div>
-    </div>
-  </div>
-  <div class="ev-body">
-    <div class="ev-tipo">Culto especial</div>
-    <div class="ev-title">Semana Santa: recordando la cruz</div>
-    <div class="ev-info">🕐 19:00 hs</div>
-    <div class="ev-info">📍 Salón principal · Iglesia Betel</div>
-    <div class="ev-info">Libre y gratuita</div>
-    
-    
-    <div class="ev-tag-realizado">Realizado</div>
-    
-    
-  </div>
-</a>
-
-  
-  
-<a href="/eventos/2024-04-20-encuentro-matrimonios/" class="ev-card" data-date="2024-04-20">
-  <div class="ev-card-top">
-    <div class="ev-date-num">20</div>
-    <div class="ev-date-rest">
-      <div class="ev-date-month">April</div>
-      <div class="ev-date-year">2024</div>
-    </div>
-  </div>
-  <div class="ev-body">
-    <div class="ev-tipo">Encuentro</div>
-    <div class="ev-title">Encuentro de matrimonios</div>
-    <div class="ev-info">🕐 18:00 hs</div>
-    <div class="ev-info">📍 Salón principal · Iglesia Betel</div>
-    <div class="ev-info">Con inscripción previa</div>
-    
-    
-    <div class="ev-tag-realizado">Realizado</div>
-    
-    
-  </div>
-</a>
-
-  
-  
-<a href="/eventos/2024-05-05-dia-de-la-familia/" class="ev-card" data-date="2024-05-05">
-  <div class="ev-card-top">
-    <div class="ev-date-num">5</div>
-    <div class="ev-date-rest">
-      <div class="ev-date-month">May</div>
-      <div class="ev-date-year">2024</div>
-    </div>
-  </div>
-  <div class="ev-body">
-    <div class="ev-tipo">Culto especial</div>
-    <div class="ev-title">Día de la familia</div>
-    <div class="ev-info">🕐 10:00 hs</div>
-    <div class="ev-info">📍 Salón principal · Iglesia Betel</div>
-    <div class="ev-info">Libre y gratuita</div>
-    
-    
-    <div class="ev-tag-realizado">Realizado</div>
-    
-    
-  </div>
-</a>
-
-  
-  
-<a href="/eventos/2024-06-16-dia-del-padre/" class="ev-card" data-date="2024-06-16">
-  <div class="ev-card-top">
-    <div class="ev-date-num">16</div>
-    <div class="ev-date-rest">
-      <div class="ev-date-month">June</div>
-      <div class="ev-date-year">2024</div>
-    </div>
-  </div>
-  <div class="ev-body">
-    <div class="ev-tipo">Culto especial</div>
-    <div class="ev-title">Día del padre</div>
-    <div class="ev-info">🕐 10:00 hs</div>
-    <div class="ev-info">📍 Salón principal · Iglesia Betel</div>
-    <div class="ev-info">Libre y gratuita</div>
-    
-    
-    <div class="ev-tag-realizado">Realizado</div>
-    
-    
-  </div>
-</a>
-
-  
-  
-<a href="/eventos/2024-07-20-cena-de-amigos/" class="ev-card" data-date="2024-07-20">
-  <div class="ev-card-top">
-    <div class="ev-date-num">20</div>
-    <div class="ev-date-rest">
-      <div class="ev-date-month">July</div>
-      <div class="ev-date-year">2024</div>
-    </div>
-  </div>
-  <div class="ev-body">
-    <div class="ev-tipo">Encuentro</div>
-    <div class="ev-title">Cena de amigos</div>
-    <div class="ev-info">🕐 20:30 hs</div>
-    <div class="ev-info">📍 Salón principal · Iglesia Betel</div>
-    <div class="ev-info">Traé algo para compartir</div>
-    
-    
-    <div class="ev-tag-realizado">Realizado</div>
-    
-    
-  </div>
-</a>
-
-  
-  
-<a href="/eventos/2024-08-17-encuentro-jovenes/" class="ev-card" data-date="2024-08-17">
-  <div class="ev-card-top">
-    <div class="ev-date-num">17</div>
-    <div class="ev-date-rest">
-      <div class="ev-date-month">August</div>
-      <div class="ev-date-year">2024</div>
-    </div>
-  </div>
-  <div class="ev-body">
-    <div class="ev-tipo">Jovenes</div>
-    <div class="ev-title">Encuentro regional de jóvenes</div>
-    <div class="ev-info">🕐 16:00 hs</div>
-    <div class="ev-info">📍 Salón principal · Iglesia Betel</div>
-    <div class="ev-info">Libre y gratuita</div>
-    
-    
-    <div class="ev-tag-realizado">Realizado</div>
-    
-    
-  </div>
-</a>
-
-  
-  
-<a href="/eventos/2024-09-07-bautismos/" class="ev-card" data-date="2024-09-07">
-  <div class="ev-card-top">
-    <div class="ev-date-num">7</div>
-    <div class="ev-date-rest">
-      <div class="ev-date-month">September</div>
-      <div class="ev-date-year">2024</div>
-    </div>
-  </div>
-  <div class="ev-body">
-    <div class="ev-tipo">Bautismos</div>
-    <div class="ev-title">Servicio de bautismos</div>
-    <div class="ev-info">🕐 17:00 hs</div>
-    <div class="ev-info">📍 Salón principal · Iglesia Betel</div>
-    <div class="ev-info">Libre y gratuita</div>
-    
-    
-    <div class="ev-tag-realizado">Realizado</div>
-    
-    
-  </div>
-</a>
-
-  
-  
-<a href="/eventos/2024-10-12-campana-evangelistica/" class="ev-card" data-date="2024-10-12">
-  <div class="ev-card-top">
-    <div class="ev-date-num">12</div>
-    <div class="ev-date-rest">
-      <div class="ev-date-month">October</div>
-      <div class="ev-date-year">2024</div>
-    </div>
-  </div>
-  <div class="ev-body">
-    <div class="ev-tipo">Evangelismo</div>
-    <div class="ev-title">Campaña evangelística en el barrio</div>
-    <div class="ev-info">🕐 16:00 hs</div>
-    <div class="ev-info">📍 Plaza principal del barrio</div>
-    <div class="ev-info">Actividad al aire libre</div>
-    
-    
-    <div class="ev-tag-realizado">Realizado</div>
-    
-    
-  </div>
-</a>
-
-  
-  
-<a href="/eventos/2024-11-02-encuentro-damas/" class="ev-card" data-date="2024-11-02">
-  <div class="ev-card-top">
-    <div class="ev-date-num">2</div>
-    <div class="ev-date-rest">
-      <div class="ev-date-month">November</div>
-      <div class="ev-date-year">2024</div>
-    </div>
-  </div>
-  <div class="ev-body">
-    <div class="ev-tipo">Damas</div>
-    <div class="ev-title">Encuentro de damas</div>
-    <div class="ev-info">🕐 15:30 hs</div>
-    <div class="ev-info">📍 Salón anexo · Iglesia Betel</div>
-    <div class="ev-info">Con inscripción previa</div>
-    
-    
-    <div class="ev-tag-realizado">Realizado</div>
-    
-    
-  </div>
-</a>
-
-  
-  
-<a href="/eventos/2024-12-15-culto-navidad/" class="ev-card" data-date="2024-12-15">
-  <div class="ev-card-top">
-    <div class="ev-date-num">15</div>
-    <div class="ev-date-rest">
-      <div class="ev-date-month">December</div>
-      <div class="ev-date-year">2024</div>
-    </div>
-  </div>
-  <div class="ev-body">
-    <div class="ev-tipo">Navidad</div>
-    <div class="ev-title">Culto de Navidad 2024</div>
-    <div class="ev-info">🕐 19:00 hs</div>
-    <div class="ev-info">📍 Salón principal · Iglesia Betel</div>
-    <div class="ev-info">Libre y gratuita</div>
-    
-    
-    <div class="ev-tag-realizado">Realizado</div>
-    
-    
-  </div>
-</a>
-
-  
-  
-<a href="/eventos/2025-01-12-ayuno-oracion/" class="ev-card" data-date="2025-01-12">
-  <div class="ev-card-top">
-    <div class="ev-date-num">12</div>
-    <div class="ev-date-rest">
-      <div class="ev-date-month">January</div>
-      <div class="ev-date-year">2025</div>
-    </div>
-  </div>
-  <div class="ev-body">
-    <div class="ev-tipo">Ayuno oracion</div>
-    <div class="ev-title">Jornada de ayuno y oración</div>
-    <div class="ev-info">🕐 09:00 hs</div>
-    <div class="ev-info">📍 Salón principal · Iglesia Betel</div>
-    <div class="ev-info">Libre y gratuita</div>
-    
-    
-    <div class="ev-tag-realizado">Realizado</div>
-    
-    
-  </div>
-</a>
-
-  
-  
-<a href="/eventos/2025-02-09-culto-visita-misionero/" class="ev-card" data-date="2025-02-09">
-  <div class="ev-card-top">
-    <div class="ev-date-num">9</div>
-    <div class="ev-date-rest">
-      <div class="ev-date-month">February</div>
-      <div class="ev-date-year">2025</div>
-    </div>
-  </div>
-  <div class="ev-body">
-    <div class="ev-tipo">Misiones</div>
-    <div class="ev-title">Culto con visita misionera</div>
-    <div class="ev-info">🕐 10:00 hs</div>
-    <div class="ev-info">📍 Salón principal · Iglesia Betel</div>
-    <div class="ev-info">Ofrenda misionera voluntaria</div>
-    
-    
-    <div class="ev-tag-realizado">Realizado</div>
-    
-    
-  </div>
-</a>
-
-  
-  
-<a href="/eventos/2025-03-16-escuela-obreros/" class="ev-card" data-date="2025-03-16">
-  <div class="ev-card-top">
-    <div class="ev-date-num">16</div>
-    <div class="ev-date-rest">
-      <div class="ev-date-month">March</div>
-      <div class="ev-date-year">2025</div>
-    </div>
-  </div>
-  <div class="ev-body">
-    <div class="ev-tipo">Capacitacion</div>
-    <div class="ev-title">Escuela de obreros</div>
-    <div class="ev-info">🕐 17:00 hs</div>
-    <div class="ev-info">📍 Salón anexo · Iglesia Betel</div>
-    <div class="ev-info">Con material impreso</div>
-    
-    
-    <div class="ev-tag-realizado">Realizado</div>
-    
-    
-  </div>
-</a>
-
-  
-  
-<a href="/eventos/2025-04-06-domingo-ramos/" class="ev-card" data-date="2025-04-06">
-  <div class="ev-card-top">
-    <div class="ev-date-num">6</div>
-    <div class="ev-date-rest">
-      <div class="ev-date-month">April</div>
-      <div class="ev-date-year">2025</div>
-    </div>
-  </div>
-  <div class="ev-body">
-    <div class="ev-tipo">Culto especial</div>
-    <div class="ev-title">Domingo de Ramos</div>
-    <div class="ev-info">🕐 10:00 hs</div>
-    <div class="ev-info">📍 Salón principal · Iglesia Betel</div>
-    <div class="ev-info">Libre y gratuita</div>
-    
-    
-    <div class="ev-tag-realizado">Realizado</div>
-    
-    
-  </div>
-</a>
-
-  
-  
-<a href="/eventos/2025-05-04-aniversario-iglesia/" class="ev-card" data-date="2025-05-04">
-  <div class="ev-card-top">
-    <div class="ev-date-num">4</div>
-    <div class="ev-date-rest">
-      <div class="ev-date-month">May</div>
-      <div class="ev-date-year">2025</div>
-    </div>
-  </div>
-  <div class="ev-body">
-    <div class="ev-tipo">Aniversario</div>
-    <div class="ev-title">Aniversario de la iglesia</div>
-    <div class="ev-info">🕐 10:00 hs</div>
-    <div class="ev-info">📍 Salón principal · Iglesia Betel</div>
-    <div class="ev-info">Libre y gratuita</div>
-    
-    
-    <div class="ev-tag-realizado">Realizado</div>
-    
-    
-  </div>
-</a>
-
-  
-  
-<a href="/eventos/2025-06-08-noche-de-alabanza/" class="ev-card" data-date="2025-06-08">
-  <div class="ev-card-top">
-    <div class="ev-date-num">8</div>
-    <div class="ev-date-rest">
-      <div class="ev-date-month">June</div>
-      <div class="ev-date-year">2025</div>
-    </div>
-  </div>
-  <div class="ev-body">
-    <div class="ev-tipo">Culto especial</div>
-    <div class="ev-title">Noche de Alabanza y Oración</div>
-    <div class="ev-info">🕐 20:00 hs</div>
-    <div class="ev-info">📍 Salón principal · Iglesia Betel</div>
-    <div class="ev-info">Libre y gratuita</div>
-    
-  </div>
-</a>
-
-  
-  
-<a href="/eventos/2026-03-08-noche-adoracion/" class="ev-card" data-date="2026-03-08">
-  <div class="ev-card-top">
-    <div class="ev-date-num">8</div>
-    <div class="ev-date-rest">
-      <div class="ev-date-month">March</div>
-      <div class="ev-date-year">2026</div>
-    </div>
-  </div>
-  <div class="ev-body">
-    <div class="ev-tipo">Culto especial</div>
-    <div class="ev-title">Noche de adoración y clamor</div>
-    <div class="ev-info">🕐 20:00 hs</div>
-    <div class="ev-info">📍 Salón principal · Iglesia Betel</div>
-    <div class="ev-info">Libre y gratuita</div>
-    
-  </div>
-</a>
-
-  
-  
-<a href="/eventos/2025-04-12-retiro-jovenes/" class="ev-card" data-date="2026-04-12">
-  <div class="ev-card-top">
-    <div class="ev-date-num">12</div>
-    <div class="ev-date-rest">
-      <div class="ev-date-month">April</div>
-      <div class="ev-date-year">2026</div>
-    </div>
-  </div>
-  <div class="ev-body">
-    <div class="ev-tipo">Retiro</div>
-    <div class="ev-title">Retiro de Jóvenes Betel 2025</div>
-    <div class="ev-info">🕐 Sábado 9:00 hs — Domingo 18:00 hs</div>
-    <div class="ev-info">📍 Centro de Retiros La Paz, Ezeiza</div>
-    <div class="ev-info">Costo: $15.000 (beca disponible)</div>
-    
-    
-    <div class="ev-tag-realizado">Realizado</div>
-    
-    
-  </div>
-</a>
-
-  
-  
-<a href="/eventos/2026-04-19-encuentro-matrimonios-2026/" class="ev-card" data-date="2026-04-19">
-  <div class="ev-card-top">
-    <div class="ev-date-num">19</div>
-    <div class="ev-date-rest">
-      <div class="ev-date-month">April</div>
-      <div class="ev-date-year">2026</div>
-    </div>
-  </div>
-  <div class="ev-body">
-    <div class="ev-tipo">Encuentro</div>
-    <div class="ev-title">Encuentro de matrimonios 2026</div>
-    <div class="ev-info">🕐 18:00 hs</div>
-    <div class="ev-info">📍 Centro de encuentros · Iglesia Betel</div>
-    <div class="ev-info">Con inscripción previa</div>
-    
-  </div>
-</a>
-
-  
-  
-<a href="/eventos/2026-06-14-encuentro-juvenil/" class="ev-card" data-date="2026-06-14">
-  <div class="ev-card-top">
-    <div class="ev-date-num">14</div>
-    <div class="ev-date-rest">
-      <div class="ev-date-month">June</div>
-      <div class="ev-date-year">2026</div>
-    </div>
-  </div>
-  <div class="ev-body">
-    <div class="ev-tipo">Jovenes</div>
-    <div class="ev-title">Encuentro juvenil de invierno</div>
-    <div class="ev-info">🕐 16:00 hs</div>
-    <div class="ev-info">📍 Salón principal · Iglesia Betel</div>
-    <div class="ev-info">Libre y gratuita</div>
-    
-  </div>
-</a>
-
-  
-  
-<a href="/eventos/2026-09-13-conferencia-misiones/" class="ev-card" data-date="2026-09-13">
-  <div class="ev-card-top">
-    <div class="ev-date-num">13</div>
-    <div class="ev-date-rest">
-      <div class="ev-date-month">September</div>
-      <div class="ev-date-year">2026</div>
-    </div>
-  </div>
-  <div class="ev-body">
-    <div class="ev-tipo">Misiones</div>
-    <div class="ev-title">Conferencia de misiones 2026</div>
-    <div class="ev-info">🕐 10:00 hs</div>
-    <div class="ev-info">📍 Salón principal · Iglesia Betel</div>
-    <div class="ev-info">Ofrenda misionera voluntaria</div>
-    
-  </div>
-</a>
-
-  
-  
-<a href="/eventos/2026-12-20-culto-navidad-2026/" class="ev-card" data-date="2026-12-20">
-  <div class="ev-card-top">
-    <div class="ev-date-num">20</div>
-    <div class="ev-date-rest">
-      <div class="ev-date-month">December</div>
-      <div class="ev-date-year">2026</div>
-    </div>
-  </div>
-  <div class="ev-body">
-    <div class="ev-tipo">Navidad</div>
-    <div class="ev-title">Culto de Navidad 2026</div>
-    <div class="ev-info">🕐 19:00 hs</div>
-    <div class="ev-info">📍 Salón principal · Iglesia Betel</div>
-    <div class="ev-info">Libre y gratuita</div>
-    
-  </div>
-</a>
-
-  
-</div>
-
-
-<section class="section ev-section" id="eventos-proximos-section">
-  <div class="section-inner">
-    <p class="section-label">Próximamente</p>
-    <h2 class="section-title">Lo que se <em>viene</em></h2>
-    <div class="divider"></div>
-    <div class="ev-grid" id="eventos-proximos-grid"></div>
-    <div class="no-eventos js-no-eventos-proximos" style="display:none;">
-      <div class="no-eventos-icon">📅</div>
-      <div class="no-eventos-title">No hay eventos programados por el momento</div>
-      <div class="no-eventos-text">
-        Seguinos en <a href="https://instagram.com/iglesiabetel" target="_blank" rel="noopener">Instagram</a> para estar al tanto de las novedades.
+  <section class="section" style="background:var(--beige);">
+    <div class="section-inner">
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:24px;">
+        
+        <a href="/eventos/2026-12-20-culto-navidad-2026/" style="background:var(--white);border-radius:var(--r);padding:28px;box-shadow:var(--shadow-sm);text-decoration:none;display:block;transition:transform 0.2s,box-shadow 0.2s;" onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='var(--shadow-md)'" onmouseout="this.style.transform='';this.style.boxShadow='var(--shadow-sm)'">
+          <div style="font-family:var(--font-h);font-size:20px;font-weight:600;color:var(--black);margin-bottom:8px;">Culto de Navidad 2026</div>
+          <div style="font-size:13px;color:var(--muted);">20 December 2026</div>
+        </a>
+        
+        <a href="/eventos/2026-09-13-conferencia-misiones/" style="background:var(--white);border-radius:var(--r);padding:28px;box-shadow:var(--shadow-sm);text-decoration:none;display:block;transition:transform 0.2s,box-shadow 0.2s;" onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='var(--shadow-md)'" onmouseout="this.style.transform='';this.style.boxShadow='var(--shadow-sm)'">
+          <div style="font-family:var(--font-h);font-size:20px;font-weight:600;color:var(--black);margin-bottom:8px;">Conferencia de misiones 2026</div>
+          <div style="font-size:13px;color:var(--muted);">13 September 2026</div>
+        </a>
+        
+        <a href="/eventos/2026-06-14-encuentro-juvenil/" style="background:var(--white);border-radius:var(--r);padding:28px;box-shadow:var(--shadow-sm);text-decoration:none;display:block;transition:transform 0.2s,box-shadow 0.2s;" onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='var(--shadow-md)'" onmouseout="this.style.transform='';this.style.boxShadow='var(--shadow-sm)'">
+          <div style="font-family:var(--font-h);font-size:20px;font-weight:600;color:var(--black);margin-bottom:8px;">Encuentro juvenil de invierno</div>
+          <div style="font-size:13px;color:var(--muted);">14 June 2026</div>
+        </a>
+        
+        <a href="/eventos/2026-04-19-encuentro-matrimonios-2026/" style="background:var(--white);border-radius:var(--r);padding:28px;box-shadow:var(--shadow-sm);text-decoration:none;display:block;transition:transform 0.2s,box-shadow 0.2s;" onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='var(--shadow-md)'" onmouseout="this.style.transform='';this.style.boxShadow='var(--shadow-sm)'">
+          <div style="font-family:var(--font-h);font-size:20px;font-weight:600;color:var(--black);margin-bottom:8px;">Encuentro de matrimonios 2026</div>
+          <div style="font-size:13px;color:var(--muted);">19 April 2026</div>
+        </a>
+        
+        <a href="/eventos/2025-04-12-retiro-jovenes/" style="background:var(--white);border-radius:var(--r);padding:28px;box-shadow:var(--shadow-sm);text-decoration:none;display:block;transition:transform 0.2s,box-shadow 0.2s;" onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='var(--shadow-md)'" onmouseout="this.style.transform='';this.style.boxShadow='var(--shadow-sm)'">
+          <div style="font-family:var(--font-h);font-size:20px;font-weight:600;color:var(--black);margin-bottom:8px;">Retiro de Jóvenes Betel 2025</div>
+          <div style="font-size:13px;color:var(--muted);">12 April 2026</div>
+        </a>
+        
+        <a href="/eventos/2026-03-08-noche-adoracion/" style="background:var(--white);border-radius:var(--r);padding:28px;box-shadow:var(--shadow-sm);text-decoration:none;display:block;transition:transform 0.2s,box-shadow 0.2s;" onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='var(--shadow-md)'" onmouseout="this.style.transform='';this.style.boxShadow='var(--shadow-sm)'">
+          <div style="font-family:var(--font-h);font-size:20px;font-weight:600;color:var(--black);margin-bottom:8px;">Noche de adoración y clamor</div>
+          <div style="font-size:13px;color:var(--muted);">8 March 2026</div>
+        </a>
+        
+        <a href="/eventos/2025-06-08-noche-de-alabanza/" style="background:var(--white);border-radius:var(--r);padding:28px;box-shadow:var(--shadow-sm);text-decoration:none;display:block;transition:transform 0.2s,box-shadow 0.2s;" onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='var(--shadow-md)'" onmouseout="this.style.transform='';this.style.boxShadow='var(--shadow-sm)'">
+          <div style="font-family:var(--font-h);font-size:20px;font-weight:600;color:var(--black);margin-bottom:8px;">Noche de Alabanza y Oración</div>
+          <div style="font-size:13px;color:var(--muted);">8 June 2025</div>
+        </a>
+        
+        <a href="/eventos/2025-05-04-aniversario-iglesia/" style="background:var(--white);border-radius:var(--r);padding:28px;box-shadow:var(--shadow-sm);text-decoration:none;display:block;transition:transform 0.2s,box-shadow 0.2s;" onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='var(--shadow-md)'" onmouseout="this.style.transform='';this.style.boxShadow='var(--shadow-sm)'">
+          <div style="font-family:var(--font-h);font-size:20px;font-weight:600;color:var(--black);margin-bottom:8px;">Aniversario de la iglesia</div>
+          <div style="font-size:13px;color:var(--muted);">4 May 2025</div>
+        </a>
+        
+        <a href="/eventos/2025-04-06-domingo-ramos/" style="background:var(--white);border-radius:var(--r);padding:28px;box-shadow:var(--shadow-sm);text-decoration:none;display:block;transition:transform 0.2s,box-shadow 0.2s;" onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='var(--shadow-md)'" onmouseout="this.style.transform='';this.style.boxShadow='var(--shadow-sm)'">
+          <div style="font-family:var(--font-h);font-size:20px;font-weight:600;color:var(--black);margin-bottom:8px;">Domingo de Ramos</div>
+          <div style="font-size:13px;color:var(--muted);">6 April 2025</div>
+        </a>
+        
+        <a href="/eventos/2025-03-16-escuela-obreros/" style="background:var(--white);border-radius:var(--r);padding:28px;box-shadow:var(--shadow-sm);text-decoration:none;display:block;transition:transform 0.2s,box-shadow 0.2s;" onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='var(--shadow-md)'" onmouseout="this.style.transform='';this.style.boxShadow='var(--shadow-sm)'">
+          <div style="font-family:var(--font-h);font-size:20px;font-weight:600;color:var(--black);margin-bottom:8px;">Escuela de obreros</div>
+          <div style="font-size:13px;color:var(--muted);">16 March 2025</div>
+        </a>
+        
+        <a href="/eventos/2025-02-09-culto-visita-misionero/" style="background:var(--white);border-radius:var(--r);padding:28px;box-shadow:var(--shadow-sm);text-decoration:none;display:block;transition:transform 0.2s,box-shadow 0.2s;" onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='var(--shadow-md)'" onmouseout="this.style.transform='';this.style.boxShadow='var(--shadow-sm)'">
+          <div style="font-family:var(--font-h);font-size:20px;font-weight:600;color:var(--black);margin-bottom:8px;">Culto con visita misionera</div>
+          <div style="font-size:13px;color:var(--muted);">9 February 2025</div>
+        </a>
+        
+        <a href="/eventos/2025-01-12-ayuno-oracion/" style="background:var(--white);border-radius:var(--r);padding:28px;box-shadow:var(--shadow-sm);text-decoration:none;display:block;transition:transform 0.2s,box-shadow 0.2s;" onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='var(--shadow-md)'" onmouseout="this.style.transform='';this.style.boxShadow='var(--shadow-sm)'">
+          <div style="font-family:var(--font-h);font-size:20px;font-weight:600;color:var(--black);margin-bottom:8px;">Jornada de ayuno y oración</div>
+          <div style="font-size:13px;color:var(--muted);">12 January 2025</div>
+        </a>
+        
+        <a href="/eventos/2024-12-15-culto-navidad/" style="background:var(--white);border-radius:var(--r);padding:28px;box-shadow:var(--shadow-sm);text-decoration:none;display:block;transition:transform 0.2s,box-shadow 0.2s;" onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='var(--shadow-md)'" onmouseout="this.style.transform='';this.style.boxShadow='var(--shadow-sm)'">
+          <div style="font-family:var(--font-h);font-size:20px;font-weight:600;color:var(--black);margin-bottom:8px;">Culto de Navidad 2024</div>
+          <div style="font-size:13px;color:var(--muted);">15 December 2024</div>
+        </a>
+        
+        <a href="/eventos/2024-11-02-encuentro-damas/" style="background:var(--white);border-radius:var(--r);padding:28px;box-shadow:var(--shadow-sm);text-decoration:none;display:block;transition:transform 0.2s,box-shadow 0.2s;" onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='var(--shadow-md)'" onmouseout="this.style.transform='';this.style.boxShadow='var(--shadow-sm)'">
+          <div style="font-family:var(--font-h);font-size:20px;font-weight:600;color:var(--black);margin-bottom:8px;">Encuentro de damas</div>
+          <div style="font-size:13px;color:var(--muted);">2 November 2024</div>
+        </a>
+        
+        <a href="/eventos/2024-10-12-campana-evangelistica/" style="background:var(--white);border-radius:var(--r);padding:28px;box-shadow:var(--shadow-sm);text-decoration:none;display:block;transition:transform 0.2s,box-shadow 0.2s;" onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='var(--shadow-md)'" onmouseout="this.style.transform='';this.style.boxShadow='var(--shadow-sm)'">
+          <div style="font-family:var(--font-h);font-size:20px;font-weight:600;color:var(--black);margin-bottom:8px;">Campaña evangelística en el barrio</div>
+          <div style="font-size:13px;color:var(--muted);">12 October 2024</div>
+        </a>
+        
+        <a href="/eventos/2024-09-07-bautismos/" style="background:var(--white);border-radius:var(--r);padding:28px;box-shadow:var(--shadow-sm);text-decoration:none;display:block;transition:transform 0.2s,box-shadow 0.2s;" onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='var(--shadow-md)'" onmouseout="this.style.transform='';this.style.boxShadow='var(--shadow-sm)'">
+          <div style="font-family:var(--font-h);font-size:20px;font-weight:600;color:var(--black);margin-bottom:8px;">Servicio de bautismos</div>
+          <div style="font-size:13px;color:var(--muted);">7 September 2024</div>
+        </a>
+        
+        <a href="/eventos/2024-08-17-encuentro-jovenes/" style="background:var(--white);border-radius:var(--r);padding:28px;box-shadow:var(--shadow-sm);text-decoration:none;display:block;transition:transform 0.2s,box-shadow 0.2s;" onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='var(--shadow-md)'" onmouseout="this.style.transform='';this.style.boxShadow='var(--shadow-sm)'">
+          <div style="font-family:var(--font-h);font-size:20px;font-weight:600;color:var(--black);margin-bottom:8px;">Encuentro regional de jóvenes</div>
+          <div style="font-size:13px;color:var(--muted);">17 August 2024</div>
+        </a>
+        
+        <a href="/eventos/2024-07-20-cena-de-amigos/" style="background:var(--white);border-radius:var(--r);padding:28px;box-shadow:var(--shadow-sm);text-decoration:none;display:block;transition:transform 0.2s,box-shadow 0.2s;" onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='var(--shadow-md)'" onmouseout="this.style.transform='';this.style.boxShadow='var(--shadow-sm)'">
+          <div style="font-family:var(--font-h);font-size:20px;font-weight:600;color:var(--black);margin-bottom:8px;">Cena de amigos</div>
+          <div style="font-size:13px;color:var(--muted);">20 July 2024</div>
+        </a>
+        
+        <a href="/eventos/2024-06-16-dia-del-padre/" style="background:var(--white);border-radius:var(--r);padding:28px;box-shadow:var(--shadow-sm);text-decoration:none;display:block;transition:transform 0.2s,box-shadow 0.2s;" onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='var(--shadow-md)'" onmouseout="this.style.transform='';this.style.boxShadow='var(--shadow-sm)'">
+          <div style="font-family:var(--font-h);font-size:20px;font-weight:600;color:var(--black);margin-bottom:8px;">Día del padre</div>
+          <div style="font-size:13px;color:var(--muted);">16 June 2024</div>
+        </a>
+        
+        <a href="/eventos/2024-05-05-dia-de-la-familia/" style="background:var(--white);border-radius:var(--r);padding:28px;box-shadow:var(--shadow-sm);text-decoration:none;display:block;transition:transform 0.2s,box-shadow 0.2s;" onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='var(--shadow-md)'" onmouseout="this.style.transform='';this.style.boxShadow='var(--shadow-sm)'">
+          <div style="font-family:var(--font-h);font-size:20px;font-weight:600;color:var(--black);margin-bottom:8px;">Día de la familia</div>
+          <div style="font-size:13px;color:var(--muted);">5 May 2024</div>
+        </a>
+        
+        <a href="/eventos/2024-04-20-encuentro-matrimonios/" style="background:var(--white);border-radius:var(--r);padding:28px;box-shadow:var(--shadow-sm);text-decoration:none;display:block;transition:transform 0.2s,box-shadow 0.2s;" onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='var(--shadow-md)'" onmouseout="this.style.transform='';this.style.boxShadow='var(--shadow-sm)'">
+          <div style="font-family:var(--font-h);font-size:20px;font-weight:600;color:var(--black);margin-bottom:8px;">Encuentro de matrimonios</div>
+          <div style="font-size:13px;color:var(--muted);">20 April 2024</div>
+        </a>
+        
+        <a href="/eventos/2024-03-30-semana-santa/" style="background:var(--white);border-radius:var(--r);padding:28px;box-shadow:var(--shadow-sm);text-decoration:none;display:block;transition:transform 0.2s,box-shadow 0.2s;" onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='var(--shadow-md)'" onmouseout="this.style.transform='';this.style.boxShadow='var(--shadow-sm)'">
+          <div style="font-family:var(--font-h);font-size:20px;font-weight:600;color:var(--black);margin-bottom:8px;">Semana Santa: recordando la cruz</div>
+          <div style="font-size:13px;color:var(--muted);">30 March 2024</div>
+        </a>
+        
+        <a href="/eventos/2024-02-10-vigilia-oracion/" style="background:var(--white);border-radius:var(--r);padding:28px;box-shadow:var(--shadow-sm);text-decoration:none;display:block;transition:transform 0.2s,box-shadow 0.2s;" onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='var(--shadow-md)'" onmouseout="this.style.transform='';this.style.boxShadow='var(--shadow-sm)'">
+          <div style="font-family:var(--font-h);font-size:20px;font-weight:600;color:var(--black);margin-bottom:8px;">Vigilia de oración</div>
+          <div style="font-size:13px;color:var(--muted);">10 February 2024</div>
+        </a>
+        
+        <a href="/eventos/2024-01-15-vision-2024/" style="background:var(--white);border-radius:var(--r);padding:28px;box-shadow:var(--shadow-sm);text-decoration:none;display:block;transition:transform 0.2s,box-shadow 0.2s;" onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='var(--shadow-md)'" onmouseout="this.style.transform='';this.style.boxShadow='var(--shadow-sm)'">
+          <div style="font-family:var(--font-h);font-size:20px;font-weight:600;color:var(--black);margin-bottom:8px;">Noche de visión 2024</div>
+          <div style="font-size:13px;color:var(--muted);">15 January 2024</div>
+        </a>
+        
       </div>
     </div>
-  </div>
-</section>
-
-
-<section class="section ev-section-dark" id="eventos-pasados-section">
-  <div class="section-inner">
-    <button class="historial-toggle" id="historialToggle" type="button">
-      <div class="historial-toggle-icon">▼</div>
-      <span class="historial-toggle-text">Historial de eventos (<span id="eventos-pasados-count">0</span>)</span>
-    </button>
-    <div class="ev-grid historial-grid" id="historialGrid"></div>
-  </div>
-</section>
-
+  </section>
+</div>
 
   </main>
 
@@ -748,19 +254,17 @@
     <div class="footer-col">
       <div class="footer-col-title">Ministerios</div>
       
-        <a href="/ministerios/jovenes/">Jóvenes Betel</a>
+        <a href="/ministerios/misioneritas/">Misioneritas</a>
       
-        <a href="/ministerios/ninos/">Niños Betel</a>
+        <a href="/ministerios/mujeres/">Reuniones de mujeres</a>
       
-        <a href="/ministerios/damas/">Ministerio de Damas</a>
-      
-        <a href="/ministerios/alabanza/">Alabanza y Adoración</a>
+        <a href="/ministerios/exploradores/">Exploradores del Rey</a>
       
       <a href="/ministerios/">Ver todos →</a>
     </div>
     <div class="footer-col">
       <div class="footer-col-title">Contacto</div>
-      <p>Calle Ejemplo 1234, Berazategui, Buenos Aires</p>
+      <p>Calle 143 2124 (entre 21 y 22), Berazategui, Buenos Aires</p>
       <p style="margin-top:8px;">Domingo 10:00 hs<br>Miércoles 20:00 hs</p>
       <p style="margin-top:8px;">&#43;54 11 1234-5678</p>
       <p style="margin-top:4px;"><a href="mailto:contacto@iglesiabetel.com.ar" style="color:inherit;">contacto@iglesiabetel.com.ar</a></p>
@@ -786,18 +290,5 @@
 
   <script src="/js/main.js"></script>
   
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-  const toggle = document.getElementById('historialToggle');
-  const grid   = document.getElementById('historialGrid');
-  if (toggle && grid) {
-    toggle.addEventListener('click', () => {
-      toggle.classList.toggle('open');
-      grid.classList.toggle('open');
-    });
-  }
-});
-</script>
-
 </body>
 </html>
